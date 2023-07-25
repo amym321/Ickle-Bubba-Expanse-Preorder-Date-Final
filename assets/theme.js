@@ -966,6 +966,8 @@ if (console && console.log) {
         this._updateUnitPrice(variant);
         this._updateSKU(variant);
         this.currentVariant = variant;
+
+        this._updatePreorder(variant); // - am
   
         if (this.enableHistoryState) {
           this._updateHistoryState(variant);
@@ -993,6 +995,15 @@ if (console && console.log) {
         }
   
         this.container.dispatchEvent(new CustomEvent('variantPriceChange', {
+          detail: {
+            variant: variant
+          }
+        }));
+      },
+
+      // update pdp preorder date - am
+      _updatePreorder: function(variant) {
+        this.container.dispatchEvent(new CustomEvent('variantPreorderChange', {
           detail: {
             variant: variant
           }
@@ -1638,6 +1649,8 @@ if (console && console.log) {
       discounts: '[data-discounts]',
       savings: '[data-savings]',
       subTotal: '[data-subtotal]',
+      orderDate: '[data-order-date]',  // - am
+      orderPreorderDateISO: '[data-preorder-iso]', // preorder date as cart attribute - am
   
       cartBubble: '.cart-link__bubble',
       cartNote: '[name="note"]',
@@ -1668,9 +1681,12 @@ if (console && console.log) {
       this.discounts = form.querySelector(selectors.discounts);
       this.savings = form.querySelector(selectors.savings);
       this.subtotal = form.querySelector(selectors.subTotal);
+      this.orderDate = form.querySelector(selectors.orderDate);  // - am
       this.termsCheckbox = form.querySelector(selectors.termsCheckbox);
       this.noteInput = form.querySelector(selectors.cartNote);
-  
+
+      this.notePreorderInput = form.querySelector(selectors.orderPreorderDateISO); // pass pre-order date as cart attribute - am
+
       this.cartItemsUpdated = false;
   
       if (this.termsCheckbox) {
@@ -1763,9 +1779,15 @@ if (console && console.log) {
         var count = parseInt(items.dataset.count);
         var subtotal = items.dataset.cartSubtotal;
         var savings = items.dataset.cartSavings;
-  
+        var preorder = items.dataset.cartPreorder;  // -am
+        var preorderS = items.dataset.cartPreorderS;  // -am
+        var today = items.dataset.dateToday;  // -am
+        var preorderISO = items.dataset.cartPreorderIso; // preorder date as cart attribute - am
+
         this.updateCartDiscounts(markup.discounts);
         this.updateSavings(savings);
+
+        this.updateOrderDate(preorder, today, preorderS, preorderISO); // preorder date - am
   
         if (count > 0) {
           this.wrapper.classList.remove('is-empty');
@@ -1877,6 +1899,24 @@ if (console && console.log) {
       ==============================================================================*/
       updateSubtotal: function(subtotal) {
         this.form.querySelector(selectors.subTotal).innerHTML = theme.Currency.formatMoney(subtotal, theme.settings.moneyFormat);
+      },
+
+      // update the pre-order date & cart attribute - am
+      updateOrderDate: function(preorder, today, preorderS, preorderISO) {
+        var preorderText = 'Order to be dispatched by '+ preorder;
+
+        if (preorderS > today) {
+          this.form.querySelector(selectors.orderDate).innerHTML = preorderText;
+          this.form.querySelector(selectors.orderPreorderDateISO).value = preorderISO;
+          
+        } else if (preorderS <= today) {
+          if (this.form.querySelector(selectors.orderDate)) {
+            this.form.querySelector(selectors.orderDate).innerHTML = ' ';
+            this.form.querySelector(selectors.orderPreorderDateISO).value = '';
+            // checkout button on cart-drawer fails when removing item with preorder date & leaving item w/o preorder date
+            // occurs regardless of theme, 1st commit, device, etc, so nt any of my code. Was working b4
+          }
+        };
       },
   
       updateSavings: function(savings) {
@@ -8020,6 +8060,7 @@ if (console && console.log) {
   
         priceWrapper: '[data-product-price-wrap]',
         price: '[data-product-price]',
+        preorder: '[data-variant-date]', // pdp preorder date- am
         comparePrice: '[data-compare-price]',
         savePrice: '[data-save-price]',
         priceA11y: '[data-a11y-price]',
@@ -8205,6 +8246,7 @@ if (console && console.log) {
         this.container.on('variantImageChange' + this.settings.namespace, this.updateVariantImage.bind(this));
         this.container.on('variantPriceChange' + this.settings.namespace, this.updatePrice.bind(this));
         this.container.on('variantUnitPriceChange' + this.settings.namespace, this.updateUnitPrice.bind(this));
+        this.container.on('variantPreorderChange' + this.settings.namespace, this.updatePreorder.bind(this)); // pdp preorder date - am
   
         if (this.container.querySelectorAll(this.selectors.sku).length) {
           this.container.on('variantSKUChange' + this.settings.namespace, this.updateSku.bind(this));
@@ -8347,6 +8389,44 @@ if (console && console.log) {
             }
           }
         }
+      },
+  
+
+      // dynamic pdp Preorder text, ATC, & By Now button - am
+      updatePreorder: function(evt) {
+        var variant = evt.detail.variant;
+
+        var variantsMetafields = jQuery.parseJSON($("#hidden-variant-metafields").html());
+        var today = $("#hidden-today").html();
+
+        $("#hidden-current-variant-metafield").hide(); // delete the field 1st. If item "coming soon" no variant shows. So start with hidden field b/c can't delete later based on variant.id
+        $("#hidden-current-variant-message").hide();
+        $(".gf_p-dynamic-checkout-button").show();     // show the dynamic button 1st before possibly hiding
+        $("#m-1682498763345").show();
+        
+        variantsMetafields.forEach(function(variantMetafield) {
+          if (variantMetafield.variant_id == variant.id) {
+            if (variantMetafield.metafield_value !== false) {
+              if (variantMetafield.metafield_value_s > today) {
+                $("#hidden-current-variant-metafield").html("Order today for dispatch by "+variantMetafield.metafield_value);
+                $("#hidden-current-variant-metafield").show();
+                $("#hidden-current-variant-message").html("We will fulfill the item as soon as it becomes available");
+                $("#hidden-current-variant-message").show();
+                //$(".AddToCartText").html("PRE ORDER"); // goes back to ATC automatically on next variant change if necessary
+                $("#atc").html("PRE ORDER"); // goes back to ATC automatically on next variant change if necessary
+                $(".gf_p-dynamic-checkout-button").hide();
+              } else {
+                // $(".AddToCartText").html("ADD TO CART");
+                $(".gf_p-dynamic-checkout-button").show();
+                $("#m-1682498763345").show();
+              }
+            } else {
+              // $(".AddToCartText").html("ADD TO CART");
+              $(".gf_p-dynamic-checkout-button").show();
+              $("#m-1682498763345").show();
+            }
+          }
+        });
       },
   
       updateUnitPrice: function(evt) {

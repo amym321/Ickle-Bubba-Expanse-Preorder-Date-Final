@@ -44,6 +44,10 @@
             </div>
           {% endif %}
 
+          {% comment %} pre-order date for dispatch - am {% endcomment %}
+          {% render 'cart-preorder-dates', cart.items: cart.items %}
+
+          
           <div class="cart__item-sub cart__item-row cart__item--subtotal">
             <div>{{ 'cart.general.subtotal' | t }}</div>
             <div data-subtotal>

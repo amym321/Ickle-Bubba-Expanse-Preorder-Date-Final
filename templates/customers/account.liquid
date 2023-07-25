@@ -20,6 +20,9 @@
               <th>{{ 'customer.orders.date' | t }}</th>
               <th>{{ 'customer.orders.payment_status' | t }}</th>
               <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
+              {% comment %}  pre-order date & shipping method - am {% endcomment %}
+              <th>Dispatch By</th>
+              <th>Ship Method</th>
               <th>{{ 'customer.orders.total' | t }}</th>
             </tr>
           </thead>
@@ -30,6 +33,9 @@
                 <td data-label="{{ 'customer.orders.date' | t }}">{{ order.created_at | time_tag: format: 'date' }}</td>
                 <td data-label="{{ 'customer.orders.payment_status' | t }}">{{ order.financial_status_label }}</td>
                 <td data-label="{{ 'customer.orders.fulfillment_status' | t }}">{{ order.fulfillment_status_label }}</td>
+                {% comment %}  pre-order date & shipping method - am {% endcomment %}
+                <td data-label="Dispatch By">{% render 'order-preorder-dates', order: order %}</td>
+                <td data-label="Ship Method">{{  order.shipping_method.title }}</td>
                 <td data-label="{{ 'customer.orders.total' | t }}">{{ order.total_price | money }}</td>
               </tr>
             {%- endfor -%}
