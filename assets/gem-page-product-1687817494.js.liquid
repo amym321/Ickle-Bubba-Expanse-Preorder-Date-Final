@@ -31,7 +31,9 @@
   (function( jQuery ){
   
   //set initial ATC & Buy Now button - am
-  (function () {
+  const defer = (fn, ...args) => setTimeout(fn, 1000, ...args);
+  
+  function atc() {
     var dateText = document.getElementById('hidden-current-variant-message').innerHTML;
   
     if (dateText) {
@@ -42,7 +44,11 @@
       $(".gf_p-dynamic-checkout-button").show();
       $("#m-1682498763345").show();
     }
-  })();
+  //})();
+  }
+
+  defer(atc);
+
 
 
 
