@@ -4,6 +4,9 @@
   mobile_layout
 {% endcomment %}
 
+{% comment %} prevent JSON.parse from getting scrabled by iOS - am {% endcomment %}
+<meta name="format-detection" content="telephone=no">
+
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
 
