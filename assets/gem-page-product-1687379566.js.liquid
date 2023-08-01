@@ -57,6 +57,7 @@
   $module.gfV3ProductSwatches({
     swatchText: swatchText,
     onSwatchSelected: function(variant, $swatch) {
+      console.log('log 10) variant change');
 
       // dynamic Preorder text ATC & By Now button.  impacts chassis & handles change
       var variantsMetafields = jQuery.parseJSON($("#hidden-variant-metafields").html());
@@ -69,6 +70,8 @@
       $("#m-1682498763345").show();
       
       variantsMetafields.forEach(function(variantMetafield) {
+        console.log('log 12) variantsMetafields.forEach');
+
         if (variantMetafield.variant_id == variant.id) {
           if (variantMetafield.metafield_value !== false) {
 
@@ -108,6 +111,8 @@
   $module.gfV3ProductSwatches({
     swatchText: swatchText,
     onSwatchSelected: function(variant, $swatch) {
+      console.log('log 20) variant change');
+
       document.dispatchEvent(new CustomEvent('variant:change', {
         detail : {
           variant: variant
@@ -126,6 +131,8 @@
       $("#m-1682498763345").show();
       
       variantsMetafields.forEach(function(variantMetafield) {
+        console.log('log 22) variantsMetafields.forEach');
+
         if (variantMetafield.variant_id == variant.id) {
           if (variantMetafield.metafield_value !== false) {
 
