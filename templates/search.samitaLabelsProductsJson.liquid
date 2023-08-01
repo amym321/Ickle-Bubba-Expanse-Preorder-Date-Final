@@ -5,15 +5,15 @@
         {
             "id":{{-product.id-}},
             "title":{{-product.title | json-}},
-            "handle":"{{-product.handle-}}",
+            "handle":{{-product.handle | json-}},
             "price":"{{-product.price-}}",
             "price_max":"{{-product.price_max}}",
             "price_min":"{{-product.price_min}}",
-            "type":"{{-product.type-}}",
+            "type":{{-product.type | json-}},
             "created_at":"{{-product.created_at | date: "%Y-%m-%d %H:%M" -}}",
             "published_at":"{{-product.published_at | date: "%Y-%m-%d %H:%M" -}}",
             "tags": {{-product.tags | json-}},
-            "vendor": "{{-product.vendor-}}",
+            "vendor": {{-product.vendor | json-}},
             "featured_image":"{{-product.featured_image-}}",
             "url":"{{-product.url-}}",
             "collections":{{-product.collections | map: 'id' | json-}},
@@ -28,6 +28,7 @@
             "src":{{-image.src | json-}}}{%- endfor -%}],
             "first_available_variant":{"id":{{product.selected_or_first_available_variant.id}}},
             "available":{{-product.available-}},
+            "options": {{-product.options | json-}},
             "variants":[
                 {%- for variant in product.variants -%}{%- unless forloop.first -%},
                     {%- endunless -%}
@@ -36,12 +37,16 @@
                     "title":{{-variant.title | json}},
                     "name":{{-variant.name | json}},
                     "price":{{-variant.price-}},
-                    "compare_at_price":"{{-variant.compare_at_price-}}",
+                    "compare_at_price":{{-variant.compare_at_price | times: 1-}},
                     "available":{{-variant.available-}},
                     "sku":{{-variant.sku | json -}},
                     "weight":"{{-variant.weight-}}",
                     "weight_unit": "{{-variant.weight_unit-}}",
                     "inventory_quantity":{{-variant.inventory_quantity-}},
+                    "option1":  {{-variant.option1| json-}},
+                    "option2":  {{-variant.option2| json-}},
+                    "option3":  {{-variant.option3| json-}},
+                    "options":  {{-variant.options| json-}},
                     "selected": {%- if variant.selected -%}  {{-variant.selected-}} {%- elsif product.selected_or_first_available_variant.id == variant.id -%} true  {%- else -%} false {%- endif -%}
                     }
                 {%- endfor -%}
