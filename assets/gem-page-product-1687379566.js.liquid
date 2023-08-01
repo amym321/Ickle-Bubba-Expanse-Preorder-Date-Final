@@ -64,6 +64,8 @@
       // dynamic Preorder text ATC & By Now button.  impacts chassis & handles change
       var variantsMetafields = jQuery.parseJSON($("#hidden-variant-metafields").html());
       var today = $("#hidden-today").html();
+      console.log('log 11) variantsMetafields = '+ variantsMetafields);
+      console.log('log 12) today = '+today);
 
       $("#hidden-current-variant-metafield").hide(); // delete the field 1st. If item "coming soon" no variant shows. So start with hidden field b/c can't delete later based on variant.id
       $("#hidden-current-variant-message").hide();
@@ -124,6 +126,8 @@
     // dynamic Preorder text ATC & By Now button.  impacts chassis & handles change  - am
       var variantsMetafields = jQuery.parseJSON($("#hidden-variant-metafields").html());
       var today = $("#hidden-today").html();
+      console.log('log 21) variantsMetafields = '+ variantsMetafields);
+      console.log('log 22) today = '+today);
 
       $("#hidden-current-variant-metafield").hide(); // delete the field 1st. If item "coming soon" no variant shows. So start with hidden field b/c can't delete later based on variant.id
       $("#hidden-current-variant-message").hide();
