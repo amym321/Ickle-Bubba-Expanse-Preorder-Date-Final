@@ -34,6 +34,8 @@
   const defer = (fn, ...args) => setTimeout(fn, 1000, ...args);
   
   function atc() {
+    console.log('log 00) ATC');
+
     var dateText = document.getElementById('hidden-current-variant-message').innerHTML;
   
     if (dateText) {
