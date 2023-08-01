@@ -62,6 +62,13 @@
       console.log('log 10) variant change');
 
       // dynamic Preorder text ATC & By Now button.  impacts chassis & handles change
+      var variantsMetafields_1 = document.getElementById("hidden-variant-metafields").html();
+          console.log('log 101) variantsMetafields_1 = '+ variantsMetafields_1);
+      var variantsMetafields_2 = JSON.parse(variantsMetafields_1);
+          console.log('log 102) variantsMetafields_2 = '+ variantsMetafields_2);
+
+
+
       var variantsMetafields = jQuery.parseJSON($("#hidden-variant-metafields").html());
       var today = $("#hidden-today").html();
       console.log('log 11) variantsMetafields = '+ variantsMetafields);
@@ -124,6 +131,12 @@
       }));
 
     // dynamic Preorder text ATC & By Now button.  impacts chassis & handles change  - am
+          var variantsMetafields_1 = document.getElementById("hidden-variant-metafields").html();
+              console.log('log 201) variantsMetafields_1 = '+ variantsMetafields_1);
+          var variantsMetafields_2 = JSON.parse(variantsMetafields_1);
+              console.log('log 202) variantsMetafields_2 = '+ variantsMetafields_2);
+
+
       var variantsMetafields = jQuery.parseJSON($("#hidden-variant-metafields").html());
       var today = $("#hidden-today").html();
       console.log('log 21) variantsMetafields = '+ variantsMetafields);
