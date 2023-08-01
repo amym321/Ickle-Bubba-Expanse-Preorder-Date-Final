@@ -81,9 +81,9 @@
     {% assign metafields-data = metafields-data | append: ']'%}
     {% assign metafields-data = metafields-data | replace: ",]", "]"%}
 
-    <span id="hidden-today" style="display:none;">{{date-today}}</span> 
-    <span id="hidden-first-variant-metafield" style="display:none;">{{first-variant-metafield-date}}</span>
-    <span id="hidden-variant-metafields" style="display:none;">{{metafields-data}}</span>  {% comment %} pass all metafield dates {% endcomment %}
+    <span id="hidden-today" style="color:#ffffff00; font-size: 1px; max-height:1px; display: block;">{{date-today}}</span> 
+    <span id="hidden-first-variant-metafield" style="color:#ffffff00; font-size: 1px; max-height:1px; display: block;">{{first-variant-metafield-date}}</span>
+    <span id="hidden-variant-metafields" style="color:#ffffff00; font-size: 1px; max-height:1px; display: block;">{{metafields-data}}</span>  {% comment %} pass all metafield dates {% endcomment %}
     {% comment %} end preorder date - am {% endcomment %}
 
 
