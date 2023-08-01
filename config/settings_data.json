@@ -358,15 +358,15 @@
         "settings": {
         }
       },
-      "3824936769257688723": {
-        "type": "shopify:\/\/apps\/sami-product-labels-badges\/blocks\/app-embed-block\/b9b44663-5d51-4be1-8104-faedd68da8c5",
-        "disabled": false,
-        "settings": {
-        }
-      },
       "5439026248262864547": {
         "type": "shopify:\/\/apps\/preorder-globo-back-in-stock\/blocks\/app-embed\/e547a0ad-8212-4bcc-b02f-761faa9b8af2",
         "disabled": true,
+        "settings": {
+        }
+      },
+      "3824936769257688723": {
+        "type": "shopify:\/\/apps\/sami-product-labels-badges\/blocks\/app-embed-block\/b9b44663-5d51-4be1-8104-faedd68da8c5",
+        "disabled": false,
         "settings": {
         }
       }
