@@ -1,0 +1,1002 @@
+{% comment %}
+	GEMPAGE BUILDER (https://apps.shopify.com/gempage)
+
+	You SHOULD NOT modify source code in this page because
+	It is automatically generated from GEMPAGE BUILDER
+	Try to edit page with the live editor.
+{% endcomment %}
+
+    (function( jQuery ){
+  var $module = jQuery('#m-1682498763387').children('.module');
+  $module.gfV3Product();
+})( window.GemQuery || jQuery );
+  
+    
+  
+    
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1682500799278').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1682506196483').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    
+  (function( jQuery ){
+  
+  //set initial ATC & Buy Now button - am
+  const defer = (fn, ...args) => setTimeout(fn, 1000, ...args);
+  
+  function atc() {
+    console.log('log 00) ATC');
+
+    var dateText = document.getElementById('hidden-current-variant-message').innerHTML;
+  
+    if (dateText) {
+      $('.AddToCartText').html("PRE ORDER");
+      $(".gf_p-dynamic-checkout-button").hide();
+      $("#m-1682498763345").hide();
+    } else {
+      $(".gf_p-dynamic-checkout-button").show();
+      $("#m-1682498763345").show();
+    }
+  //})();
+  }
+
+  defer(atc);
+
+
+
+  // repeated JS for variant change  - am
+  var $module = jQuery('#m-1682498763297').children('.module');
+  var swatchText = $module.attr('data-swatch-text') !== undefined ? $module.attr('data-swatch-text') : '1';
+  $module.gfV3ProductSwatches({
+    swatchText: swatchText,
+    onSwatchSelected: function(variant, $swatch) {
+      console.log('log 10) variant change');
+
+      // dynamic Preorder text ATC & By Now button.  impacts chassis & handles change
+      var variantsMetafields_1 = document.getElementById("hidden-variant-metafields").innerHTML;
+          console.log('log 101) variantsMetafields_1 = '+ variantsMetafields_1);
+      var variantsMetafields = JSON.parse(variantsMetafields_1);
+          console.log('log 102) variantsMetafields = '+ variantsMetafields);
+
+
+
+      // var variantsMetafields = jQuery.parseJSON($("#hidden-variant-metafields").html());
+      var today = $("#hidden-today").html();
+      // console.log('log 11) variantsMetafields = '+ variantsMetafields);
+      // console.log('log 12) today = '+today);
+
+      $("#hidden-current-variant-metafield").hide(); // delete the field 1st. If item "coming soon" no variant shows. So start with hidden field b/c can't delete later based on variant.id
+      $("#hidden-current-variant-message").hide();
+      $(".gf_p-dynamic-checkout-button").show();     // show the dynamic button 1st before possibly hiding
+      $(".gf_p-dynamic-checkout-button").show();
+      $("#m-1682498763345").show();
+      
+      variantsMetafields.forEach(function(variantMetafield) {
+        console.log('log 12) variantsMetafields.forEach');
+
+        if (variantMetafield.variant_id == variant.id) {
+          if (variantMetafield.metafield_value !== false) {
+
+            if (variantMetafield.metafield_value_s > today) {
+              $("#hidden-current-variant-metafield").html("Order today for dispatch by "+variantMetafield.metafield_value);
+              $("#hidden-current-variant-metafield").show();
+              $("#hidden-current-variant-message").html("We will fulfill the item as soon as it becomes available");
+              $("#hidden-current-variant-message").show();
+              $(".AddToCartText").html("PRE ORDER"); // goes back to ATC automatically on next variant change if necessary
+              $(".gf_p-dynamic-checkout-button").hide();
+            } else {
+              // $(".AddToCartText").html("ADD TO CART");
+              $(".gf_p-dynamic-checkout-button").show();
+              $("#m-1682498763345").show();
+            }
+          } else {
+            // $(".AddToCartText").html("ADD TO CART");
+            $(".gf_p-dynamic-checkout-button").show();
+            $("#m-1682498763345").show();
+          }
+        }
+      });
+
+
+    }
+  });
+
+})( window.GemQuery || jQuery );
+
+
+
+
+(function( jQuery ){
+  // repeated JS for variant change
+  var $module = jQuery('#m-1682498763296').children('.module');
+  var swatchText = $module.attr('data-swatch-text') !== undefined ? $module.attr('data-swatch-text') : '1';
+  $module.gfV3ProductSwatches({
+    swatchText: swatchText,
+    onSwatchSelected: function(variant, $swatch) {
+      console.log('log 20) variant change');
+
+      document.dispatchEvent(new CustomEvent('variant:change', {
+        detail : {
+          variant: variant
+        }
+      }));
+
+    // dynamic Preorder text ATC & By Now button.  impacts chassis & handles change  - am
+          var variantsMetafields_1 = document.getElementById("hidden-variant-metafields").innerHTML;
+              console.log('log 201) variantsMetafields_1 = '+ variantsMetafields_1);
+          var variantsMetafields = JSON.parse(variantsMetafields_1);
+              console.log('log 202) variantsMetafields = '+ variantsMetafields);
+
+
+      // var variantsMetafields = jQuery.parseJSON($("#hidden-variant-metafields").html());
+      var today = $("#hidden-today").html();
+      // console.log('log 21) variantsMetafields = '+ variantsMetafields);
+      // console.log('log 22) today = '+today);
+
+      $("#hidden-current-variant-metafield").hide(); // delete the field 1st. If item "coming soon" no variant shows. So start with hidden field b/c can't delete later based on variant.id
+      $("#hidden-current-variant-message").hide();
+      $(".gf_p-dynamic-checkout-button").show();     // show the dynamic button 1st before possibly hiding
+      $("#m-1682498763345").show();     // show the dynamic button 1st before possibly hiding
+      $(".gf_p-dynamic-checkout-button").show();
+      $("#m-1682498763345").show();
+      
+      variantsMetafields.forEach(function(variantMetafield) {
+        console.log('log 22) variantsMetafields.forEach');
+
+        if (variantMetafield.variant_id == variant.id) {
+          if (variantMetafield.metafield_value !== false) {
+
+            if (variantMetafield.metafield_value_s > today) {
+              $("#hidden-current-variant-metafield").html("Order today for dispatch by "+variantMetafield.metafield_value);
+              $("#hidden-current-variant-metafield").show();
+              $("#hidden-current-variant-message").html("We will fulfill the item as soon as it becomes available");
+              $("#hidden-current-variant-message").show();
+              $(".AddToCartText").html("PRE ORDER"); // goes back to ATC automatically on next variant change if necessary
+              $(".gf_p-dynamic-checkout-button").hide();
+              $("#m-1682498763345").hide();
+            } else {
+              // $(".AddToCartText").html("ADD TO CART");
+              $(".gf_p-dynamic-checkout-button").show();
+              $("#m-1682498763345").show();
+            }
+          } else {
+            // $(".AddToCartText").html("ADD TO CART");
+            $(".gf_p-dynamic-checkout-button").show();
+            $("#m-1682498763345").show();
+          }
+        }
+      });
+
+    }
+  });
+})( window.GemQuery || jQuery );
+    (function( jQuery ){
+  var $module = jQuery('#m-1682498763317').children('.module');
+  $module.gfV3ProductCartButton({ onItemAdded: function(data) {}});
+})( window.GemQuery || jQuery );
+  
+    
+  
+    
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1682509243548').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1686063381526').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    (function(jQuery) {
+    var $module = jQuery('#m-1682498763350').children('.module');
+    $module.gfV3ProductPrice({
+        displayCurrency: true
+    });
+})(window.GemQuery || jQuery);
+  (function( jQuery ){
+  // var $module = jQuery('#m-1679325869592').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+    
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1686575377396').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    (function(jQuery) {
+    var $module = jQuery('#m-1682498763324').children('.module');
+    $module.gfV3ProductPrice({
+        displayCurrency: true
+    });
+})(window.GemQuery || jQuery);
+  (function(jQuery) {
+  var $module = jQuery('#m-1682498763297').children('.module');
+  var swatchText = $module.attr('data-swatch-text') != undefined ? $module.attr('data-swatch-text') : '1';
+  $module.gfV3ProductSwatches({
+    swatchText: swatchText,
+    onSwatchSelected: function(variant, $swatch) {}
+  });
+})(window.GemQuery || jQuery);(function(jQuery) {
+  var $module = jQuery('#m-1682498763296').children('.module');
+  var swatchText = $module.attr('data-swatch-text') != undefined ? $module.attr('data-swatch-text') : '1';
+  $module.gfV3ProductSwatches({
+    swatchText: swatchText,
+    onSwatchSelected: function(variant, $swatch) {
+      document.dispatchEvent(new CustomEvent('variant:change', {
+        detail : {
+          variant: variant
+        }
+      }));
+    }
+  });
+})(window.GemQuery || jQuery);(function( jQuery ){
+  var $module = jQuery('#m-1687181495831').children('.module');
+
+
+if($('.gempage-editing').length < 1){
+  
+  function formatDay(day){
+    var fday;
+    
+    if(day == 1 || day == 21 || day == 31){
+      fday = day + 'st';
+    }else if(day == 2 || day == 22){
+      fday = day + 'nd';
+    }else if(day == 3 || day == 23){
+      fday = day + 'rd';
+    }else{
+      fday = day + 'th'
+    }
+    return fday;
+  }
+  
+      //debug
+      var debug = 0;
+      //
+  
+  var $wrapper = $module.find('.gp_custom-shipping-time');
+  var $countdownElm = $module.find('.gp_custom-countdown');
+  var $hourElm = $module.find('.gp_hour');
+  var $minutesElm = $module.find('.gp_minutes');
+  var $todayElm = $module.find('.gp_custom-today');
+  var $todayP2Elm = $module.find('.gp_custom-today-p2');
+  
+  var month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  var weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+  
+  utc = 1;
+ 
+ 
+ function addDate(plus){
+  
+    //Add today
+    var today = new Date();
+    today.setUTCHours(today.getUTCHours() + utc)
+    
+    today.setUTCDate(today.getUTCDate() + plus);
+    
+    
+        //debug
+        today.setUTCDate(today.getUTCDate() + debug);
+        console.log("Debug [today]: " + today.toUTCString() + utc);
+        //
+        
+    if(today.getUTCDay() == 0 || today.getUTCDay() == 6){
+      $module.find('.gp_custom-shipping-time').addClass('gp-hide');
+    }else{
+      $module.find('.gp_custom-shipping-time').removeClass('gp-hide');
+    }
+    
+    var todayP = 0; 
+    
+    
+    if(today.getUTCDay() == 0){
+      today.setUTCDate(today.getUTCDate() + 1);
+      todayP = 1;
+    }else if(today.getUTCDay() == 6){
+      today.setUTCDate(today.getUTCDate() + 2);
+      todayP = 2;
+    } 
+  
+    $todayElm.html(weekday[today.getUTCDay()] + ' ' + formatDay(today.getUTCDate()) + ' ' + month[today.getUTCMonth()])
+    
+    
+    //Add today + 2
+    var todayP2 = new Date();
+    todayP2.setUTCHours(todayP2.getUTCHours() + utc)
+    today.setUTCDate(today.getUTCDate() + plus);
+    
+    todayP2.setUTCDate(todayP2.getUTCDate() + 2);
+    
+        //debug
+        todayP2.setUTCDate(todayP2.getUTCDate() + debug);
+        console.log("Debug [today + 2]: " + todayP2.toUTCString()+ utc);
+        //
+    
+    
+    todayP2.setUTCDate(todayP2.getUTCDate() + todayP);
+    if(todayP2.getUTCDay() == 0){
+      todayP2.setUTCDate(todayP2.getUTCDate() + 1);
+    }else if(todayP2.getUTCDay() == 6){
+      todayP2.setUTCDate(todayP2.getUTCDate() + 2);
+    } 
+    $todayP2Elm.html(weekday[todayP2.getUTCDay()] + ' ' + formatDay(todayP2.getUTCDate()) + ' ' + month[todayP2.getUTCMonth()])
+  
+  }
+  
+  addDate(0);
+
+  
+  //Add countdown
+  
+  function setCountdown(){
+    var now = new Date();
+    now.setUTCHours(now.getUTCHours() + utc);
+    var a  = now.getUTCHours() * 60 + now.getUTCMinutes();
+    var b = 14 * 60;
+    
+    if(a < b){
+      var c = b - a;
+      $hourElm.text(Math.floor(c / 60));
+      $minutesElm.text(c % 60);
+    }else{
+      var c = b + (24 * 60) - a;
+      $hourElm.text(Math.floor(c / 60));
+      $minutesElm.text(c % 60);
+    }
+    
+    if(a < b){
+      addDate(0);
+    }else{
+      addDate(1);
+    }
+ 
+  }
+
+  interval = setInterval( function() {
+    setCountdown()  
+  }, 60000);
+  
+  setCountdown();
+  
+ 
+  //Check variant out stock
+  var $product = $module.closest('[data-label="Product"]').children('.module');
+    if ($product.length == 0) {
+        $product = $module.closest('[data-icon="gpicon-product"]').children('.module');
+    }
+    if ($product.data('gfv3product') != undefined) {
+      var selectedVariant = $product.data('gfv3product').getVariant();
+      triggerChangeVariant(selectedVariant)
+    }
+
+  var currentWrapProductId = $module.closest('[data-label="Product"]').attr('id');
+  
+  function changeVariantFunction(variant){
+    triggerChangeVariant(variant)
+  }
+    
+  if (window.GEMSTORE) {
+      window.GEMSTORE.subscribe("product-"+currentWrapProductId+"-variant", changeVariantFunction);
+  }
+  
+  function triggerChangeVariant(variant){
+    if(variant.available){
+      $wrapper.addClass('gp_show');
+    }else{
+      $wrapper.removeClass('gp_show');
+    }
+    
+    var quantity = $module.find('.gf-variant-' + variant.id).attr('data-inventory_quantity');
+    if(quantity <= 0){
+      $wrapper.removeClass('gp_show');
+    }
+    
+  }
+  
+}
+
+})( window.GemQuery || jQuery );
+    (function( jQuery ){
+  // var $module = jQuery('#m-1682500864127').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    (function( jQuery ){
+  try {
+    var $module = jQuery('#m-1686575301983').children('.module');
+    var single = $module.attr('data-single');
+    var openDefault = $module.attr('data-openDefault');
+    var openTab = $module.attr('data-openTab');
+    var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+
+    if(openDefault == 0 || openDefault == '0') {
+      openTab = '0';
+    }
+
+    $module.gfAccordion({
+      single: single,
+      openTab: openTab,
+      mode: mode,
+      onChanged: function() {	
+        // Fix (P) Desc read more bug	
+        $module.find('.module-wrap[data-label="(P) Description"]').each(function(index, el) {	
+          if (jQuery(el).children('.module').data('gfv3productdesc') != undefined) {	
+            jQuery(el).children(".module").data("gfv3productdesc").initReadMore();	
+          }	
+        })	
+      }
+    });
+
+    var borderColor = $module.attr('data-borderColor');
+    var borderSize = $module.attr('data-borderSize');
+
+    $module.children('[data-accordion]').children('[data-control]').css('border-bottom', borderSize + ' solid ' + borderColor);
+    $module.children('[data-accordion]').children('[data-content]').children().css('border-bottom', borderSize + ' solid ' + borderColor);
+  } catch(err) {}
+})( window.GemQuery || jQuery );
+  
+    
+  
+    (function( jQuery ){
+  var $module = jQuery('#m-1686575302049').children('.module');
+  $module.gfV3ProductDesc();
+})( window.GemQuery || jQuery );
+  
+    
+  (function( jQuery ){
+  // var $module = jQuery('#m-1686575302085').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+    
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1686575301980').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    
+  
+    
+  
+    
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1682498763259').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1686575302022').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    (function( jQuery ){
+  var $module = jQuery('#m-1686575302066').children('.module');
+  if(jQuery().gfYoutube) {
+    $module.gfYoutube();
+  }
+})( window.GemQuery || jQuery );
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1686575685053').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1686063334056').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    (function(jQuery) {
+    var $module = jQuery('#m-1686575362663').children('.module');
+    $module.gfV3ProductPrice({
+        displayCurrency: true
+    });
+})(window.GemQuery || jQuery);
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    (function( jQuery ){
+  var $module = jQuery('#m-1686575302081').children('.module');
+  if(jQuery().gfYoutube) {
+    $module.gfYoutube();
+  }
+})( window.GemQuery || jQuery );
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    (function( jQuery ){
+  try {
+    var $module = jQuery('#m-1690880052597').children('.module');
+    var single = $module.attr('data-single');
+    var openDefault = $module.attr('data-openDefault');
+    var openTab = $module.attr('data-openTab');
+    var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+
+    if(openDefault == 0 || openDefault == '0') {
+      openTab = '0';
+    }
+
+    $module.gfAccordion({
+      single: single,
+      openTab: openTab,
+      mode: mode,
+      onChanged: function() {	
+        // Fix (P) Desc read more bug	
+        $module.find('.module-wrap[data-label="(P) Description"]').each(function(index, el) {	
+          if (jQuery(el).children('.module').data('gfv3productdesc') != undefined) {	
+            jQuery(el).children(".module").data("gfv3productdesc").initReadMore();	
+          }	
+        })	
+      }
+    });
+
+    var borderColor = $module.attr('data-borderColor');
+    var borderSize = $module.attr('data-borderSize');
+
+    $module.children('[data-accordion]').children('[data-control]').css('border-bottom', borderSize + ' solid ' + borderColor);
+    $module.children('[data-accordion]').children('[data-content]').children().css('border-bottom', borderSize + ' solid ' + borderColor);
+  } catch(err) {}
+})( window.GemQuery || jQuery );
+  
+    
+  
+    (function( jQuery ){
+  var $module = jQuery('#m-1690880052550').children('.module');
+  $module.gfV3ProductDesc();
+})( window.GemQuery || jQuery );
+  
+    
+  (function( jQuery ){
+  // var $module = jQuery('#m-1690880052533').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+    
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1690880052467').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    (function( jQuery ){
+  var $module = jQuery('#m-1686575302030').children('.module');
+  $module.gfV2HeroBanner({});
+  
+})( window.GemQuery || jQuery );
+  
+    (function( jQuery ){
+  try {
+    var $module = jQuery('#m-1686575301999').children('.module');   
+    var navspeed = $module.data('navspeed'),
+      autoplaytimeout = $module.data('autoplaytimeout'),
+      autoplayhoverpause = $module.data('autoplayhoverpause'),
+      navlg = $module.data('navlg'),
+      navmd = $module.data('navmd'),
+      navsm = $module.data('navsm'),
+      navxs = $module.data('navxs'),
+      collg = $module.data('collg'),
+      colmd = $module.data('colmd'),
+      colsm = $module.data('colsm'),
+      colxs = $module.data('colxs'),
+      dotslg = $module.data('dotslg'),
+      dotsmd = $module.data('dotsmd'),
+      dotssm = $module.data('dotssm'),
+      dotsxs = $module.data('dotsxs'),
+      marginlg = parseInt($module.data('marginlg')),
+      marginmd = parseInt($module.data('marginmd')),
+      marginsm = parseInt($module.data('marginsm')),
+      marginxs = parseInt($module.data('marginxs'));
+
+    var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+    if(mode == 'production') {
+    var autoplay = $module.data('autoplay'), 
+        autoRefresh = true, 
+        loop = $module.data('loop');
+    } else {
+    var autoplay = 0, 
+        autoRefresh = false, 
+        loop = 0;
+    }
+
+    var initCarousel = function() {
+      $module.owlCarousel({
+        mouseDrag: false,
+        autoplayHoverPause: autoplayhoverpause,
+        autoplay: autoplay,
+        autoRefresh: autoRefresh,
+        autoplaySpeed: navspeed,
+        autoplayTimeout: autoplaytimeout,
+        loop: loop,
+        navSpeed: navspeed,
+        autoWidth: !1,
+        responsiveClass:true,
+        responsive:{
+          0:{
+            items:colxs,
+            nav: navxs,
+            dots:dotsxs,
+            margin: marginxs
+          },
+          768:{
+            items:colsm,
+            nav: navsm,
+            dots:dotssm,
+            margin: marginsm
+          },
+          992:{
+            items:colmd,
+            nav: navmd,
+            dots:dotsmd,
+            margin: marginmd
+          },
+          1200:{
+            items:collg,
+            nav: navlg,
+            dots:dotslg,
+            margin: marginlg
+          }
+        },
+        onInitialized: function () {
+          $module.closest('.module-wrap[data-label="Carousel"]').addClass('gf-carousel-loaded');
+          jQuery(window).trigger("resize");
+        }
+      });
+    }
+    
+    // Fix nested carousel bug	
+    if ($module.parent().parent().closest('.module-wrap[data-label="Carousel"]').length > 0) {	
+      setTimeout(function() {	
+        initCarousel();	
+      }, 300)	
+    } else {	
+      initCarousel();	
+    }
+  } catch(err) {}
+})( window.GemQuery || jQuery );
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    (function( jQuery ){
+  var $module = jQuery('#m-1686575301965').children('.module');
+  $module.gfV2HeroBanner({});
+  
+})( window.GemQuery || jQuery );
+  
+    
+  
+    (function( jQuery ){
+  var $module = jQuery('#m-1686575484497').children('.module');
+
+  var sameHeightTitle = $module.data('sameheightitle'),
+  spacing = $module.data('spacing');
+  collg = $module.data('collg'),
+  colmd = $module.data('colmd'),
+  colsm = $module.data('colsm'),
+  colxs = $module.data('colxs');
+
+  var $clearfixes = $module.find('.gf_row-no-padding').children('.gf_clearfix');
+  var col = collg;
+
+  jQuery(window).resize(function() {
+    setTimeout(function() {
+      for(var i = 0; i < $clearfixes.length; i++) {
+        if($clearfixes.eq(i).css('display') == 'block') {
+          if($clearfixes.eq(i).hasClass('visible-lg')) {
+            col = collg;
+            break;
+          }
+          if($clearfixes.eq(i).hasClass('visible-md')) {
+            col = colmd;
+            break;
+          }
+          if($clearfixes.eq(i).hasClass('visible-sm')) {
+            col = colsm;
+            break;
+          }
+          if($clearfixes.eq(i).hasClass('visible-xs')) {
+            col = colxs;
+            break;
+          }
+        }
+      }
+    }, 1000);
+  });
+
+  jQuery($module).css('padding', spacing);
+})( window.GemQuery || jQuery );
+  
+    
+  
+    (function( jQuery ){
+  var $module = jQuery('#m-1686575484497-child1').children('.module');
+  $module.gfV3Product();
+})( window.GemQuery || jQuery );
+  
+    (function(jQuery) {
+  var $module = jQuery('#m-1686575484497-child1-0').children('.module');
+  var effect = $module.attr('data-effect');
+  var magnify = $module.attr('data-zoom-level');
+  var displayType = $module.attr('data-displaytype');
+  $module.gfV3ProductImage({
+    'effect': effect,
+    'displayType': displayType,
+    'magnify': magnify
+  });
+})(window.GemQuery || jQuery);
+  
+    
+  
+    (function(jQuery) {
+    var $module = jQuery('#m-1686575484497-child1-2').children('.module');
+    $module.gfV3ProductPrice({
+        displayCurrency: true
+    });
+})(window.GemQuery || jQuery);
+  
+    (function( jQuery ){
+  var $module = jQuery('#m-1686575484497-child2').children('.module');
+  $module.gfV3Product();
+})( window.GemQuery || jQuery );
+  
+    (function(jQuery) {
+  var $module = jQuery('#m-1686575484497-child2-0').children('.module');
+  var effect = $module.attr('data-effect');
+  var magnify = $module.attr('data-zoom-level');
+  var displayType = $module.attr('data-displaytype');
+  $module.gfV3ProductImage({
+    'effect': effect,
+    'displayType': displayType,
+    'magnify': magnify
+  });
+})(window.GemQuery || jQuery);
+  
+    
+  
+    (function(jQuery) {
+    var $module = jQuery('#m-1686575484497-child2-2').children('.module');
+    $module.gfV3ProductPrice({
+        displayCurrency: true
+    });
+})(window.GemQuery || jQuery);
+  
+    (function( jQuery ){
+  var $module = jQuery('#m-1686575484497-child3').children('.module');
+  $module.gfV3Product();
+})( window.GemQuery || jQuery );
+  
+    (function(jQuery) {
+  var $module = jQuery('#m-1686575484497-child3-0').children('.module');
+  var effect = $module.attr('data-effect');
+  var magnify = $module.attr('data-zoom-level');
+  var displayType = $module.attr('data-displaytype');
+  $module.gfV3ProductImage({
+    'effect': effect,
+    'displayType': displayType,
+    'magnify': magnify
+  });
+})(window.GemQuery || jQuery);
+  
+    
+  
+    (function(jQuery) {
+    var $module = jQuery('#m-1686575484497-child3-2').children('.module');
+    $module.gfV3ProductPrice({
+        displayCurrency: true
+    });
+})(window.GemQuery || jQuery);
+  
+    (function( jQuery ){
+  var $module = jQuery('#m-1686575484497-child4').children('.module');
+  $module.gfV3Product();
+})( window.GemQuery || jQuery );
+  
+    (function(jQuery) {
+  var $module = jQuery('#m-1686575484497-child4-0').children('.module');
+  var effect = $module.attr('data-effect');
+  var magnify = $module.attr('data-zoom-level');
+  var displayType = $module.attr('data-displaytype');
+  $module.gfV3ProductImage({
+    'effect': effect,
+    'displayType': displayType,
+    'magnify': magnify
+  });
+})(window.GemQuery || jQuery);
+  
+    
+  
+    (function(jQuery) {
+    var $module = jQuery('#m-1686575484497-child4-2').children('.module');
+    $module.gfV3ProductPrice({
+        displayCurrency: true
+    });
+})(window.GemQuery || jQuery);
+  
+    
+  
+    
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1682501084243').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1686063466291').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  window.__gfFlowActions = []; window.__gfFlowActions.push([{"source":{"id":"#m-1686575377396"},"events":[{"key":"click"}],"targets":[{"id":"#e-1686063777164","actions":[{"key":"scrollToId","type":2,"data":{"delay":0,"duration":500,"marginTop":30}}],"rename":"Text Block: #e-1686063777164"},{"id":"#m-1686063777085","actions":[{"key":"show","type":2,"data":{"delay":0,"duration":50}}],"rename":"Liquid: #m-1686063777085"}],"disableOn":["md","xs"]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1686575301995","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1682498763347","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":300}}],"rename":"Text Block: #e-1682498763347"}]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1686575302052","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1682498763347","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":300}}],"rename":"Text Block: #e-1682498763347"}]}]);window.__gfFlowActions.push([{"source":{"id":"#m-1686063334056"},"events":[{"key":"click"}],"targets":[{"id":"#e-1686063777164","actions":[{"key":"scrollToId","type":2,"data":{"delay":0,"duration":500,"marginTop":30}}],"rename":"Text Block: #e-1686063777164"},{"id":"#m-1686063777085","actions":[{"key":"show","type":2,"data":{"delay":0,"duration":50}}],"rename":"Liquid: #m-1686063777085"}],"disableOn":["md","xs"]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1686575302010","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1682498763347","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":300}}],"rename":"Text Block: #e-1682498763347"}]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1686575302056","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1682498763347","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":300}}],"rename":"Text Block: #e-1682498763347"}]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1686575301943","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1682498763347","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":300}}],"rename":"Text Block: #e-1682498763347"}]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1686575302048","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1682498763347","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":300}}],"rename":"Text Block: #e-1682498763347"}]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1686575302001","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1682498763347","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":300}}],"rename":"Text Block: #e-1682498763347"}]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1686575302091","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1682498763347","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":300}}],"rename":"Text Block: #e-1682498763347"}]}]); window.__gfV1FlowActions.init();
