@@ -10,7 +10,7 @@
           "settings": {
             "heading": "Subscribe!",
             "heading_size": "h2",
-            "text": "<p>Sign up now to stay informed, inspired, connected and get first dibs on exciting promotions, special discounts, and exclusive offers!<br\/><\/p>",
+            "text": "<p>Sign up now to stay informed, inspired, connected and get first dibs on exciting promotions, special discounts, and exclusive offers!<\/p>",
             "content_alignment": "center"
           }
         },
@@ -30,7 +30,7 @@
           "type": "button",
           "settings": {
             "button_link": "shopify:\/\/pages\/sign-up",
-            "button": "SUBSCRIBE NOW",
+            "button": "JETZT ABONNIEREN",
             "button_style": "secondary"
           }
         }
@@ -40,12 +40,13 @@
         "sections--20025206898972__b5af77b1-9fa1-45ad-948a-ab1a41795296-timer-1",
         "sections--20025206898972__b5af77b1-9fa1-45ad-948a-ab1a41795296-button-1"
       ],
+      "disabled": true,
       "settings": {
         "layout": "banner",
         "full_width": true,
         "color_scheme": "2",
         "blur_image": false,
-        "overlay_color": "#000",
+        "overlay_color": "#000000",
         "overlay_opacity": 0,
         "lazyload_images": false
       }
@@ -97,7 +98,6 @@
     },
     "footer-promotions": {
       "type": "footer-promotions",
-      "disabled": true,
       "blocks": {
         "footer-promotions-0": {
           "type": "promotion",
@@ -141,6 +141,7 @@
         "footer-promotions-1",
         "footer-promotions-2"
       ],
+      "disabled": true,
       "settings": {
         "hide_homepage": false,
         "image_size": "wide"
