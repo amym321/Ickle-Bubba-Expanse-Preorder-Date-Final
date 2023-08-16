@@ -74,9 +74,9 @@
           if (variantMetafield.metafield_value !== false) {
 
             if (variantMetafield.metafield_value_s > today) {
-              $("#hidden-current-variant-metafield").html("YYY Order today for dispatch by "+variantMetafield.metafield_value);
+              $("#hidden-current-variant-metafield").html("Order today for dispatch by "+variantMetafield.metafield_value);
               $("#hidden-current-variant-metafield").show();
-              $("#hidden-current-variant-message").html("YYY We will fulfill the item as soon as it becomes available");
+              $("#hidden-current-variant-message").html("We will fulfill the item as soon as it becomes available");
               $("#hidden-current-variant-message").show();
               $(".AddToCartText").html("PRE ORDER"); // goes back to ATC automatically on next variant change if necessary
               $(".gf_p-dynamic-checkout-button").hide();
