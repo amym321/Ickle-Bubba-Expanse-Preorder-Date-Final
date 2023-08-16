@@ -198,7 +198,16 @@
         displayCurrency: true
     });
 })(window.GemQuery || jQuery);
-  (function(jQuery) {
+  (function( jQuery ){
+  // var $module = jQuery('#m-1686640113860').children('.module');
+  // You can add custom Javascript code right here.
+console.log("before clicking button");
+
+$(".form").click(function(e){
+  exponea.showBanner('647e2e73ef34c41d2b6962f6');
+  console.log("after clicking button");
+});
+})( window.GemQuery || jQuery );(function(jQuery) {
   var $module = jQuery('#m-1682498763297').children('.module');
   var swatchText = $module.attr('data-swatch-text') != undefined ? $module.attr('data-swatch-text') : '1';
   $module.gfV3ProductSwatches({
@@ -283,8 +292,8 @@ if($('.gempage-editing').length < 1){
       today.setUTCDate(today.getUTCDate() + 1);
       todayP = 1;
     }else if(today.getUTCDay() == 6){
-      today.setUTCDate(today.getUTCDate() + 2);
-      todayP = 2;
+      today.setUTCDate(today.getUTCDate() + 6);
+      todayP = 6;
     } 
   
     $todayElm.html(weekday[today.getUTCDay()] + ' ' + formatDay(today.getUTCDate()) + ' ' + month[today.getUTCMonth()])
@@ -295,7 +304,7 @@ if($('.gempage-editing').length < 1){
     todayP2.setUTCHours(todayP2.getUTCHours() + utc)
     today.setUTCDate(today.getUTCDate() + plus);
     
-    todayP2.setUTCDate(todayP2.getUTCDate() + 2);
+    todayP2.setUTCDate(todayP2.getUTCDate() + 6);
     
         //debug
         todayP2.setUTCDate(todayP2.getUTCDate() + debug);
@@ -307,7 +316,7 @@ if($('.gempage-editing').length < 1){
     if(todayP2.getUTCDay() == 0){
       todayP2.setUTCDate(todayP2.getUTCDate() + 1);
     }else if(todayP2.getUTCDay() == 6){
-      todayP2.setUTCDate(todayP2.getUTCDate() + 2);
+      todayP2.setUTCDate(todayP2.getUTCDate() + 6);
     } 
     $todayP2Elm.html(weekday[todayP2.getUTCDay()] + ' ' + formatDay(todayP2.getUTCDate()) + ' ' + month[todayP2.getUTCMonth()])
   
