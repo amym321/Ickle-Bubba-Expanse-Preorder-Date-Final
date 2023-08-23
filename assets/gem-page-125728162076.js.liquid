@@ -42,7 +42,16 @@ $(".form").click(function(e){
   $module.gfV2HeroBanner({});
   
 })( window.GemQuery || jQuery );
-  
+  (function( jQuery ){
+  // var $module = jQuery('#m-1684848417450').children('.module');
+  // You can add custom Javascript code right here.
+console.log("before clicking button");
+
+$(".form").click(function(e){
+  exponea.showBanner('64e37d0592d791c55efdbf86');
+  console.log("after clicking button");
+});
+})( window.GemQuery || jQuery );
     (function( jQuery ){
     var $module = jQuery('#m-1692781501655').children('.module');
     $module.gfV1Countdown({
