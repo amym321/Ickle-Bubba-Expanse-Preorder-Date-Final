@@ -30,7 +30,7 @@
           "type": "button",
           "settings": {
             "button_link": "shopify:\/\/pages\/sign-up",
-            "button": "JETZT ABONNIEREN",
+            "button": "SIGN UP NOW",
             "button_style": "secondary"
           }
         }
@@ -40,7 +40,6 @@
         "sections--20025206898972__b5af77b1-9fa1-45ad-948a-ab1a41795296-timer-1",
         "sections--20025206898972__b5af77b1-9fa1-45ad-948a-ab1a41795296-button-1"
       ],
-      "disabled": true,
       "settings": {
         "layout": "banner",
         "full_width": true,
