@@ -207,16 +207,7 @@ $(".form").click(function(e){
         displayCurrency: true
     });
 })(window.GemQuery || jQuery);
-  (function( jQuery ){
-  // var $module = jQuery('#m-1686640113860').children('.module');
-  // You can add custom Javascript code right here.
-console.log("before clicking button");
-
-$(".form").click(function(e){
-  exponea.showBanner('64df736ed11e654477c50865');
-  console.log("after clicking button");
-});
-})( window.GemQuery || jQuery );(function(jQuery) {
+  (function(jQuery) {
   var $module = jQuery('#m-1682498763297').children('.module');
   var swatchText = $module.attr('data-swatch-text') != undefined ? $module.attr('data-swatch-text') : '1';
   $module.gfV3ProductSwatches({
@@ -540,6 +531,8 @@ if($('.gempage-editing').length < 1){
   
     
   
+    
+  
     (function( jQuery ){
   // var $module = jQuery('#m-1692119367768').children('.module');
   // You can add custom Javascript code right here.
@@ -554,4 +547,27 @@ if($('.gempage-editing').length < 1){
   // var $module = jQuery('#m-1686063466291').children('.module');
   // You can add custom Javascript code right here.
 })( window.GemQuery || jQuery );
-  window.__gfFlowActions = []; window.__gfFlowActions.push([{"source":{"id":"#m-1686063334056"},"events":[{"key":"click"}],"targets":[{"id":"#e-1686063777164","actions":[{"key":"scrollToId","type":2,"data":{"delay":0,"duration":500,"marginTop":30}}],"rename":"Text Block: #e-1686063777164"},{"id":"#m-1686063777085","actions":[{"key":"show","type":2,"data":{"delay":0,"duration":50}}],"rename":"Liquid: #m-1686063777085"}],"disableOn":["md","xs"]}]); window.__gfV1FlowActions.init();
+  
+    (function( jQuery ){
+  var $module = jQuery('#m-1692880856135').children('.module');
+  $module.gfV1Popup();
+
+  var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+  if(mode == 'dev') {
+    var moduleId = "1692880856135";
+    var moduleIdSlug = moduleId.toString().replace(/-/g, '');
+    if (moduleIdSlug == "1692880856135") {
+      window.getPopup1692880856135 = function() {
+        return $module.data('gfv1popup');
+      }
+    }
+  }
+})( window.GemQuery || jQuery );
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1692880950843').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    
+  window.__gfFlowActions = []; window.__gfFlowActions.push([{"source":{"id":"#m-1686063334056"},"events":[{"key":"click"}],"targets":[{"id":"#e-1686063777164","actions":[{"key":"scrollToId","type":2,"data":{"delay":0,"duration":500,"marginTop":30}}],"rename":"Text Block: #e-1686063777164"},{"id":"#m-1686063777085","actions":[{"key":"show","type":2,"data":{"delay":0,"duration":50}}],"rename":"Liquid: #m-1686063777085"}],"disableOn":["md","xs"]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1692880807969","target":".elm"},"events":[{"key":"click"}],"targets":[{"id":"#m-1692880856135","actions":[{"key":"showPopup","type":3,"data":{"delay":0}}],"rename":"Popup: #m-1692880856135"}]}]); window.__gfV1FlowActions.init();
