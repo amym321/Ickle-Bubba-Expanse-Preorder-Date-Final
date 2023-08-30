@@ -47,15 +47,15 @@
         "45d6afe8-32e3-4978-a00e-ffcc8b36d3f1": {
           "type": "button",
           "settings": {
-            "link": "",
-            "link_text": "Button"
+            "link": "shopify:\/\/collections\/stomp-travel-systems",
+            "link_text": "Stomp"
           }
         },
         "7144fdc3-639a-4fee-a762-f304444cbadc": {
           "type": "button",
           "settings": {
-            "link": "",
-            "link_text": "Button"
+            "link": "shopify:\/\/collections\/star-travel-system",
+            "link_text": "Star"
           }
         },
         "00ed7c0c-7e04-44ba-9bf7-b83fed7e05a9": {
