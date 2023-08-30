@@ -1,1 +1,104 @@
-{"sections":{"collection-header":{"type":"collection-header","settings":{"enable":true,"collection_image_enable":false,"parallax":false,"parallax_direction":"top"}},"main-collection":{"type":"main-collection","blocks":{"collection_description":{"type":"collection_description","settings":{}},"product_grid":{"type":"product_grid","settings":{"grid_style":"large"}}},"block_order":["collection_description","product_grid"],"settings":{"enable_sidebar":true,"collapse_filters":true,"enable_color_swatches":true,"enable_sort":true}},"recently-viewed":{"type":"recently-viewed","disabled":true,"settings":{}}},"order":["collection-header","main-collection","recently-viewed"]}
+{
+  "sections": {
+    "collection-header": {
+      "type": "collection-header",
+      "settings": {
+        "enable": true,
+        "collection_image_enable": false,
+        "parallax": false,
+        "parallax_direction": "top"
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "collection_description": {
+          "type": "collection_description",
+          "settings": {
+          }
+        },
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "grid_style": "large"
+          }
+        }
+      },
+      "block_order": [
+        "collection_description",
+        "product_grid"
+      ],
+      "settings": {
+        "enable_sidebar": true,
+        "collapse_filters": true,
+        "enable_color_swatches": true,
+        "enable_sort": true
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "03e2a4cf-2bc9-42f3-afe7-2c535bc18509": {
+      "type": "rich-text",
+      "blocks": {
+        "45d6afe8-32e3-4978-a00e-ffcc8b36d3f1": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "Button"
+          }
+        },
+        "7144fdc3-639a-4fee-a762-f304444cbadc": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "Button"
+          }
+        },
+        "00ed7c0c-7e04-44ba-9bf7-b83fed7e05a9": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "Button"
+          }
+        },
+        "356b5a80-430e-40f0-b9e6-76403288c054": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "Button"
+          }
+        },
+        "5eec6fae-11a1-42a9-ab9e-531e20fc78d5": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "Button"
+          }
+        }
+      },
+      "block_order": [
+        "45d6afe8-32e3-4978-a00e-ffcc8b36d3f1",
+        "7144fdc3-639a-4fee-a762-f304444cbadc",
+        "00ed7c0c-7e04-44ba-9bf7-b83fed7e05a9",
+        "356b5a80-430e-40f0-b9e6-76403288c054",
+        "5eec6fae-11a1-42a9-ab9e-531e20fc78d5"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "collection-header",
+    "main-collection",
+    "recently-viewed",
+    "03e2a4cf-2bc9-42f3-afe7-2c535bc18509"
+  ]
+}
