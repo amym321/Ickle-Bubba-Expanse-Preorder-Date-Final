@@ -40,65 +40,11 @@
       "disabled": true,
       "settings": {
       }
-    },
-    "03e2a4cf-2bc9-42f3-afe7-2c535bc18509": {
-      "type": "rich-text",
-      "blocks": {
-        "45d6afe8-32e3-4978-a00e-ffcc8b36d3f1": {
-          "type": "button",
-          "settings": {
-            "link": "shopify:\/\/collections\/stomp-travel-systems",
-            "link_text": "Stomp"
-          }
-        },
-        "7144fdc3-639a-4fee-a762-f304444cbadc": {
-          "type": "button",
-          "settings": {
-            "link": "shopify:\/\/collections\/star-travel-system",
-            "link_text": "Star"
-          }
-        },
-        "00ed7c0c-7e04-44ba-9bf7-b83fed7e05a9": {
-          "type": "button",
-          "settings": {
-            "link": "",
-            "link_text": "Button"
-          }
-        },
-        "356b5a80-430e-40f0-b9e6-76403288c054": {
-          "type": "button",
-          "settings": {
-            "link": "",
-            "link_text": "Button"
-          }
-        },
-        "5eec6fae-11a1-42a9-ab9e-531e20fc78d5": {
-          "type": "button",
-          "settings": {
-            "link": "",
-            "link_text": "Button"
-          }
-        }
-      },
-      "block_order": [
-        "45d6afe8-32e3-4978-a00e-ffcc8b36d3f1",
-        "7144fdc3-639a-4fee-a762-f304444cbadc",
-        "00ed7c0c-7e04-44ba-9bf7-b83fed7e05a9",
-        "356b5a80-430e-40f0-b9e6-76403288c054",
-        "5eec6fae-11a1-42a9-ab9e-531e20fc78d5"
-      ],
-      "settings": {
-        "align_text": "center",
-        "narrow_column": false,
-        "color_scheme": "none",
-        "divider": false
-      }
     }
   },
   "order": [
     "collection-header",
     "main-collection",
-    "recently-viewed",
-    "03e2a4cf-2bc9-42f3-afe7-2c535bc18509"
+    "recently-viewed"
   ]
 }
