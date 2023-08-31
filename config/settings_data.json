@@ -967,7 +967,9 @@
       ".nav-bold .tmenu_item_text {font-weight: 600 !important; color: #f414b3 !important;}",
       ".jqkdD {display: none !important;}",
       ".gkDbkt {min-width: 180px !important;}",
-      ".samita_productLabel-content img {margin-left: -25px !important;}"
+      ".samita_productLabel-content img {margin-left: -25px !important;}",
+      "ul {list-style: inherit; text-indent: 0px; margin-left: 20px;}",
+      "li {margin-bottom: 10px;}"
     ]
   }
 }
