@@ -14,18 +14,6 @@
             "content_alignment": "center"
           }
         },
-        "sections--20025206898972__b5af77b1-9fa1-45ad-948a-ab1a41795296-timer-1": {
-          "type": "timer",
-          "settings": {
-            "year": "2023",
-            "month": "01",
-            "day": "1",
-            "hour": "03",
-            "minute": "00",
-            "hide_timer": true,
-            "text": ""
-          }
-        },
         "sections--20025206898972__b5af77b1-9fa1-45ad-948a-ab1a41795296-button-1": {
           "type": "button",
           "settings": {
@@ -37,7 +25,6 @@
       },
       "block_order": [
         "sections--20025206898972__b5af77b1-9fa1-45ad-948a-ab1a41795296-content-1",
-        "sections--20025206898972__b5af77b1-9fa1-45ad-948a-ab1a41795296-timer-1",
         "sections--20025206898972__b5af77b1-9fa1-45ad-948a-ab1a41795296-button-1"
       ],
       "settings": {
