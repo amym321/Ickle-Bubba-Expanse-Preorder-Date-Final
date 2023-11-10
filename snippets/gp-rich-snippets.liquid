@@ -1,5 +1,9 @@
 
-    {% if isGpTemplate and (shop.metafields.gpGlobalConfigs.enableProductSchema == "true" or shop.metafields.gpGlobalConfigs.enableProductSchema == blank) %}
+    {% assign isEnableProductSchema = false %}
+    {% if shop.metafields.gpGlobalConfigs.enableProductSchema == "true" or shop.metafields.gpGlobalConfigs.enableProductSchema == blank %}
+      {% assign isEnableProductSchema = true %}
+    {% endif %}
+    {% if isGpTemplate and isEnableProductSchema %}
       {% case request.page_type %}
         {% when "page" %}
         {% when "product" %}
