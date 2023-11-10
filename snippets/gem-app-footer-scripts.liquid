@@ -1,4 +1,4 @@
-{% if template == 'index.gem-1676995555-template' %}<script data-instant-track type="text/javascript">if(typeof pageLibs === 'undefined' || pageLibs === null){	var pageLibs = [		"https://d1um8515vdn9kb.cloudfront.net/libs/js/gfv2herobanner.js",		 "https://d1um8515vdn9kb.cloudfront.net/libs/js/owl.carousel.min.js",		 "https://d1um8515vdn9kb.cloudfront.net/libs/js/gfv3product.js",		 "https://www.youtube.com/player_api",		'{{ 'gem-page-index-1689215260.js' | asset_url }}',	];}</script>{% endif %}{% capture gemFooterScripts %}    <script data-instant-track type="text/javascript">
+{% capture gemFooterScripts %}    <script data-instant-track type="text/javascript">
       var GEMVENDOR = GEMVENDOR || (function(){		var _js = {};		return {			init: function(Args) {				_js = Args;			},			getLibs: function() {				return _js;			}		};	}());
       if(typeof pageLibs === 'undefined' || pageLibs === null){
         var pageLibs = [];
@@ -7,7 +7,7 @@
       </script>
     <script data-instant-track type="text/javascript" src="https://d1um8515vdn9kb.cloudfront.net/files/gempagev2.js?v=1.0" class="gf-script" defer></script>
 {% endcapture %}
-{% assign gemHandleCheck = 'product.gem-1668778143-template, collection.gem-1668778144-template, index.gem-1676995555-template' | split: ", " %}{% for h in gemHandleCheck %}{% if template == h %}{{ gemFooterScripts }}{% endif %}{% endfor %}
+{% assign gemHandleCheck = 'index.gem-1676456915-template, product.gem-1676456916-template, collection.gem-1676456917-template' | split: ", " %}{% for h in gemHandleCheck %}{% if template == h %}{{ gemFooterScripts }}{% endif %}{% endfor %}
       {% if GEM_FOOTER_SCRIPT %}
       {{ GEM_FOOTER_SCRIPT }}
       {% else %}
