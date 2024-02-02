@@ -1,5 +1,53 @@
 {
   "sections": {
+    "countdown_7P66Yy": {
+      "type": "countdown",
+      "blocks": {
+        "content_YHBCX9": {
+          "type": "content",
+          "settings": {
+            "heading": "Countdown",
+            "heading_size": "h2",
+            "text": "<p>Use this timer to create urgency and boost sales.<\/p>",
+            "content_alignment": "left"
+          }
+        },
+        "timer_hy3dWp": {
+          "type": "timer",
+          "settings": {
+            "year": "2025",
+            "month": "01",
+            "day": "1",
+            "hour": "03",
+            "minute": "00",
+            "hide_timer": false,
+            "text": ""
+          }
+        },
+        "button_JV4bdi": {
+          "type": "button",
+          "settings": {
+            "button_link": "shopify:\/\/collections\/best-selling-products",
+            "button": "Shop Collection",
+            "button_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "content_YHBCX9",
+        "timer_hy3dWp",
+        "button_JV4bdi"
+      ],
+      "settings": {
+        "layout": "banner",
+        "full_width": false,
+        "color_scheme": "none",
+        "blur_image": false,
+        "overlay_color": "#000",
+        "overlay_opacity": 0,
+        "lazyload_images": true
+      }
+    },
     "1676627539el96vr0i": {
       "type": "gem-page-default-index",
       "settings": {
@@ -7,6 +55,7 @@
     }
   },
   "order": [
+    "countdown_7P66Yy",
     "1676627539el96vr0i"
   ]
 }
