@@ -48,11 +48,6 @@
         "lazyload_images": true
       }
     },
-    "1676627539el96vr0i": {
-      "type": "gem-page-default-index",
-      "settings": {
-      }
-    },
     "featured_video_xcjMLX": {
       "type": "featured-video",
       "settings": {
@@ -60,11 +55,16 @@
         "video_url": "https:\/\/www.youtube.com\/watch?v=SACxjUCa8Ks",
         "divider": false
       }
+    },
+    "1676627539el96vr0i": {
+      "type": "gem-page-default-index",
+      "settings": {
+      }
     }
   },
   "order": [
     "countdown_7P66Yy",
-    "1676627539el96vr0i",
-    "featured_video_xcjMLX"
+    "featured_video_xcjMLX",
+    "1676627539el96vr0i"
   ]
 }
