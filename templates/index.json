@@ -52,10 +52,19 @@
       "type": "gem-page-default-index",
       "settings": {
       }
+    },
+    "featured_video_xcjMLX": {
+      "type": "featured-video",
+      "settings": {
+        "title": "",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=SACxjUCa8Ks",
+        "divider": false
+      }
     }
   },
   "order": [
     "countdown_7P66Yy",
-    "1676627539el96vr0i"
+    "1676627539el96vr0i",
+    "featured_video_xcjMLX"
   ]
 }
