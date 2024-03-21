@@ -29,13 +29,13 @@
         {%- endcapture -%}
       {%- endif -%}
 
-      <li class="slide-nav__item nav-{{forloop.index}}">
+      <li class="slide-nav__item">
         {%- if link.levels > 0 -%}
           <button type="button"
             class="slide-nav__button js-toggle-submenu"
             data-target="tier-2-{{ child_list_handle }}"
             {% if link.active or link.child_active %}data-active="true"{% endif %}>
-            <span class="slide-nav__link">
+            <span class="slide-nav__link nav-{{forloop.index}}">
               {%- if have_image -%}
                 {{ collection_image }}
               {%- endif -%}
