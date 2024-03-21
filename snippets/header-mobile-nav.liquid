@@ -29,7 +29,7 @@
         {%- endcapture -%}
       {%- endif -%}
 
-      <li class="slide-nav__item">
+      <li class="slide-nav__item nav-{{forloop.index}}">
         {%- if link.levels > 0 -%}
           <button type="button"
             class="slide-nav__button js-toggle-submenu"
