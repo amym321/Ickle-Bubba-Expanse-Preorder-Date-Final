@@ -32,10 +32,10 @@
       <li class="slide-nav__item nav-{{forloop.index}}">
         {%- if link.levels > 0 -%}
           <button type="button"
-            class="slide-nav__button js-toggle-submenu"
+            class="slide-nav__button js-toggle-submenu nav-{{forloop.index}}"
             data-target="tier-2-{{ child_list_handle }}"
             {% if link.active or link.child_active %}data-active="true"{% endif %}>
-            <span class="slide-nav__link nav-{{forloop.index}}">
+            <span class="slide-nav__link">
               {%- if have_image -%}
                 {{ collection_image }}
               {%- endif -%}
