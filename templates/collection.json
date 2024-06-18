@@ -64,17 +64,17 @@
         "lazyload_images": true
       }
     },
-    "96d35c5b-fd84-424e-b566-43e0f97f20da": {
+    "efd150f7-a3c2-4615-96cb-c53a24cddef2": {
       "type": "apps",
       "blocks": {
-        "2e0cfd2a-3d5b-4579-9914-516ec9302fcb": {
+        "0bbd6f21-7936-4551-9bec-5ca160b32ef9": {
           "type": "shopify:\/\/apps\/boost-ai-search-discovery\/blocks\/filter-product-list-ssr\/7fc998ae-a150-4367-bab8-505d8a4503f7",
           "settings": {
           }
         }
       },
       "block_order": [
-        "2e0cfd2a-3d5b-4579-9914-516ec9302fcb"
+        "0bbd6f21-7936-4551-9bec-5ca160b32ef9"
       ],
       "settings": {
       }
@@ -85,6 +85,6 @@
     "main-collection",
     "recently-viewed",
     "3da79469-38f8-4a6f-abb4-60843e5cfdbf",
-    "96d35c5b-fd84-424e-b566-43e0f97f20da"
+    "efd150f7-a3c2-4615-96cb-c53a24cddef2"
   ]
 }
