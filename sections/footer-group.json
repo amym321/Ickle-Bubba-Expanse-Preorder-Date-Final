@@ -17,7 +17,7 @@
         "instafeed_app_block_dyicrq": {
           "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
           "settings": {
-            "title": "<div class=\"ig-widget\">\n<span style=\"font-size:28px;\">Want to be part of the IB family?<\/span><br><br><span style=\"font-weight:400;\">Tag us @icklebubba #MyIckleBubba for a chance to feature on our feed<\/span>\n<\/div>",
+            "title": "<span style=\"font-size:28px;\">Want to be part of the IB family?<\/span><br><br><span style=\"font-weight:400;\">Tag us @icklebubba #MyIckleBubba for a chance to feature on our feed<\/span>",
             "title_color": "#000000",
             "alignment": "center",
             "html_area": ""
