@@ -1,0 +1,4 @@
+{%comment %}This snippet is generated and updated by Bold Memberships. any changes will be overridden when the Store Owner saves a Plan in the app.{%endcomment%}
+
+{% assign bold_memberships_salt = '5794e9bd1e56d285093d626ffb4a68185e0e5bcdb856de9227807c44393f4d611795fee3c922110442839a674968f071f59037d96eae85c5cbb43ab5754827cf' %}
+{% assign bold_memberships_hash = customer.id | append: bold_memberships_salt | md5 %}
