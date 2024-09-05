@@ -1,12 +1,79 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
+  "order": [
+    "countdown_7P66Yy",
+    "featured_video_xcjMLX",
+    "1676627539el96vr0i"
+  ],
   "sections": {
     "1676627539el96vr0i": {
       "type": "gem-page-default-index",
       "settings": {
       }
+    },
+    "countdown_7P66Yy": {
+      "type": "countdown",
+      "blocks": {
+        "button_JV4bdi": {
+          "type": "button",
+          "settings": {
+            "button_link": "shopify:\/\/collections\/best-selling-products",
+            "button": "Shop Collection",
+            "button_style": "solid"
+          }
+        },
+        "content_YHBCX9": {
+          "type": "content",
+          "settings": {
+            "heading": "Countdown",
+            "heading_size": "h2",
+            "text": "<p>Use this timer to create urgency and boost sales.<\/p>",
+            "content_alignment": "left"
+          }
+        },
+        "timer_hy3dWp": {
+          "type": "timer",
+          "settings": {
+            "year": "2025",
+            "month": "01",
+            "day": "1",
+            "hour": "03",
+            "minute": "00",
+            "hide_timer": false,
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_YHBCX9",
+        "timer_hy3dWp",
+        "button_JV4bdi"
+      ],
+      "settings": {
+        "layout": "banner",
+        "full_width": false,
+        "color_scheme": "none",
+        "blur_image": false,
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "lazyload_images": true
+      }
+    },
+    "featured_video_xcjMLX": {
+      "type": "featured-video",
+      "settings": {
+        "title": "",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=SACxjUCa8Ks",
+        "divider": false
+      }
     }
-  },
-  "order": [
-    "1676627539el96vr0i"
-  ]
+  }
 }
