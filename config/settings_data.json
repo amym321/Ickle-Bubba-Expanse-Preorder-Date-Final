@@ -356,24 +356,6 @@
         "settings": {
         }
       },
-      "5439026248262864547": {
-        "type": "shopify:\/\/apps\/preorder-globo-back-in-stock\/blocks\/app-embed\/e547a0ad-8212-4bcc-b02f-761faa9b8af2",
-        "disabled": true,
-        "settings": {
-        }
-      },
-      "qikify-tmenu-1701320903": {
-        "type": "shopify:\/\/apps\/qikify-smart-menu-mega-menu\/blocks\/app-embed\/19d2f1cd-1836-4a32-8937-03df3c601dc8",
-        "disabled": false,
-        "settings": {
-        }
-      },
-      "9468172321995857178": {
-        "type": "shopify:\/\/apps\/qikify-bogo-freegift\/blocks\/app-embed\/2e94b962-8172-4839-8ad9-7837eb8b017a",
-        "disabled": false,
-        "settings": {
-        }
-      },
       "3b1d8bef-5d38-480b-b1b6-11e7e7ff3103": {
         "type": "shopify:\/\/apps\/boost-ai-search-discovery\/blocks\/boost-sd-ssr\/7fc998ae-a150-4367-bab8-505d8a4503f7",
         "disabled": false,
@@ -381,27 +363,17 @@
           "templateId": "bdAqk5v8Wf"
         }
       },
-      "1923486770171284578": {
-        "type": "shopify:\/\/apps\/simplee-memberships\/blocks\/app-block\/f502d2a4-3112-42c9-ad39-89fb8aca93a7",
+      "18228966181090706294": {
+        "type": "shopify:\/\/apps\/selleasy\/blocks\/app-embed\/790c1a03-a71f-4bc1-9869-00dad526d3c2",
         "disabled": false,
         "settings": {
-          "text_color": "#2F3537",
-          "background_color": "#2E90FA",
-          "description_color": "#5B5F62",
-          "renewal_color": "#9FA9AD",
-          "heading_color": "#2F3537",
-          "button_color": "#667085",
-          "selected_button_color": "#ffffff",
-          "renewal_text": "\/ Renewal",
-          "trial_days_text": "[initial_price] for [count] days, then [regular_price]",
-          "trial_orders_text": "[initial_price] for [count] orders, then [regular_price]",
-          "life_time_text": "Lifetime Access",
-          "simplee_widget_type": "widget_1",
-          "css": "#Simplee-Product_widget{}",
-          "link_color": "#000000",
-          "link_text": "My Membership",
-          "link_css": ".simplee-membership-link{}",
-          "link_icon_size": 16
+          "storefrontAccessToken": ""
+        }
+      },
+      "16422382648059844097": {
+        "type": "shopify:\/\/apps\/boost-ai-search-discovery\/blocks\/instant-search-app-embedded\/7fc998ae-a150-4367-bab8-505d8a4503f7",
+        "disabled": false,
+        "settings": {
         }
       }
     }
