@@ -1,141 +1,299 @@
 {% comment %}
-	GEMPAGE BUILDER (https://apps.shopify.com/gempage)
+	GEMPAGES BUILDER (https://apps.shopify.com/gempages)
 
-	You SHOULD NOT modify source code in this page because
-	It is automatically generated from GEMPAGE BUILDER
+	You SHOULD NOT modify source code in this file because
+	It is automatically generated from GEMPAGES BUILDER
 	Try to edit page with the live editor.
 {% endcomment %}
 
     (function( jQuery ){
-  var $module = jQuery('#m-1697029044477').children('.module');
+  var $module = jQuery('#m-1725527550793').children('.module');
   $module.gfV3Product();
 })( window.GemQuery || jQuery );
   
     
   
-    (function(jQuery) {
-  var $module = jQuery('#m-1697029047483').children('.module');
-  var effect = $module.attr('data-effect');
-  var magnify = $module.attr('data-zoom-level');
-  var displayType = $module.attr('data-displaytype');
-  $module.gfV3ProductImage({
-    'effect': effect,
-    'displayType': displayType,
-    'magnify': magnify
-  });
-})(window.GemQuery || jQuery);
+    
+  (function( jQuery ){
   
-    (function(jQuery) {
-  var $module = jQuery('#m-1697029047113').children('.module');
-  $module.gfV4ProductImageList({
-    onImageClicked: function(imageUrl, imageZoomUrl) {}
+  //set initial ATC & Buy Now button - am
+  const defer = (fn, ...args) => setTimeout(fn, 1000, ...args);
+  
+  function atc() {
+    var dateText = document.getElementById('hidden-current-variant-message').innerHTML;
+  
+    if (dateText) {
+      $('.AddToCartText').html("PRE ORDER");
+      $(".gf_p-dynamic-checkout-button").hide();
+      $("#m-1725527550775").hide();
+    } else {
+      $(".gf_p-dynamic-checkout-button").show();
+      $("#m-1725527550775").show();
+    }
+  //})();
+  }
+
+  defer(atc);
+
+
+
+
+  // repeated JS for variant change  - am
+  var $module = jQuery('#m-1682498763297').children('.module');
+  var swatchText = $module.attr('data-swatch-text') !== undefined ? $module.attr('data-swatch-text') : '1';
+  $module.gfV3ProductSwatches({
+    swatchText: swatchText,
+    onSwatchSelected: function(variant, $swatch) {
+
+      // dynamic Preorder text ATC & By Now button.  impacts chassis & handles change
+      var variantsMetafields = jQuery.parseJSON($("#hidden-variant-metafields").html());
+      var today = $("#hidden-today").html();
+          var variantInventoryObject2 = window.inventories2[variant.id];
+          var variantQuantity = variantInventoryObject2.quantity;
+          console.log('log 101) variantQuantity ='+ variantQuantity );
+
+      $("#hidden-current-variant-metafield").hide(); // delete the field 1st. If item "coming soon" no variant shows. So start with hidden field b/c can't delete later based on variant.id
+      $("#hidden-current-variant-message").hide();
+      $(".gf_p-dynamic-checkout-button").show();     // show the dynamic button 1st before possibly hiding
+      $(".gf_p-dynamic-checkout-button").show();
+      $("#m-1725527550775").show();
+      
+      variantsMetafields.forEach(function(variantMetafield) {
+        if (variantMetafield.variant_id == variant.id) {
+          if (variantMetafield.metafield_value !== false) {
+
+            if (variantMetafield.metafield_value_s > today && variantQuantity < 1  ) {
+              $("#hidden-current-variant-metafield").html("Order today for dispatch by "+variantMetafield.metafield_value);
+              $("#hidden-current-variant-metafield").show();
+              $("#hidden-current-variant-message").html("We will fulfill the item as soon as it becomes available");
+              $("#hidden-current-variant-message").show();
+              $(".AddToCartText").html("PRE ORDER"); // goes back to ATC automatically on next variant change if necessary
+              $(".gf_p-dynamic-checkout-button").hide();
+            } else {
+              // $(".AddToCartText").html("ADD TO CART");
+              $(".gf_p-dynamic-checkout-button").show();
+              $("#m-1725527550775").show();
+            }
+          } else {
+            // $(".AddToCartText").html("ADD TO CART");
+            $(".gf_p-dynamic-checkout-button").show();
+            $("#m-1725527550775").show();
+          }
+        }
+      });
+
+
+    }
   });
 
-  var style = $module.attr('data-style');
-  switch(style) {
-    case 'slider':
-    var navspeed = $module.data('navspeed'),
-      navlg = $module.data('navlg'),
-      navmd = $module.data('navmd'),
-      navsm = $module.data('navsm'),
-      navxs = $module.data('navxs'),
-      collg = $module.data('collg'),
-      colmd = $module.data('colmd'),
-      colsm = $module.data('colsm'),
-      colxs = $module.data('colxs'),
-      dotslg = $module.data('dotslg'),
-      dotsmd = $module.data('dotsmd'),
-      dotssm = $module.data('dotssm'),
-      dotsxs = $module.data('dotsxs'),
+})( window.GemQuery || jQuery );
 
-      marginlg = parseInt($module.data('mlg')),
-      marginmd = parseInt($module.data('mmd')),
-      marginsm = parseInt($module.data('msm')),
-      marginxs = parseInt($module.data('mxs'));
 
-    var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
-    if(mode == 'production') {
-      var loop = $module.data('loop'),
-        autoRefresh = true;
-    } else {
-      var loop = 0,
-        autoRefresh = false;
-    }
-    $module.find('.gf_product-images-list').children().each( function( index ) {
-      jQuery(this).attr( 'data-position', index );
-    });
-    $module.find('.gf_product-images-list').owlCarousel({
-      mouseDrag: false,
-      navSpeed: navspeed,
-      autoRefresh: autoRefresh,
-      autoWidth: !1,
-      loop: loop,
-      responsiveClass:true,
-      responsive:{
-        0:{
-          items:colxs,
-          nav: navxs,
-          dots:dotsxs,
-          margin: marginxs
-        },
-        768:{
-          items:colsm,
-          nav: navsm,
-          dots:dotssm,
-          margin: marginsm
-        },
-        992:{
-          items:colmd,
-          nav: navmd,
-          dots:dotsmd,
-          margin: marginmd
-        },
-        1200:{
-          items:collg,
-          nav: navlg,
-          dots:dotslg,
-          margin: marginlg
+
+
+(function( jQuery ){
+  // repeated JS for variant change
+  var $module = jQuery('#m-1725527550841').children('.module');
+  var swatchText = $module.attr('data-swatch-text') !== undefined ? $module.attr('data-swatch-text') : '1';
+  $module.gfV3ProductSwatches({
+    swatchText: swatchText,
+    onSwatchSelected: function(variant, $swatch) {
+      document.dispatchEvent(new CustomEvent('variant:change', {
+        detail : {
+          variant: variant
         }
-      },
-      onInitialized: function(){
-        $module.closest('.module-wrap[data-label="(P) Image List"]').addClass('gf-carousel-loaded');
-      }
-    }); 
-    break;
-  }
-})(window.GemQuery || jQuery); 
+      }));
+
+    // dynamic Preorder text ATC & By Now button.  impacts chassis & handles change  - am
+      var variantsMetafields = jQuery.parseJSON($("#hidden-variant-metafields").html());
+      var today = $("#hidden-today").html();
+          var variantInventoryObject2 = window.inventories2[variant.id];
+          var variantQuantity = variantInventoryObject2.quantity;
+          console.log('log 102) variantQuantity ='+ variantQuantity );
+
+      $("#hidden-current-variant-metafield").hide(); // delete the field 1st. If item "coming soon" no variant shows. So start with hidden field b/c can't delete later based on variant.id
+      $("#hidden-current-variant-message").hide();
+      $(".gf_p-dynamic-checkout-button").show();     // show the dynamic button 1st before possibly hiding
+      $("#m-1725527550775").show();     // show the dynamic button 1st before possibly hiding
+      $(".gf_p-dynamic-checkout-button").show();
+      $("#m-1725527550775").show();
+      
+      variantsMetafields.forEach(function(variantMetafield) {
+        if (variantMetafield.variant_id == variant.id) {
+          if (variantMetafield.metafield_value !== false) {
+
+            if (variantMetafield.metafield_value_s > today && variantQuantity < 1  ) {
+              $("#hidden-current-variant-metafield").html(" Order today for dispatch by "+variantMetafield.metafield_value);
+              $("#hidden-current-variant-metafield").show();
+              $("#hidden-current-variant-message").html(" We will fulfill the item as soon as it becomes available");
+              $("#hidden-current-variant-message").show();
+              $(".AddToCartText").html("PRE ORDER"); // goes back to ATC automatically on next variant change if necessary
+              $(".gf_p-dynamic-checkout-button").hide();
+              $("#m-1725527550775").hide();
+            } else {
+              // $(".AddToCartText").html("ADD TO CART");
+              $(".gf_p-dynamic-checkout-button").show();
+              $("#m-1725527550775").show();
+            }
+          } else {
+            // $(".AddToCartText").html("ADD TO CART");
+            $(".gf_p-dynamic-checkout-button").show();
+            $("#m-1725527550775").show();
+          }
+        }
+      });
+
+    }
+  });
+})( window.GemQuery || jQuery );
+    (function( jQuery ){
+  var $module = jQuery('#m-1725527550855').children('.module');
+  $module.gfV3ProductCartButton({ onItemAdded: function(data) {}});
+})( window.GemQuery || jQuery );
   
     
   
+    (function( jQuery ){
+  // var $module = jQuery('#m-1725527550899').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
     (function(jQuery) {
-    var $module = jQuery('#m-1697029046650').children('.module');
+    var $module = jQuery('#m-1725527550854').children('.module');
+    $module.gfV3ProductPrice({
+        displayCurrency: true
+    });
+})(window.GemQuery || jQuery);
+  (function( jQuery ){
+  // var $module = jQuery('#m-1679325869592').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+    
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1725527550863').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    (function(jQuery) {
+    var $module = jQuery('#m-1725527550851').children('.module');
     $module.gfV3ProductPrice({
         displayCurrency: true
     });
 })(window.GemQuery || jQuery);
   
-    (function(jQuery) {
-  var $module = jQuery('#m-1697029046709').children('.module');
+    (function( jQuery ){
+  // var $module = jQuery('#m-1725527550818').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  (function(jQuery) {
+  var $module = jQuery('#m-1725527550841').children('.module');
   var swatchText = $module.attr('data-swatch-text') != undefined ? $module.attr('data-swatch-text') : '1';
   $module.gfV3ProductSwatches({
     swatchText: swatchText,
-    onSwatchSelected: function(variant, $swatch) {}
+    onSwatchSelected: function(variant, $swatch) {
+      document.dispatchEvent(new CustomEvent('variant:change', {
+        detail : {
+          variant: variant
+        }
+      }));
+    }
   });
-})(window.GemQuery || jQuery);
-  
-    (function( jQuery ){
-  var $module = jQuery('#m-1697029046343').children('.module');
-  var style = $module.attr('data-style');
-  var updatePrice = $module.attr('data-updateprice');
+})(window.GemQuery || jQuery);(function( jQuery ){
+  // var $module = jQuery('#m-1686640113860').children('.module');
+  // You can add custom Javascript code right here.
+console.log("before clicking button");
 
-  $module.gfV3ProductQuantity({
-    'style': style,
-    'updatePrice': updatePrice
-  });
+$(".form-mobile").click(function(e){
+  exponea.showBanner('64df736ed11e654477c50865');
+  console.log("after clicking button");
+});
+})( window.GemQuery || jQuery );(function( jQuery ){
+  // var $module = jQuery('#m-1725527550858').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+    (function( jQuery ){
+  try {
+    var $module = jQuery('#m-1725527550791').children('.module');
+    var single = $module.attr('data-single');
+    var openDefault = $module.attr('data-openDefault');
+    var openTab = $module.attr('data-openTab');
+    var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+
+    if(openDefault == 0 || openDefault == '0') {
+      openTab = '0';
+    }
+
+    $module.gfAccordion({
+      single: single,
+      openTab: openTab,
+      mode: mode,
+      onChanged: function() {	
+        // Fix (P) Desc read more bug	
+        $module.find('.module-wrap[data-label="(P) Description"]').each(function(index, el) {	
+          if (jQuery(el).children('.module').data('gfv3productdesc') != undefined) {	
+            jQuery(el).children(".module").data("gfv3productdesc").initReadMore();	
+          }	
+        })	
+      }
+    });
+
+    var borderColor = $module.attr('data-borderColor');
+    var borderSize = $module.attr('data-borderSize');
+
+    $module.children('[data-accordion]').children('[data-control]').css('border-bottom', borderSize + ' solid ' + borderColor);
+    $module.children('[data-accordion]').children('[data-content]').children().css('border-bottom', borderSize + ' solid ' + borderColor);
+  } catch(err) {}
+})( window.GemQuery || jQuery );
+  
+    
+  
+    (function( jQuery ){
+  var $module = jQuery('#m-1725527550878').children('.module');
+  $module.gfV3ProductDesc();
+})( window.GemQuery || jQuery );
+  
+    
+  (function( jQuery ){
+  // var $module = jQuery('#m-1725527550836').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+    
+  
+    
+  (function( jQuery ){
+  // var $module = jQuery('#m-1725527550861').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );(function( jQuery ){
+  // var $module = jQuery('#m-1725527550894').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+    (function( jQuery ){
+  // var $module = jQuery('#m-1725527550922').children('.module');
+  // You can add custom Javascript code right here.
 })( window.GemQuery || jQuery );
   
     (function( jQuery ){
-  var $module = jQuery('#m-1697029045948').children('.module');
-  $module.gfV3ProductCartButton({ onItemAdded: function(data) {}});
+  // var $module = jQuery('#m-1725527550915').children('.module');
+  // You can add custom Javascript code right here.
 })( window.GemQuery || jQuery );
   
+    
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1725527550924').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1725527550760').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1725527550790').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  window.__gfFlowActions = []; window.__gfFlowActions.push([{"source":{"id":"#m-1725527550899"},"events":[{"key":"click"}],"targets":[{"id":"#m-1725527550791","actions":[{"key":"scrollToId","type":2,"data":{"delay":0,"duration":150,"marginTop":30}}],"rename":"Accordion: #m-1725527550791"}]}]);window.__gfFlowActions.push([{"source":{"id":"#m-1725527550863"},"events":[{"key":"click"}],"targets":[{"id":"#m-1725527550791","actions":[{"key":"scrollToId","type":2,"data":{"delay":0,"duration":150,"marginTop":30}}],"rename":"Accordion: #m-1725527550791"}]}]); window.__gfV1FlowActions.init();
