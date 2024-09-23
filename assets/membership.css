@@ -20,8 +20,8 @@
       line-height: 15px;
       font-size:14px;
     }
-      #HeaderMenu-member-form,
-      #HeaderMenu-member-area{
+      #membership-form,
+      #membership-area{
         display:none;
       }
       .formField{
