@@ -313,7 +313,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                  {% include 'wcp_cart' %}
                {% endif %}
                <!-- WPD End -->
-
-  {{ 'membership.js' | asset_url | stylesheet_tag: preload: true }}
+<script src="{{ 'membership.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>
