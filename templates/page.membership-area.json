@@ -13,9 +13,15 @@
       "type": "main-page",
       "settings": {
       }
+    },
+    "membership_area_qCmQH4": {
+      "type": "membership-area",
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "membership_area_qCmQH4"
   ]
 }
