@@ -341,13 +341,13 @@ function checkCustomer() {
         globalCustomer = data.object;
 
         if (response.status === 200) {
-          document.querySelector('#HeaderMenu-member-form').style.display = 'none';
-          document.querySelector('#HeaderMenu-member-area').style.display = 'flex';
+          document.querySelector('#membership-form').style.display = 'none';
+          document.querySelector('#membership-area').style.display = 'flex';
           document.querySelector('#setupArea select').value = globalCustomer.relationship;
           document.querySelector('#setupArea input').value = globalCustomer.dueDate;
         } else {
-          document.querySelector('#HeaderMenu-member-form').style.display = 'flex';
-          document.querySelector('#HeaderMenu-member-area').style.display = 'none';
+          document.querySelector('#membership-form').style.display = 'flex';
+          document.querySelector('#membership-area').style.display = 'none';
           document.querySelector('.infoPopupMessage').innerHTML = 'You are one step away from becoming a member.';
         }
       } catch (error) {
