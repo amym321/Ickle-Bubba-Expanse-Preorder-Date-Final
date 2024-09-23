@@ -13,9 +13,15 @@
       "type": "main-page",
       "settings": {
       }
+    },
+    "membership_form_YAgCig": {
+      "type": "membership-form",
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "membership_form_YAgCig"
   ]
 }
