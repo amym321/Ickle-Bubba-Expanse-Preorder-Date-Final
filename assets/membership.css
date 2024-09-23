@@ -4,10 +4,10 @@
     .infoPopup{
     background-color: #fecdc9;
     position: absolute;
-    top: 35px;
-    right: 65px;
+    top: 41px;
+    right: 73px;
     z-index: 11111111111;
-    width: 250px;
+    width: 260px;
     padding: 12px 14px;
     border-radius: 7px;
     box-shadow: 6px 6px 3px #0000001f;
