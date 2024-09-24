@@ -115,25 +115,30 @@
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
   {{ content_for_header }}
   <!-- EXPONEA start -->
-  <script>
+<script>
     !function(e,n,t,i,o,r){function c(e){if("number"!=typeof e)return e;var n=new Date;return new Date(n.getTime()+1e3*e)}var a=4e3,s="xnpe_async_hide";function p(e){return e.reduce((function(e,n){return e[n]=function(){e._.push([n.toString(),arguments])},e}),{_:[]})}function m(e,n,t){var i=t.createElement(n);i.src=e;var o=t.getElementsByTagName(n)[0];return o.parentNode.insertBefore(i,o),i}function u(e){return"[object Date]"===Object.prototype.toString.call(e)}r.target=r.target||"https://api.exponea.com",r.file_path=r.file_path||r.target+"/js/exponea.min.js",o[n]=p(["anonymize","initialize","identify","update","track","trackLink","trackEnhancedEcommerce","getHtml","showHtml","showBanner","showWebLayer","ping","getAbTest","loadDependency","getRecommendation","reloadWebLayers"]),o[n].notifications=p(["isAvailable","isSubscribed","subscribe","unsubscribe"]),o[n]["snippetVersion"]="v2.3.0",function(e,n,t){e[n]["_"+t]={},e[n]["_"+t].nowFn=Date.now,e[n]["_"+t].snippetStartTime=e[n]["_"+t].nowFn()}(o,n,"performance"),function(e,n,t,i,o,r){e[o]={sdk:e[i],sdkObjectName:i,skipExperiments:!!t.new_experiments,sign:t.token+"/"+(r.exec(n.cookie)||["","new"])[1],path:t.target}}(o,e,r,n,i,RegExp("__exponea_etc__"+"=([\\w-]+)")),function(e,n,t){m(e.file_path,n,t)}(r,t,e),function(e,n,t,i,o,r,p){if(e.new_experiments){!0===e.new_experiments&&(e.new_experiments={});var f,l=e.new_experiments.hide_class||s,_=e.new_experiments.timeout||a,d=encodeURIComponent(r.location.href.split("#")[0]);e.cookies&&e.cookies.expires&&("number"==typeof e.cookies.expires||u(e.cookies.expires)?f=c(e.cookies.expires):e.cookies.expires.tracking&&("number"==typeof e.cookies.expires.tracking||u(e.cookies.expires.tracking))&&(f=c(e.cookies.expires.tracking))),f&&f<new Date&&(f=void 0);var x=e.target+"/webxp/"+n+"/"+r[t].sign+"/modifications.min.js?http-referer="+d+"&timeout="+_+"ms"+(f?"&cookie-expires="+Math.floor(f.getTime()/1e3):"");"sync"===e.new_experiments.mode&&r.localStorage.getItem("__exponea__sync_modifications__")?function(e,n,t,i,o){t[o][n]="<"+n+' src="'+e+'"></'+n+">",i.writeln(t[o][n]),i.writeln("<"+n+">!"+o+".init && document.writeln("+o+"."+n+'.replace("/'+n+'/", "/'+n+'-async/").replace("><", " async><"))</'+n+">")}(x,n,r,p,t):function(e,n,t,i,o,r,c,a){r.documentElement.classList.add(e);var s=m(t,i,r);function p(){o[a].init||m(t.replace("/"+i+"/","/"+i+"-async/"),i,r)}function u(){r.documentElement.classList.remove(e)}s.onload=p,s.onerror=p,o.setTimeout(u,n),o[c]._revealPage=u}(l,_,x,n,r,p,o,t)}}(r,t,i,0,n,o,e),function(e,n,t){e[n].start=function(i){i&&Object.keys(i).forEach((function(e){return t[e]=i[e]})),e[n].initialize(t)}}(o,n,r)}(document,"exponea","script","webxpClient",window,{
         "target": "https://api.uk.exponea.com",
-		"token": "7d160d4e-a2f7-11ed-b328-ee4a50baaa43",
+          "token": "3990d784-a2f7-11ed-8b3b-ae3f7c7b92f2",
+          
     });
 
     function getCookie(cname) {
         var name = cname + "=";
         var ca = document.cookie.split(';');
+        var cookie = undefined;
         for (var i = 0; i < ca.length; i++) {
             var c = ca[i];
             while (c.charAt(0) == ' ') {
                 c = c.substring(1);
             }
             if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
+                cookie = c.substring(name.length, c.length);
+                break;
             }
         }
-        return undefined;
+        cookie = decodeURIComponent(cookie);
+        cookie = cookie.split('?')[0];
+        return cookie;
     }
 
     var customer = {};
@@ -183,6 +188,8 @@
 <!--End_Gem_Page_Header_Script-->
  {% render 'qikify-apps' %}
 <style>@import url(//fonts.googleapis.com/css?family=Abril+Fatface|Amaranth|Anton|Arvo|Architects+Daughter|Berkshire+Swash|Bevan|Bitter|B612+Mono:400,700|Caveat|Chewy|Chilanka|Comfortaa|Concert+One|Courgette|Domine|Frijole|Fjalla+One|Josefin+Slab|Gloria+Hallelujah|Hepta+Slab:400,500,600,700|Josefin+Sans:400,600,700|Kaushan+Script|Knewave|Lexend+Mega|Libre+Baskerville|Lobster|Montserrat|Mansalva|Old+Standard+TT|Oleo+Script|Open+Sans|Orbitron:400,500,700|Oswald|PT+Sans|Pacifico|Passion+One|Permanent+Marker|Playfair+Display|Poppins|Prata|PT+Mono|Quicksand:400,500,600,700|Raleway|Righteous|Roboto|Rubik|Roboto:400,500,700|Satisfy|Shrikhand|Ubuntu|Work+Sans);</style>{% render 'gp-head' %}
+
+{{ 'membership.css' | asset_url | stylesheet_tag: preload: true }}
 </head>
 
 <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}" data-transitions="{{ settings.animate_page_transitions }}" data-button_style="{{ settings.button_style }}" data-edges="{{ settings.roundness }}" data-type_header_capitalize="{{ settings.type_header_capitalize }}" data-swatch_style="{{ settings.swatch_style }}" data-grid-style="{{ settings.product_grid_style }}">
@@ -215,7 +222,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
   <div id="ProductModals"></div>
 
-  {% comment %} Image markup used when building product grid item via JS {% endcomment %}
+  
   <template id="naturalImageMarkup">
     <div class="image-wrap" style="height: 0;">
       <img class="grid-product__image" width height src srcset loading="lazy" alt>
@@ -230,8 +237,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <img width height src loading="lazy">
   </template>
 <!--Gem_Page_Footer_Script-->
-
+  {%- liquid
+    assign gpTemplateSuffix = template.suffix
+    assign arrSplitSuffix = gpTemplateSuffix | split: '-'
+    if gpTemplateSuffix contains 'gem-' and gpTemplateSuffix contains '-template' and arrSplitSuffix.size == 3
+      assign isV6GpTemplate = true
+    endif
+    assign gpShopMeta = shop.metafields.gempages
+    if gpShopMeta
+      if gpShopMeta['productV6-default'] == 'true' and request.page_type == 'product'
+        assign isProductDefault = true
+      endif
+      if gpShopMeta['collectionV6-default'] == 'true' and request.page_type == 'collection'
+        assign isCollectionDefault = true
+      endif
+      if gpShopMeta['indexV6-default'] == 'true' and request.page_type == 'index'
+        assign isIndexDefault = true
+      endif
+      if isProductDefault or isCollectionDefault or isIndexDefault or isPreviewV6
+        assign isV6GpTemplate = true
+      endif
+    endif
+  %}
+  {% if isV6GpTemplate %}
+    
+  {% endif %}
 <!--End_Gem_Page_Footer_Script-->
+
+
+
+
+
+
+
+
     <style>
     .gempage-editing .transition-body {
       opacity:1 !important;
@@ -243,5 +282,161 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script defer src="https://cdn.pickystory.com/widget/dist/latest/pickystory-widget.min.js"></script>
   {% endif %}
   <!-- PickyStory end snippet "main_widget_script" -->
-</body>
+<!-- WPD Start -->
+                {% if customer.tags.size > 0 and template != 'cart' %}
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                      let checkoutbtninterval = setInterval(function(){
+                        var x=document.querySelectorAll("input[name='checkout'], button[name='checkout'], input[name='goto_pp'], button[name='goto_pp'], input[name='goto_gc'], button[name='goto_gc'], [href$='checkout']");
+                        var WPD_RedirectToCart = function(e) {
+                          	e.stopPropagation();
+                            e.preventDefault();
+                            window.location = '/cart';
+                            };
+                            for (var i = 0; i < x.length; i++) {
+                                x[i].addEventListener('click', WPD_RedirectToCart, false);
+                            }
+                        },500)
+                });
+              </script>
+               {% endif %}
+         
+
+               {% if customer.tags.size > 0 and template == 'cart' %}
+                 
+               {% endif %}
+               <!-- WPD End -->
+<script src="{{ 'membership.js' | asset_url }}" defer="defer"></script>
+
+  <script>
+    let test = 'http://localhost:4000';
+let live = 'https://app.progryss.com';
+let baseurl = live; // Switch to live in production
+
+let globalCustomer;
+
+// Function to check customer status
+function checkCustomer() {
+  {% if customer %}
+    let customerId = { id: {{ customer.id | json }} };
+
+    const checkCustomerIdInDb = async () => {
+      try {
+        const response = await fetch(`${baseurl}/api/get-company-status`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(customerId)
+        });
+
+        const data = await response.json();
+        globalCustomer = data.object;
+
+        if (response.status === 200) {
+          document.querySelector('#membership-form').style.display = 'none';
+          document.querySelector('#membership-area').style.display = 'flex';
+          document.querySelector('#setupArea select').value = globalCustomer.relationship;
+          document.querySelector('#setupArea input').value = globalCustomer.dueDate;
+        } else {
+          document.querySelector('#membership-form').style.display = 'flex';
+          document.querySelector('#membership-area').style.display = 'none';
+          document.querySelector('.infoPopupMessage').innerHTML = 'You are one step away from becoming a member.';
+        }
+      } catch (error) {
+        console.log('Error fetching customer data:', error);
+      }
+    };
+
+    checkCustomerIdInDb();
+
+  {% else %}
+    console.log('No user logged in');
+    document.querySelector('.infoPopupMessage').innerHTML = 'For a personalized experience, <strong>LOG IN</strong> or <strong>CREATE AN ACCOUNT</strong>.';
+  {% endif %}
+}
+
+checkCustomer();
+
+// Form submission handling
+let setupForm = document.getElementById('setupForm');
+if (setupForm) {
+  setupForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const sendForm = async () => {
+      const formData = new FormData(event.target);
+      const formObject = {};
+      formData.forEach((value, key) => { formObject[key] = value; });
+console.log('hi')
+      try {
+        const response = await fetch(`${baseurl}/api/create-company`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formObject)
+        });
+console.log(response)
+        const jsonData = await response.json();
+        console.log(jsonData.message);
+      } catch (error) {
+        console.log('Error in sending form data:', error);
+      }
+    };
+
+    sendForm();
+
+    setTimeout(() => {
+      window.location.href = "/pages/membership-purchase-success";
+      checkCustomer();
+    }, 2000);
+  });
+}
+
+// Edit and update button logic
+let editBtn = document.querySelector('.editForm svg');
+let updateBtn = document.querySelector('#setupArea .membershipButton');
+
+if (editBtn) {
+  editBtn.addEventListener('click', function() {
+    document.querySelector('#area_relationship').disabled = false;
+    document.querySelector('#area_dueDate').disabled = false;
+    updateBtn.style.visibility = 'visible';
+  });
+}
+
+if (updateBtn) {
+  updateBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    let rel = document.querySelector('#area_relationship').value;
+    let due = document.querySelector('#area_dueDate').value;
+
+    if (!rel || !due) {
+      alert('Please fill in both fields before submitting.');
+      return;
+    }
+
+    let obj = { relationship: rel, due: due, id: globalCustomer._id };
+
+    try {
+      const response = await fetch(`${baseurl}/api/update-company`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(obj)
+      });
+
+      if (response.ok) {
+        document.querySelector('#area_relationship').disabled = true;
+        document.querySelector('#area_dueDate').disabled = true;
+        updateBtn.style.visibility = 'hidden';
+      } else {
+        console.log('Error updating company');
+      }
+    } catch (error) {
+      console.log('Error updating company:', error);
+    }
+  });
+}
+
+  </script>
+  </body>
 </html>
