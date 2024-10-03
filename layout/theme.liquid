@@ -389,6 +389,7 @@ if (setupForm) {
       const formObject = {};
       formData.forEach((value, key) => { formObject[key] = value; });
 console.log('hi')
+console.log(formObject)
       try {
         const response = await fetch(`${baseurl}/api/create-company`, {
           method: 'POST',
