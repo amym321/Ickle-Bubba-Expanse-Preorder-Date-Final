@@ -20,10 +20,10 @@
       line-height: 15px;
       font-size:14px;
     }
-      #membership-form,
+      /* #membership-form,
       #membership-area{
         display:none;
-      }
+      } */
       .formField{
         margin-bottom:12px;
       }
