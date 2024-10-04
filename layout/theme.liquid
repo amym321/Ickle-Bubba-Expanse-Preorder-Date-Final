@@ -359,7 +359,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const formData = new FormData(event.target);
         const formObject = {};
         formData.forEach((value, key) => { formObject[key] = value; });
-        // console.log(formObject)
+        console.log(formObject)
         let checkStatus = await checkCustomerByEmail(formObject.customerEmail);
         console.log(checkStatus)
         if(checkStatus === 200){
