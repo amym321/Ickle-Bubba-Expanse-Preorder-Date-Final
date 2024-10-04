@@ -353,6 +353,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   {% if customer %}
     checkCustomerByEmail({{customer.email | json }}).then((data)=> {
+      console.log(data)
       if(data === 401){
         document.querySelector('#membership-form').style.display = 'none'
       }
