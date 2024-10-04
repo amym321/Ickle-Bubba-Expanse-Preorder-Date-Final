@@ -64,7 +64,7 @@
       }
       .formWrapper input,
       .formWrapper select{
-        border:1px solid silver;
+        border:1px solid #000000;
       }
       .formWrapper select{ 
         -webkit-appearance: none;
@@ -163,4 +163,8 @@
       }
       #area_dueDate:disabled{
         color:rgb(161 156 156);
+      }
+      .formWrapper input[disabled]{
+        background: transparent;
+        border:1px solid silver;
       }
