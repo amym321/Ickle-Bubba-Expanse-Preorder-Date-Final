@@ -356,6 +356,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       console.log(data)
       if(data === 401){
         document.querySelector('#membership-form').style.display = 'none'
+      }else{
+        document.querySelector('#membership-form').style.display = 'block'
       }
     })
   {% endif %}
