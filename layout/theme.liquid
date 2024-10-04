@@ -362,22 +362,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // console.log(formObject)
         let checkStatus = await checkCustomerByEmail(formObject.customerEmail);
         console.log(checkStatus)
-        // try {
-        //   const response = await fetch(`${baseurl}/api/create-company`, {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(formObject)
-        //   });
-        //   const jsonData = await response.json();
-        //   console.log(jsonData.message);
-        //   window.location.href = "/pages/membership-purchase-success";
-        //   // checkCustomer();
-        // } catch (error) {
-        //   console.log('Error in sending form data:', error);
-        // }
+        if(checkStatus === 200){
+          try {
+            const response = await fetch(`${baseurl}/api/create-company`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(formObject)
+            });
+            const jsonData = await response.json();
+            alert(jsonData.message)
+            window.location.href = "/pages/membership-purchase-success";
+          } catch (error) {
+            console.log('Error in sending form data:', error);
+          }
+        }else{
+          alert('you are already subscribe, Please login')
+        }
       };
       sendForm();
-      // checkCustomerByEmail()
     });
   }
 
