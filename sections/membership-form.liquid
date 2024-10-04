@@ -78,9 +78,19 @@
   });
   
   {% if customer %}
-    document.querySelector('input[name="firstName"]').value = {{ customer.email | json}};
-    document.querySelector('input[name="lastName"]').value = {{ customer.first_name | json}};
-    document.querySelector('input[name="customerEmail"]').value = {{ customer.last_name | json}};
+    
+    let fname = document.querySelector('input[name="firstName"]')
+    let lname = document.querySelector('input[name="lastName"]')
+    let email = document.querySelector('input[name="customerEmail"]')
+    
+    fname.value = {{ customer.email | json}};
+    lname.value = {{ customer.first_name | json}};
+    email.value = {{ customer.last_name | json}};
+
+    console.log(fname.value)
+    console.log(lname.value)
+    console.log(email.value)
+    
   {% endif %}
   
 </script>
