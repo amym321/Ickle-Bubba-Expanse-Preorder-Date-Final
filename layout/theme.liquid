@@ -352,8 +352,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
   {% if customer %}
-    let initialCheck = checkCustomerByEmail({{customer.email | json }})
-    console.log(initialCheck)
+    checkCustomerByEmail({{customer.email | json }}).then((data)=> console.log(data))
   {% endif %}
   
   // Form submission handling
