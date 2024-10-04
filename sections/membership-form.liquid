@@ -82,19 +82,19 @@
     {% if customer.first_name %}
       let firstName = document.querySelector('input[name="firstName"]');
       firstName.value = {{ customer.first_name | json}};
-      firstName.disabled = true;
+      firstName.readonly = true;
     {% endif %}
     
     {% if customer.last_name %}
       let lastName = document.querySelector('input[name="lastName"]');
       lastName.value = {{ customer.last_name | json}};
-      lastName.disabled = true;
+      lastName.readonly = true;
     {% endif %}
     
     {% if customer.email %}
       let email = document.querySelector('input[name="customerEmail"]')
       email.value = {{ customer.email | json}};
-      email.disabled = true;
+      email.readonly = true;
     {% endif %}
   
   {% else %}
