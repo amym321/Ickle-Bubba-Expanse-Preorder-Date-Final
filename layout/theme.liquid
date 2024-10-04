@@ -393,6 +393,7 @@ if (setupForm) {
       const formData = new FormData(event.target);
       const formObject = {};
       formData.forEach((value, key) => { formObject[key] = value; });
+      console.log(formObject)
       try {
         const response = await fetch(`${baseurl}/api/create-company`, {
           method: 'POST',
@@ -401,7 +402,7 @@ if (setupForm) {
         });
         const jsonData = await response.json();
         console.log(jsonData.message);
-        window.location.href = "/pages/membership-purchase-success";
+        // window.location.href = "/pages/membership-purchase-success";
         // checkCustomer();
       } catch (error) {
         console.log('Error in sending form data:', error);
