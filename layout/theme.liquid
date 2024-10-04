@@ -350,7 +350,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       console.log('Error fetching customer data:', error);
     }
   }
-
+  
   // Form submission handling
   if (setupForm) {
     setupForm.addEventListener('submit', function(event) {
@@ -376,12 +376,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             console.log('Error in sending form data:', error);
           }
         }else{
-          {% if customer %}
-            document.querySelector('#membership-form').style.display = 'none';
-          {% else %}
             document.querySelector('.membershipformMsg').innerHTML = 'you are already subscribe, Please login';
-          {% endif %}
-          
         }
       };
       sendForm();
