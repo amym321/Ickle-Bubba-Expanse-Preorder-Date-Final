@@ -82,7 +82,7 @@
     {% if customer.first_name %}
       let firstName = document.querySelector('input[name="firstName"]');
       firstName.value = {{ customer.first_name | json}};
-      firstName.readonly = true;
+      firstName.setAttribute('readonly',true)
     {% endif %}
     
     {% if customer.last_name %}
