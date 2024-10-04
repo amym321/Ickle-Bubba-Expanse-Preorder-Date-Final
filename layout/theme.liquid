@@ -397,7 +397,7 @@ if (setupForm) {
         const jsonData = await response.json();
         console.log(jsonData.message);
         window.location.href = "/pages/membership-purchase-success";
-        checkCustomer();
+        // checkCustomer();
       } catch (error) {
         console.log('Error in sending form data:', error);
       }
