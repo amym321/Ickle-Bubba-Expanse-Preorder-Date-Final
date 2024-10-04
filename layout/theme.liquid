@@ -360,7 +360,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const formObject = {};
         formData.forEach((value, key) => { formObject[key] = value; });
         // console.log(formObject)
-        let checkStatus = checkCustomerByEmail(formObject.customerEmail);
+        let checkStatus = await checkCustomerByEmail(formObject.customerEmail);
         console.log(checkStatus)
         // try {
         //   const response = await fetch(`${baseurl}/api/create-company`, {
