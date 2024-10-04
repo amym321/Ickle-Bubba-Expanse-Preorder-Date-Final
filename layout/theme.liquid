@@ -342,7 +342,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(email)
+        body: email
       }); 
       const data = await response.json();
       console.log(data)
