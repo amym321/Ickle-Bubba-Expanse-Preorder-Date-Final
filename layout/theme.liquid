@@ -360,6 +360,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         document.querySelector('#membership-form').style.display = 'block'
       }
     })
+  {% else %}
+    document.querySelector('#membership-form').style.display = 'block'
   {% endif %}
   
   
