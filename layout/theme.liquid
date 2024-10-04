@@ -345,7 +345,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         body: JSON.stringify({email:email})
       }); 
       const data = await response.json();
-      console.log(response.status)
+      return response.status
     } catch (error) {
       console.log('Error fetching customer data:', error);
     }
@@ -359,8 +359,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const formData = new FormData(event.target);
         const formObject = {};
         formData.forEach((value, key) => { formObject[key] = value; });
-        console.log(formObject)
-        checkCustomerByEmail(formObject.customerEmail)
+        // console.log(formObject)
+        let checkStatus = checkCustomerByEmail(formObject.customerEmail);
+        console.log(checkStatus)
         // try {
         //   const response = await fetch(`${baseurl}/api/create-company`, {
         //     method: 'POST',
