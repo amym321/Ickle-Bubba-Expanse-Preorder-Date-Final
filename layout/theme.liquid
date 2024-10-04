@@ -350,6 +350,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       console.log('Error fetching customer data:', error);
     }
   }
+
+  {% if customer %}
+    let initialCheck = checkCustomerByEmail({{customer.email | json }})
+    console.log(initialCheck)
+  {% endif %}
   
   // Form submission handling
   if (setupForm) {
