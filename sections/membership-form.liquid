@@ -88,13 +88,13 @@
     {% if customer.last_name %}
       let lastName = document.querySelector('input[name="lastName"]');
       lastName.value = {{ customer.last_name | json}};
-      lastName.readonly = true;
+      lastName.setAttribute('readonly',true)
     {% endif %}
     
     {% if customer.email %}
       let email = document.querySelector('input[name="customerEmail"]')
       email.value = {{ customer.email | json}};
-      email.readonly = true;
+      email.setAttribute('readonly',true)
     {% endif %}
   
   {% else %}
