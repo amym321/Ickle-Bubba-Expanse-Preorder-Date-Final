@@ -45,10 +45,6 @@
           <input type="hidden" id="selectCountry" name="countryCode" required >
           <input type="submit" class="membershipButton" value="sign up now">
       </form>
-
-    {{ customer.email | json}}
-    {{ customer.first_name }}
-    {{ customer.last_name }}
     </div>
 </div>
 
@@ -80,4 +76,11 @@
       })
       .catch(error => console.error('Error fetching country info:', error));
   });
+  
+  {% if customer %}
+    document.querySelector('input[name="firstName"]').value = {{ customer.email | json}};
+    document.querySelector('input[name="lastName"]').value = {{ customer.first_name | json}};
+    document.querySelector('input[name="customerEmail"]').value = {{ customer.last_name | json}};
+  {% endif %}
+  
 </script>
