@@ -164,7 +164,7 @@
       #area_dueDate:disabled{
         color:rgb(161 156 156);
       }
-      .formWrapper input[readonly]{
+      .formWrapper input[readonly="true"]{
         background: transparent;
         border:1px solid silver;
       }
