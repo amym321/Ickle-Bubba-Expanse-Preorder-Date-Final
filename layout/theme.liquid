@@ -388,7 +388,9 @@ let setupForm = document.getElementById('setupForm');
 if (setupForm) {
   setupForm.addEventListener('submit', function(event) {
     event.preventDefault();
-    
+    document.querySelector('input[name="firstName"]').disabled = false;
+    document.querySelector('input[name="lastName"]').disabled = false;
+    document.querySelector('input[name="customerEmail"]').disabled = false;
     const sendForm = async () => {
       const formData = new FormData(event.target);
       const formObject = {};
