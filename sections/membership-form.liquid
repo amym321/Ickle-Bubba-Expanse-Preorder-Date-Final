@@ -79,10 +79,24 @@
   
   {% if customer %}
     
-    document.querySelector('input[name="firstName"]').value = {{ customer.first_name | json}};
-    document.querySelector('input[name="lastName"]').value = {{ customer.last_name | json}};
-    document.querySelector('input[name="customerEmail"]').value = {{ customer.email | json}};
-
+    {% if customer.first_name %}
+      let firstName = document.querySelector('input[name="firstName"]');
+      firstName.value = {{ customer.first_name | json}};
+      firstName.disable = true;
+    {% endif %}
+    
+    {% if customer.last_name %}
+      let lastName = document.querySelector('input[name="lastName"]');
+      lastName.value = {{ customer.last_name | json}};
+      lastName.disable = true;
+    {% endif %}
+    
+    {% if customer.email %}
+      let email = document.querySelector('input[name="customerEmail"]')
+      email.value = {{ customer.email | json}};
+      email.disable = true;
+    {% endif %}
+  
   {% else %}
     console.log('no user login')
   {% endif %}
