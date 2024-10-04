@@ -46,7 +46,7 @@
           <input type="submit" class="membershipButton" value="sign up now">
       </form>
 
-    {{ customer.email }}
+    {{ customer.email | json}}
     {{ customer.first_name }}
     {{ customer.last_name }}
     </div>
