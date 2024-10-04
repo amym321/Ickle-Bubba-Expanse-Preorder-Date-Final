@@ -166,5 +166,5 @@
       }
       .formWrapper input[readonly="true"]:focus-visible{
         background: transparent;
-        border:1px solid silver;
+        border-color:silver;
       }
