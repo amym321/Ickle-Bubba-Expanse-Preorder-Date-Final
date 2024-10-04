@@ -388,6 +388,7 @@ let setupForm = document.getElementById('setupForm');
 if (setupForm) {
   setupForm.addEventListener('submit', function(event) {
     event.preventDefault();
+    
     const sendForm = async () => {
       const formData = new FormData(event.target);
       const formObject = {};
@@ -408,6 +409,7 @@ if (setupForm) {
       }
     };
     sendForm();
+    
   });
 }
 
