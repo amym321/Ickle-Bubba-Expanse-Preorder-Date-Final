@@ -214,6 +214,10 @@ div[data-name="orignalP"]{
 #curVarPrice{
   font-size: 25px;
   color: grey;
+  font-weight: 300;
+}
+#curVarPrice:after{
+  content:'RRP';
 }
 .gf_product-compare-price{
   border-right: 1px solid #000;
