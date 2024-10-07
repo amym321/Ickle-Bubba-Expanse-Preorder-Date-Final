@@ -244,7 +244,7 @@ div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price{
 .gf_product-compare-price + span{
   margin-left:4px !important;
 }
-#m-1725527550851 .gf_product-price {
+.gf_product-prices #m-1725527550851 .gf_product-price {
     color: #000 !important;
     font-weight: 600 !important;
 }
