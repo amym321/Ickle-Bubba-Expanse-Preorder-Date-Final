@@ -268,12 +268,10 @@
   // var $module = jQuery('#m-1725527550863').children('.module');
   // You can add custom Javascript code right here.
 })( window.GemQuery || jQuery );
-  
-    (function( jQuery ){
-  // var $module = jQuery('#m-1728295248392').children('.module');
-  // You can add custom Javascript code right here.
+  (function( jQuery ){
+  let selectedVar = document.querySelector('div.module:has([data-current-variant])');
+  console.log(selectedVar)
 })( window.GemQuery || jQuery );
-  
     (function(jQuery) {
     var $module = jQuery('#m-1725527550851').children('.module');
     $module.gfV3ProductPrice({
