@@ -339,7 +339,9 @@ const variantElement = document.querySelector('div.module[data-current-variant]'
 observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
 
     getVariantMetafieldValue(newValue, 'custom', 'rrp')
-    .then(value => console.log('Metafield Value:', value))
+    .then(value => {
+      document.getElementById('curVarPrice').innerHTML = value;
+    })
     .catch(error => console.error(error));
     // You can add your logic here to handle the change
 });
