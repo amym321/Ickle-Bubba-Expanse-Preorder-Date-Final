@@ -73,18 +73,7 @@
       .formField:has(select) {
         position:relative;
       }
-      .formField:has(select)::before {
-        content: '';
-        position: absolute;
-        pointer-events: none;
-        background-image: url(https://cdn.shopify.com/s/files/1/0446/8182/2364/files/down-arrow-5-svgrepo-com.svg?v=1726819434);
-        background-repeat: no-repeat;
-        background-size: 20px 20px;
-        width: 20px;
-        height: 20px;
-        right: 9px;
-        bottom: 13px;
-      }
+
       .editForm svg{
         width: 20px;
         height: 20px;
