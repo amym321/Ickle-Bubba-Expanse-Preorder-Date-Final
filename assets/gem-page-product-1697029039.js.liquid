@@ -268,55 +268,7 @@
   // var $module = jQuery('#m-1725527550863').children('.module');
   // You can add custom Javascript code right here.
 })( window.GemQuery || jQuery );
-  (function( jQuery ){
-document.addEventListener('DOMContentLoaded', function () {
-    // Get the URL parameters
-    const urlParams = new URLSearchParams(window.location.search);
-    const variantIdFromUrl = urlParams.get('variant');
-
-    // Fetch the product data
-    fetch(`/products/${Shopify.product.handle}.json`)
-        .then(response => response.json())
-        .then(data => {
-            // Find the variant based on the ID in the URL or fall back to the first variant
-            const variants = data.product.variants;
-            const selectedVariant = variants.find(v => v.id == variantIdFromUrl) || variants[0];
-
-            if (selectedVariant) {
-                // Fetch and display the metafield for the selected variant
-                fetchMetafield(selectedVariant.id);
-            } else {
-                console.error('No variant found');
-            }
-        });
-
-    function fetchMetafield(variantId) {
-        // Fetch metafields for the selected variant
-        fetch(`/admin/api/2023-10/products/${Shopify.product.id}/variants/${variantId}/metafields.json`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest',
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            const metafield = data.metafields.find(
-                metafield => metafield.namespace === 'custom' && metafield.key === 'rrp'
-            );
-
-            if (metafield) {
-                // Display the metafield value
-                document.getElementById('metafield-display').innerText = metafield.value;
-            } else {
-                document.getElementById('metafield-display').innerText = 'No metafield found for this variant.';
-            }
-        })
-        .catch(error => console.error('Error fetching metafield:', error));
-    }
-});
-
-})( window.GemQuery || jQuery );
+  
     (function(jQuery) {
     var $module = jQuery('#m-1725527550851').children('.module');
     $module.gfV3ProductPrice({
