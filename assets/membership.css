@@ -216,3 +216,11 @@ div[data-name="orignalP"]{
   font-size: 25px;
   color: grey;
 }
+.gf_product-compare-price{
+  border-right: 1px solid #000;
+    border-left: 1px solid #000;
+    padding-left: 14px;
+    padding-right: 14px;
+    margin-left: 14px;
+    margin-right: 14px !important;
+}
