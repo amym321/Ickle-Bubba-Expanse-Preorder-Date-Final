@@ -225,13 +225,15 @@ div[data-name="orignalP"]{
     bottom: -13px;
     left: 1px;
 }
-div[data-extraclass="priceWrapper"] .gf_product-prices .gf_product-compare-price{
+@media screen and (min-width:50px){
+  div[data-extraclass="priceWrapper"] .gf_product-prices .gf_product-compare-price{
     border-right: 1px solid #000;
     border-left: 1px solid #000;
     padding-left: 14px;
     padding-right: 14px;
     margin-left: 14px;
     font-weight:400 !important;
+}
 }
 .gf_product-compare-price:after{
   display:none;
