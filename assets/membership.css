@@ -250,7 +250,9 @@ div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price:b
 div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price {
     color: #000 !important;
     font-weight: 600 !important;
-  position: relative;
+    position: relative;
+    padding-left: 15px;
+    margin-left: 14px !important;
 }
 div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before{
     content: "";
@@ -259,7 +261,7 @@ div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before{
     display: block;
     background: #000;
     position: absolute;
-    right: 0;
+    left: 2px;
     top: 1px;
 }
 div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after{
