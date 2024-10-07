@@ -272,9 +272,9 @@
 async function getVariantMetafieldValue(variantId, namespace, key) {
     // Replace with your Shopify store domain and access token
     const shopifyDomain = 'ickle-bubba-sandbox.myshopify.com';
-    const storefrontAccessToken = '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';
-    
-       // JSON formatted query
+    const storefrontAccessToken = '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';// Replace with your actual token
+
+    // JSON formatted query
     const query = {
         query: `
         {
@@ -314,6 +314,7 @@ async function getVariantMetafieldValue(variantId, namespace, key) {
 getVariantMetafieldValue('48879177072918', 'custom', 'rrp')
     .then(value => console.log('Metafield Value:', value))
     .catch(error => console.error(error));
+
 })( window.GemQuery || jQuery );
     (function(jQuery) {
     var $module = jQuery('#m-1725527550851').children('.module');
