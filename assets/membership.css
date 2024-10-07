@@ -225,7 +225,7 @@ div[data-name="orignalP"]{
     bottom: -13px;
     left: 1px;
 }
-#m-1725527550851 .gf_product-compare-price{
+div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price{
     border-right: 1px solid #000;
     border-left: 1px solid #000;
     padding-left: 14px;
