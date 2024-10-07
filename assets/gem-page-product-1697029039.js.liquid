@@ -269,7 +269,7 @@
   // You can add custom Javascript code right here.
 })( window.GemQuery || jQuery );
   (function( jQuery ){
-  let selectedVar = document.querySelector('div.module:has([data-current-variant])');
+  let selectedVar = document.querySelector('div.module').getAttribute('data-current-variant');
   console.log('aa',selectedVar)
 })( window.GemQuery || jQuery );
     (function(jQuery) {
