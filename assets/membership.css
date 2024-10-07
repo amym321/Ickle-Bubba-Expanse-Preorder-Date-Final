@@ -203,10 +203,8 @@
     border-radius: 50%;
 }
 .discount-badges{
-      display: flex;
+    display: flex;
     align-items: center;
     gap: 10px;
-}
-.thankyou-content p{
   margin-bottom:0;
 }
