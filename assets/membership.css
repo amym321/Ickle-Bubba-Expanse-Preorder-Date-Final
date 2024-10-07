@@ -203,3 +203,6 @@
   font-size:15px;
   line-height: normal;
 }
+div[data-extraclass="priceWrapper"] > div{
+  display:flex;
+}
