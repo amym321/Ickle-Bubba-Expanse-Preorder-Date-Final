@@ -269,10 +269,51 @@
   // You can add custom Javascript code right here.
 })( window.GemQuery || jQuery );
   (function( jQuery ){
-  let selectedVar = document.querySelector('div.module');
-  selectedVar.addEventListener('change',()=>{
-    console.log('he')
-  })
+  document.addEventListener('DOMContentLoaded', function () {
+    // Parse the variants data from the JSON element
+    var variantsData = JSON.parse(document.getElementById('VariantsJson').textContent);
+
+    // Get the initial selected variant ID from the element
+    var selectedVar = document.querySelector('div.module').getAttribute('data-current-variant');
+
+    // Get the HTML element where the metafield value will be displayed
+    var metafieldSpan = document.getElementById('variant-metafield-value');
+
+    // Function to update the displayed metafield value based on selectedVar
+    function updateMetafieldValue() {
+        // Find the variant with the matching ID
+        var selectedVariant = variantsData.find(function (variant) {
+            return variant.id === parseInt(selectedVar);
+        });
+
+        // Display the metafield value if available, otherwise show a default message
+        if (selectedVariant && selectedVariant.metafields && selectedVariant.metafields.custom && selectedVariant.metafields.custom.rrp) {
+            metafieldSpan.textContent = selectedVariant.metafields.custom.rrp;
+        } else {
+            metafieldSpan.textContent = 'N/A'; // Fallback text if the metafield value is not available
+        }
+    }
+
+    // Initial call to display the value for the first selected variant
+    updateMetafieldValue();
+
+    // Add a mutation observer to detect changes in the `data-current-variant` attribute
+    var targetNode = document.querySelector('div.module');
+    var observer = new MutationObserver(function (mutationsList) {
+        for (var mutation of mutationsList) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'data-current-variant') {
+                // Update the selected variant value when the attribute changes
+                selectedVar = mutation.target.getAttribute('data-current-variant');
+                updateMetafieldValue(); // Update the metafield value display
+            }
+        }
+    });
+
+    // Start observing the target node for attribute changes
+    observer.observe(targetNode, { attributes: true });
+});
+
+  
 })( window.GemQuery || jQuery );
     (function(jQuery) {
     var $module = jQuery('#m-1725527550851').children('.module');
