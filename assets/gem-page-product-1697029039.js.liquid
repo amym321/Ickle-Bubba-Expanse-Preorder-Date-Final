@@ -270,7 +270,9 @@
 })( window.GemQuery || jQuery );
   (function( jQuery ){
   let selectedVar = document.querySelector('div.module').getAttribute('data-current-variant');
-  console.log('aa',selectedVar)
+  selectedVar.addEventListener('change',()=>{
+    console.log('he')
+  })
 })( window.GemQuery || jQuery );
     (function(jQuery) {
     var $module = jQuery('#m-1725527550851').children('.module');
