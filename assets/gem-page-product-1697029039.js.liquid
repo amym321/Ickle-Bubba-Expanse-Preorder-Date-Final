@@ -269,8 +269,48 @@
   // You can add custom Javascript code right here.
 })( window.GemQuery || jQuery );
   (function( jQuery ){
-  // var $module = jQuery('#m-1728298111948').children('.module');
-  // You can add custom Javascript code right here.
+async function getVariantMetafieldValue(variantId, namespace, key) {
+    // Replace with your Shopify store domain and access token
+    const shopifyDomain = 'ickle-bubba-sandbox.myshopify.com';
+    const storefrontAccessToken = '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';
+    
+    const query = `
+    {
+        productVariant(id: "gid://shopify/ProductVariant/${variantId}") {
+            metafield(namespace: "${namespace}", key: "${key}") {
+                value
+            }
+        }
+    }`;
+
+    try {
+        const response = await fetch(`https://${shopifyDomain}/api/2023-07/graphql.json`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Shopify-Storefront-Access-Token': storefrontAccessToken,
+            },
+            body: JSON.stringify({ query })
+        });
+
+        const result = await response.json();
+
+        if (result.data.productVariant.metafield) {
+            return result.data.productVariant.metafield.value;
+        } else {
+            console.error('Metafield not found for the given variant');
+            return null;
+        }
+    } catch (error) {
+        console.error('Error fetching metafield value:', error);
+        return null;
+    }
+}
+
+// Usage example
+getVariantMetafieldValue('48879177072918', 'custom', 'rrp')
+    .then(value => console.log('Metafield Value:', value))
+    .catch(error => console.error(error))
 })( window.GemQuery || jQuery );
     (function(jQuery) {
     var $module = jQuery('#m-1725527550851').children('.module');
