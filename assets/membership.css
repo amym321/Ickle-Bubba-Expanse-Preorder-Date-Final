@@ -176,3 +176,6 @@
           color: red;
           text-align: center;
       }
+.thank-you .formWrapper{
+  max-width:450px;
+}
