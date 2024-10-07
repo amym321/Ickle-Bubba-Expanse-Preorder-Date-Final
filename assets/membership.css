@@ -206,7 +206,12 @@
 div[data-extraclass="priceWrapper"] > div{
   display:flex;
   align-items:baseline;
+  gap:5px;
 }
 div[data-name="orignalP"]{
   display:none;
+}
+#curVarPrice{
+  font-size: 25px;
+  color: grey;
 }
