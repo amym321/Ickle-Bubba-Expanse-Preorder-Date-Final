@@ -227,10 +227,6 @@ div[data-name="orignalP"]{
 }
 div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price:after{
     content: "SALE";
-    font-size: 12px;
-    position: absolute;
-    bottom: -13px;
-    left: 1px;
 }
 div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price{
     border-right: 1px solid #000;
