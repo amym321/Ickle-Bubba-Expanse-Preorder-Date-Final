@@ -206,3 +206,6 @@
 div[data-extraclass="priceWrapper"] > div{
   display:flex;
 }
+div[data-name="orignalP"]{
+  display:none;
+}
