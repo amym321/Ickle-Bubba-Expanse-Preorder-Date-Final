@@ -194,3 +194,14 @@
   margin: auto;
   margin-top: 30px;
 }
+.thankyou-content img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.discount-badges{
+      display: flex;
+    align-items: center;
+    gap: 10px;
+}
