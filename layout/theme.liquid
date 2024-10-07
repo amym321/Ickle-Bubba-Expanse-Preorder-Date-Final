@@ -350,7 +350,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       console.log('Error fetching customer data:', error);
     }
   }
-let el = document.querySelector('.site-nav__link:has(svg.icon-user)');
+let el = document.querySelector('.site-nav__link:has(svg.icon-user)').setAttribute('href','https://ickle-bubba-sandbox.myshopify.com/pages/membership-page');
         console.log(el)
   {% if customer %}
     checkCustomerByEmail({{customer.email | json }}).then((data)=> {
