@@ -310,10 +310,6 @@ async function getVariantMetafieldValue(variantId, namespace, key) {
     }
 }
 
-// Usage example
-
-
-
 // Function to monitor attribute changes
 function observeAttributeChange(element, attributeName, callback) {
     // Create a new MutationObserver instance
@@ -334,16 +330,24 @@ function observeAttributeChange(element, attributeName, callback) {
 }
 
 // Usage example
-const variantElement = document.querySelector('div.module[data-current-variant]'); // Replace with your element's selector
+const variantElement = document.querySelector('div.module[data-current-variant]');
+
+getVariantMetafieldValue(variantElement.getAttribute('data-current-variant'), 'custom', 'rrp')
+    .then(value => {
+      document.getElementById('curVarPrice').innerHTML = value;
+    })
+    .catch(error => console.error(error));
+    
 
 observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
-
+  
+    // You can add your logic here to handle the change
     getVariantMetafieldValue(newValue, 'custom', 'rrp')
     .then(value => {
       document.getElementById('curVarPrice').innerHTML = value;
     })
     .catch(error => console.error(error));
-    // You can add your logic here to handle the change
+    
 });
 
 })( window.GemQuery || jQuery );
