@@ -188,10 +188,12 @@
 .thankyou-content a{
     background: #000;
     color: #ffffff !important;
-    padding: 3px;
+    padding: 4px;
     font-size: 18px;
     display: block;
-    width: 150px;
+    width: 100%;
+    min-width: 150px;
+    max-width: 200px;
     text-align: center;
     margin: auto;
 }
