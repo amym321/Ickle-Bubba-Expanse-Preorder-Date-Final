@@ -217,7 +217,11 @@ div[data-name="orignalP"]{
   font-weight: 300;
 }
 #curVarPrice:after{
-  content:'RRP';
+    content: "RRP";
+    font-size: 12px;
+    position: absolute;
+    bottom: -13px;
+    left: 1px;
 }
 .gf_product-compare-price{
   border-right: 1px solid #000;
