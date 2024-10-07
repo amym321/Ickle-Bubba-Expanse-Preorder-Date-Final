@@ -216,7 +216,6 @@ div[data-name="orignalP"]{
   color: grey;
   font-weight: 300;
   position: relative;
-  top: -8px;
 }
 #curVarPrice:after{
     content: "RRP";
@@ -238,7 +237,6 @@ div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price{
     padding-right: 14px;
     margin-left: 14px;
     font-weight:400 !important;
-      top: -8px;
 }
 .gf_product-compare-price:after{
   display:none;
