@@ -257,8 +257,11 @@ div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price {
     color: #000 !important;
     font-weight: 600 !important;
     position: relative;
-    padding-left: 15px;
+    padding-left: 14px;
     margin-left: 14px !important;
+    background: linear-gradient(to right, #f7d8d8, #e0e7f9);
+    padding-bottom: 16px;
+    padding-top: 3px;
 }
 div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before{
     content: "";
