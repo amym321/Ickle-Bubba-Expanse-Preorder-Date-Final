@@ -80,7 +80,7 @@ const variantElement = document.querySelector('div.module[data-current-variant]'
 
 getVariantMetafieldValue(variantElement.getAttribute('data-current-variant'), 'custom', 'rrp')
     .then(value => {
-      document.getElementById('curVarPrice').innerHTML = value;
+      document.getElementById('curVarPrice').innerHTML = `£ ${value}`;
     })
     .catch(error => console.error(error));
     
@@ -90,7 +90,7 @@ observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
     // You can add your logic here to handle the change
     getVariantMetafieldValue(newValue, 'custom', 'rrp')
     .then(value => {
-      document.getElementById('curVarPrice').innerHTML = value;
+      document.getElementById('curVarPrice').innerHTML = `£ ${value}`;
     })
     .catch(error => console.error(error));
     
