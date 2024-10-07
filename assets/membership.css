@@ -212,10 +212,13 @@ div[data-name="orignalP"]{
   display:none;
 }
 #curVarPrice{
-  font-size: 25px;
-  color: grey;
-  font-weight: 300;
-  position: relative;
+    font-size: 25px;
+    color: gray;
+    font-weight: 300;
+    position: relative;
+    padding-right: 14px;
+    margin-right: 14px;
+    text-decoration: line-through;
 }
 #curVarPrice:after{
     content: "RRP";
@@ -226,12 +229,19 @@ div[data-name="orignalP"]{
 }
 div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price:before{
     content: "SALE";
-  font-size: 12px;
+    font-size: 12px;
     position: absolute;
     bottom: -9px;
 }
 #curVarPrice:before{
-  content:'';
+    content: "";
+    height: 37px;
+    width: 1px;
+    display: block;
+    background: #000;
+    position: absolute;
+    right: 0;
+    top: 1px;
 }
 .gf_product-compare-price:after{
   display:none;
