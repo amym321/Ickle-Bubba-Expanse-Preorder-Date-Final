@@ -11,7 +11,11 @@
         <p class='discount-badges'><img src='https://cdn.shopify.com/s/files/1/0715/7723/9830/files/panda.jpg?v=1725527880'><span>Limited time offers exclusive for members</span></p>
         <p class='discount-badges'><img src='https://cdn.shopify.com/s/files/1/0715/7723/9830/files/panda.jpg?v=1725527880'><span>Bubble members get extra discounts</span></p>
         <p class='login-text-thank' style='margin-top:15px;'>You must be logged in to see your deals, so get started now!</p>
-        <a href='/account'>LOG IN</a>
+        {% if customer %}
+          <a href='/collections/all'>Browse Product</a>
+        {% else %}
+          <a href='/account'>LOG IN</a>
+        {% endif %}
       </div>  
     </div>
 </div>
