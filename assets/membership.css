@@ -205,7 +205,7 @@
 }
 div[data-extraclass="priceWrapper"] > div{
   display:flex;
-  align-items: center;
+  align-items:baseline;
 }
 div[data-name="orignalP"]{
   display:none;
