@@ -255,4 +255,5 @@ div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after{
     position: absolute;
     bottom: -13px;
     left: 0;
+  font-weight: 500;
 }
