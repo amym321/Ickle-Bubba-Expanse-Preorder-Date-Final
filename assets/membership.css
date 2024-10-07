@@ -277,7 +277,7 @@ div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after{
     content: "BUBBLE PRICE";
     font-size: 12px;
     position: absolute;
-    bottom: -13px;
+    bottom: 3px;
     left: 16px;
     font-weight: 500;
 }
