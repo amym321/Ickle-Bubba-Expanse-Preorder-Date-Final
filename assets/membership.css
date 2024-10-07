@@ -224,3 +224,6 @@ div[data-name="orignalP"]{
     margin-left: 14px;
     margin-right: 14px !important;
 }
+.gf_product-compare-price:after{
+  display:none;
+}
