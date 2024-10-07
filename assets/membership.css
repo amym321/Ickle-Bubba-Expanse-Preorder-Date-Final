@@ -206,7 +206,6 @@
 div[data-extraclass="priceWrapper"] > div{
   display:flex;
   align-items:baseline;
-  gap:5px;
   padding:0;
 }
 div[data-name="orignalP"]{
