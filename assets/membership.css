@@ -327,9 +327,9 @@ div[data-name="orignalP1"] {
   display: none;
 }
 
-div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-compare-price {
+/* div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-compare-price {
   text-decoration: line-through;
-}
+} */
 div[data-extraclass="priceWrapper"] #m-1728383719364" .gf_product-compare-price {
   text-decoration: line-through;
 }
