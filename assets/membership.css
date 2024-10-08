@@ -333,6 +333,9 @@ div[data-name="orignalP1"] {
 div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-compare-price {
   text-decoration: line-through;
 }
+.userExist div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-compare-price {
+  text-decoration: none;
+}
 div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-compare-price:before {
   content: "RRP";
   font-size: 12px;
