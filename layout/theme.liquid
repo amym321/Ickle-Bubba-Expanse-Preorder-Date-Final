@@ -272,23 +272,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   {% endif %}
 <!--End_Gem_Page_Footer_Script-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <style>
     .gempage-editing .transition-body {
       opacity:1 !important;
@@ -355,11 +338,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if(data === 401){
         document.querySelector('#membership-form').style.display = 'none';
         document.querySelector('.site-nav__link:has(svg.icon-user)').setAttribute('href','https://ickle-bubba-sandbox.myshopify.com/pages/membership-page');
-        document.querySelector('div[data-name="orignalP"]').style.display = 'block';
+        document.querySelector('div[data-name="orignalP1"]').style.display = 'block';
         document.querySelector('body.template-product').classList.add('userExist');
       }else{
         document.querySelector('#membership-form').style.display = 'block';
-        document.querySelector('div[data-name="orignalP"]').style.display = 'none';
+        document.querySelector('div[data-name="orignalP1"]').style.display = 'none';
         document.querySelector('body.template-product').classList.add('userNotExist');
       }
     })
