@@ -283,21 +283,18 @@ div[data-name="orignalP"] {
   display: none;
 }
 
+div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-compare-price {
+  text-decoration: line-through;
+}
 div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price:before {
-  content: "SALE";
+  content: "RRP";
   font-size: 12px;
   position: absolute;
   bottom: -9px;
 }
-
-.userNotExist div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-compare-price {
-  text-decoration: line-through;
+.userExist div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price:before {
+  content: "SALE";
 }
-
-.userNotExist div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price:before {
-  content: "RRP";
-}
-
 .gf_product-compare-price:after {
   display: none;
 }
