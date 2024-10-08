@@ -268,7 +268,7 @@ div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before{
     display: block;
     background: #000;
     position: absolute;
-    left: 14px;
+    left: -14px;
     top: 1px;
 }
 div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after{
