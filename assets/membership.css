@@ -269,6 +269,11 @@ div[data-name="orignalP1"] {
   margin-right: 14px;
   text-decoration: line-through;
 }
+@media screen and (max-width:767px){
+  #curVarPrice {
+    font-size: 21px;
+  }
+}
 
 #curVarPrice1 {
   font-size: 25px;
