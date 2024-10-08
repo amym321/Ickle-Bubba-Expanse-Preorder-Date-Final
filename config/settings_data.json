@@ -80,11 +80,11 @@
     "cart_collection": "",
     "cart_notes_enable": false,
     "cart_terms_conditions_enable": false,
-    "social_facebook_link": "https:\/\/www.facebook.com\/icklebubbaglobal",
-    "social_pinterest_link": "https:\/\/www.pinterest.co.uk\/icklebubba\/",
-    "social_instagram_link": "https:\/\/www.instagram.com\/icklebubba",
-    "social_tiktok_link": "https:\/\/www.tiktok.com\/@icklebubbaglobal",
-    "favicon": "shopify:\/\/shop_images\/IB-Favicon.png",
+    "social_facebook_link": "https://www.facebook.com/icklebubbaglobal",
+    "social_pinterest_link": "https://www.pinterest.co.uk/icklebubba/",
+    "social_instagram_link": "https://www.instagram.com/icklebubba",
+    "social_tiktok_link": "https://www.tiktok.com/@icklebubbaglobal",
+    "favicon": "shopify://shop_images/IB-Favicon.png",
     "search_type": "product,article,page,collection",
     "predictive_image_fill": false,
     "show_breadcrumbs": true,
@@ -125,7 +125,7 @@
           "ad2bad15-29dc-46a4-a196-84f030533acd": {
             "type": "logo",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/IB-main-logo-01.png",
+              "logo": "shopify://shop_images/IB-main-logo-01.png",
               "desktop_logo_width": 200,
               "mobile_logo_width": 140
             }
@@ -163,7 +163,7 @@
           "popup_seconds": 5,
           "popup_days": 30,
           "popup_title": "Save 10% off your first purchase",
-          "popup_text": "<p>Sign up today and we&#x27;ll send you a 10% discount code towards your first purchase.<\/p>",
+          "popup_text": "<p>Sign up today and we&#x27;ll send you a 10% discount code towards your first purchase.</p>",
           "image_position": "left",
           "color_scheme": "3",
           "show_social_icons": false,
@@ -188,7 +188,7 @@
             "settings": {
               "enable_image": true,
               "title": "Site-wide promotion",
-              "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+              "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
               "button_label": "Optional button",
               "button_link": "",
               "color_scheme": "1"
@@ -199,7 +199,7 @@
             "settings": {
               "enable_image": true,
               "title": "Site-wide promotion",
-              "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+              "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
               "button_label": "Optional button",
               "button_link": "",
               "color_scheme": "3"
@@ -210,7 +210,7 @@
             "settings": {
               "enable_image": true,
               "title": "Site-wide promotion",
-              "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+              "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
               "button_label": "Optional button",
               "button_link": "",
               "color_scheme": "2"
@@ -244,14 +244,14 @@
           "0b066516-effd-470b-ba3b-fc9f69d6c6ae": {
             "type": "announcement",
             "settings": {
-              "richtext": "<p>Hassle-free returns. 30-day postage paid returns<\/p>",
+              "richtext": "<p>Hassle-free returns. 30-day postage paid returns</p>",
               "richtext_mobile": ""
             }
           },
           "cff431d4-9a3a-4622-a731-bd2d4c67a45c": {
             "type": "announcement",
             "settings": {
-              "richtext": "<p>This is a test<\/p><p><\/p>",
+              "richtext": "<p>This is a test</p><p></p>",
               "richtext_mobile": ""
             }
           }
@@ -305,7 +305,7 @@
         ],
         "settings": {
           "show_newsletter": true,
-          "newsletter_richtext": "<p>Subscribe today and get 10% off your first purchase<\/p>",
+          "newsletter_richtext": "<p>Subscribe today and get 10% off your first purchase</p>",
           "footer_main_menu": true,
           "show_copyright": true,
           "copyright_text": "",
@@ -326,11 +326,11 @@
           "color_scheme": "none",
           "blur_image": false,
           "heading": "Confirm your age",
-          "text": "<p>Are you 18 years old or older?<\/p>",
+          "text": "<p>Are you 18 years old or older?</p>",
           "decline_button_label": "No I'm not",
           "approve_button_label": "Yes I am",
           "decline_heading": "Come back when you're older",
-          "decline_text": "<p>Sorry, the content of this store can't be seen by a younger audience. Come back when you're older.<\/p>",
+          "decline_text": "<p>Sorry, the content of this store can't be seen by a younger audience. Come back when you're older.</p>",
           "return_button_label": "Oops, I entered incorrectly"
         }
       },
@@ -351,34 +351,34 @@
     ],
     "blocks": {
       "6478312753674380289": {
-        "type": "shopify:\/\/apps\/gempages-landing-page-builder\/blocks\/embed-gp-script-head\/20b379d4-1b20-474c-a6ca-665c331919f3",
+        "type": "shopify://apps/gempages-landing-page-builder/blocks/embed-gp-script-head/20b379d4-1b20-474c-a6ca-665c331919f3",
         "disabled": false,
         "settings": {
         }
       },
       "3b1d8bef-5d38-480b-b1b6-11e7e7ff3103": {
-        "type": "shopify:\/\/apps\/boost-ai-search-discovery\/blocks\/boost-sd-ssr\/7fc998ae-a150-4367-bab8-505d8a4503f7",
+        "type": "shopify://apps/boost-ai-search-discovery/blocks/boost-sd-ssr/7fc998ae-a150-4367-bab8-505d8a4503f7",
         "disabled": false,
         "settings": {
           "templateId": "bdAqk5v8Wf"
         }
       },
       "18228966181090706294": {
-        "type": "shopify:\/\/apps\/selleasy\/blocks\/app-embed\/790c1a03-a71f-4bc1-9869-00dad526d3c2",
+        "type": "shopify://apps/selleasy/blocks/app-embed/790c1a03-a71f-4bc1-9869-00dad526d3c2",
         "disabled": false,
         "settings": {
           "storefrontAccessToken": ""
         }
       },
       "16422382648059844097": {
-        "type": "shopify:\/\/apps\/boost-ai-search-discovery\/blocks\/instant-search-app-embedded\/7fc998ae-a150-4367-bab8-505d8a4503f7",
+        "type": "shopify://apps/boost-ai-search-discovery/blocks/instant-search-app-embedded/7fc998ae-a150-4367-bab8-505d8a4503f7",
         "disabled": false,
         "settings": {
         }
       },
       "17595556821664008138": {
-        "type": "shopify:\/\/apps\/zoorix-bundle-kit\/blocks\/zoorix-head\/51fffd07-f9df-4d6a-b901-6d14b243dcad",
-        "disabled": true,
+        "type": "shopify://apps/zoorix-bundle-kit/blocks/zoorix-head/51fffd07-f9df-4d6a-b901-6d14b243dcad",
+        "disabled": false,
         "settings": {
         }
       }
@@ -614,7 +614,7 @@
             "popup_seconds": 20,
             "popup_days": 30,
             "popup_title": "Get 10% off your first purchase.",
-            "popup_text": "<p>Sign up today and we&#x27;ll send you a 10% discount code towards your first purchase. Some restrictions apply.<\/p>",
+            "popup_text": "<p>Sign up today and we&#x27;ll send you a 10% discount code towards your first purchase. Some restrictions apply.</p>",
             "color_scheme": "2",
             "enable_newsletter": true,
             "button_label": "Optional button"
@@ -714,7 +714,7 @@
           ],
           "settings": {
             "show_newsletter": true,
-            "newsletter_richtext": "<p>Subscribe today and get 10% off your first purchase<\/p>",
+            "newsletter_richtext": "<p>Subscribe today and get 10% off your first purchase</p>",
             "show_copyright": true,
             "copyright_text": "",
             "policies_menu": "policies"
@@ -836,7 +836,7 @@
             "popup_seconds": 20,
             "popup_days": 30,
             "popup_title": "Sign up and save",
-            "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.<\/p>",
+            "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.</p>",
             "color_scheme": "3",
             "enable_newsletter": true,
             "button_label": "Optional button"
@@ -937,7 +937,7 @@
           ],
           "settings": {
             "show_newsletter": true,
-            "newsletter_richtext": "<p>Subscribe today and get 10% off your first purchase<\/p>",
+            "newsletter_richtext": "<p>Subscribe today and get 10% off your first purchase</p>",
             "show_copyright": true
           }
         },
