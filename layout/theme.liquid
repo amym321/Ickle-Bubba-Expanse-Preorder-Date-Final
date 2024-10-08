@@ -347,7 +347,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     })
   {% else %}
-    document.querySelector('#membership-form').style.display = 'block'
+    document.querySelector('#membership-form').style.display = 'block';
+    document.querySelector('body.template-product').classList.add('userNotExist');
   {% endif %}
   
   
