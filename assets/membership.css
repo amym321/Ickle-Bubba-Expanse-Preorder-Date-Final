@@ -327,10 +327,10 @@ div[data-name="orignalP1"] {
   display: none;
 }
 
-div[data-extraclass=priceWrapper] #m-1725527550854 .gf_product-compare-price {
+div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-compare-price {
   text-decoration: line-through;
 }
-div[data-extraclass=priceWrapper] #m-1728383719364" .gf_product-compare-price {
+div[data-extraclass="priceWrapper"] #m-1728383719364" .gf_product-compare-price {
   text-decoration: line-through;
 }
 div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-compare-price:before {
@@ -386,7 +386,7 @@ div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price {
   margin-left: 28px !important;
 }
 
-div[data-extraclass=priceWrapper] #m-1725527550854 .gf_product-price:before {
+div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   content: "";
   height: 37px;
   width: 1px;
@@ -396,7 +396,7 @@ div[data-extraclass=priceWrapper] #m-1725527550854 .gf_product-price:before {
   left: -6px;
   top: 1px;
 }
-div[data-extraclass=priceWrapper] #m-1728383719364 .gf_product-price:before {
+div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:before {
   content: "";
   height: 37px;
   width: 1px;
@@ -407,10 +407,10 @@ div[data-extraclass=priceWrapper] #m-1728383719364 .gf_product-price:before {
   top: 1px;
 }
 
-.userExist div[data-extraclass=priceWrapper] #m-1725527550854 .gf_product-price:before {
+.userExist div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   left: -14px;
 }
-.userExist div[data-extraclass=priceWrapper] #m-1728383719364 .gf_product-price:before {
+.userExist div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:before {
   left: -14px;
 }
 
