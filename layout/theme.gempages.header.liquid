@@ -284,6 +284,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <style>
     .gempage-editing .transition-body {
       opacity:1 !important;
@@ -324,132 +385,123 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
   let test = 'http://localhost:5000';
   let live = 'https://app.progryss.com';
-  let baseurl = test;
+  let baseurl = live;
+  let setupForm = document.getElementById('setupForm');
 
-let globalCustomer;
-
-// Function to check customer status
-function checkCustomer() {
-  {% if customer %}
-    let customerId = { id: {{ customer.id | json }} };
-
-    const checkCustomerIdInDb = async () => {
-      try {
-        const response = await fetch(`${baseurl}/api/get-company-status`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(customerId)
-        });
-
-        const data = await response.json();
-        globalCustomer = data.object;
-
-        if (response.status === 200) {
-          document.querySelector('#membership-form').style.display = 'none';
-          document.querySelector('#membership-area').style.display = 'flex';
-          document.querySelector('#setupArea select').value = globalCustomer.relationship;
-          document.querySelector('#setupArea input').value = globalCustomer.dueDate;
-        } else {
-          document.querySelector('#membership-form').style.display = 'flex';
-          document.querySelector('#membership-area').style.display = 'none';
-          document.querySelector('.infoPopupMessage').innerHTML = 'You are one step away from becoming a member.';
-        }
-      } catch (error) {
-        console.log('Error fetching customer data:', error);
-      }
-    };
-
-    checkCustomerIdInDb();
-
-  {% else %}
-    console.log('No user logged in');
-    document.querySelector('.infoPopupMessage').innerHTML = 'For a personalized experience, <strong>LOG IN</strong> or <strong>CREATE AN ACCOUNT</strong>.';
-  {% endif %}
-}
-
-// checkCustomer();
-
-// Form submission handling
-let setupForm = document.getElementById('setupForm');
-if (setupForm) {
-  setupForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const sendForm = async () => {
-      const formData = new FormData(event.target);
-      const formObject = {};
-      formData.forEach((value, key) => { formObject[key] = value; });
-console.log('hi')
-console.log(formObject)
-      try {
-        const response = await fetch(`${baseurl}/api/create-company`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formObject)
-        });
-console.log(response)
-        const jsonData = await response.json();
-        console.log(jsonData.message);
-      } catch (error) {
-        console.log('Error in sending form data:', error);
-      }
-    };
-
-    sendForm();
-
-    // setTimeout(() => {
-    //   window.location.href = "/pages/membership-purchase-success";
-    //   checkCustomer();
-    // }, 2000);
-  });
-}
-
-// Edit and update button logic
-let editBtn = document.querySelector('.editForm svg');
-let updateBtn = document.querySelector('#setupArea .membershipButton');
-
-if (editBtn) {
-  editBtn.addEventListener('click', function() {
-    document.querySelector('#area_relationship').disabled = false;
-    document.querySelector('#area_dueDate').disabled = false;
-    updateBtn.style.visibility = 'visible';
-  });
-}
-
-if (updateBtn) {
-  updateBtn.addEventListener('click', async (e) => {
-    e.preventDefault();
-    let rel = document.querySelector('#area_relationship').value;
-    let due = document.querySelector('#area_dueDate').value;
-
-    if (!rel || !due) {
-      alert('Please fill in both fields before submitting.');
-      return;
-    }
-
-    let obj = { relationship: rel, due: due, id: globalCustomer._id };
-
+  // Function to check customer status by email
+  const checkCustomerByEmail = async(email) =>{
     try {
-      const response = await fetch(`${baseurl}/api/update-company`, {
+      const response = await fetch(`${baseurl}/api/get-company-status`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(obj)
-      });
-
-      if (response.ok) {
-        document.querySelector('#area_relationship').disabled = true;
-        document.querySelector('#area_dueDate').disabled = true;
-        updateBtn.style.visibility = 'hidden';
-      } else {
-        console.log('Error updating company');
-      }
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({email:email})
+      }); 
+      const data = await response.json();
+      return response.status
     } catch (error) {
-      console.log('Error updating company:', error);
+      console.log('Error fetching customer data:', error);
     }
-  });
-}
+  }
+
+  {% if customer %}
+    checkCustomerByEmail({{customer.email | json }}).then((data)=> {
+      console.log(data)
+      if(data === 401){
+        document.querySelector('#membership-form').style.display = 'none';
+        document.querySelector('.site-nav__link:has(svg.icon-user)').setAttribute('href','https://ickle-bubba-sandbox.myshopify.com/pages/membership-page');
+        document.querySelector('div[data-name="orignalP"]').style.display = 'block';
+      }else{
+        document.querySelector('#membership-form').style.display = 'block';
+        document.querySelector('div[data-name="orignalP"]').style.display = 'none';
+      }
+    })
+  {% else %}
+    document.querySelector('#membership-form').style.display = 'block'
+  {% endif %}
+  
+  
+  // Form submission handling
+  if (setupForm) {
+    setupForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const sendForm = async () => {
+        const formData = new FormData(event.target);
+        const formObject = {};
+        formData.forEach((value, key) => { formObject[key] = value; });
+        console.log(formObject)
+        let checkStatus = await checkCustomerByEmail(formObject.customerEmail);
+        console.log(checkStatus)
+        if(checkStatus === 200){
+          try {
+            const response = await fetch(`${baseurl}/api/create-company`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(formObject)
+            });
+            const jsonData = await response.json();
+            window.location.href = "/pages/thankyou-page";
+          } catch (error) {
+            console.log('Error in sending form data:', error);
+          }
+        }else{
+            document.querySelector('.membershipformMsg').innerHTML = 'you are already subscribe, Please login';
+        }
+      };
+      sendForm();
+    });
+  }
+
+
+
+
+
+  
+// Edit and update button logic
+// let editBtn = document.querySelector('.editForm svg');
+// let updateBtn = document.querySelector('#setupArea .membershipButton');
+
+// if (editBtn) {
+//   editBtn.addEventListener('click', function() {
+//     document.querySelector('#area_relationship').disabled = false;
+//     document.querySelector('#area_dueDate').disabled = false;
+//     updateBtn.style.visibility = 'visible';
+//   });
+// }
+
+// if (updateBtn) {
+//   updateBtn.addEventListener('click', async (e) => {
+//     e.preventDefault();
+//     let rel = document.querySelector('#area_relationship').value;
+//     let due = document.querySelector('#area_dueDate').value;
+
+//     if (!rel || !due) {
+//       alert('Please fill in both fields before submitting.');
+//       return;
+//     }
+
+//     let obj = { relationship: rel, due: due, id: globalCustomer._id };
+
+//     try {
+//       const response = await fetch(`${baseurl}/api/update-company`, {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify(obj)
+//       });
+
+//       if (response.ok) {
+//         document.querySelector('#area_relationship').disabled = true;
+//         document.querySelector('#area_dueDate').disabled = true;
+//         updateBtn.style.visibility = 'hidden';
+//       } else {
+//         console.log('Error updating company');
+//       }
+//     } catch (error) {
+//       console.log('Error updating company:', error);
+//     }
+//   });
+// }
 
   </script>
   </body>
