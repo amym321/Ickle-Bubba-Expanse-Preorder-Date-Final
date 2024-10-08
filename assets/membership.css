@@ -201,4 +201,78 @@
   line-height: normal;
 }
 
-
+ /* price design on pdp */
+div[data-extraclass="priceWrapper"] > div{
+  display:flex;
+  align-items:baseline;
+  padding:0;
+}
+div[data-name="orignalP"]{
+  display:none;
+}
+#curVarPrice:not(:empty):before,#curVarPrice:not(:empty):after{
+  display:block;
+}
+#curVarPrice{
+    font-size: 25px;
+    color: gray;
+    font-weight: 300;
+    position: relative;
+    padding-right: 14px;
+    margin-right: 14px;
+    text-decoration: line-through;
+}
+#curVarPrice:after{
+    content: "RRP";
+    font-size: 12px;
+    position: absolute;
+    bottom: -13px;
+    left: 1px;
+    display:none;
+}
+#curVarPrice:before{
+    content: "";
+    height: 37px;
+    width: 1px;
+    display: block;
+    background: #000;
+    position: absolute;
+    right: 0;
+    top: 1px;
+    display:none;
+}
+div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price:before{
+    content: "SALE";
+    font-size: 12px;
+    position: absolute;
+    bottom: -9px;
+}
+.gf_product-compare-price:after{
+  display:none;
+}
+div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price {
+    color: #000 !important;
+    font-weight: 600 !important;
+    position: relative;
+    margin-left: 28px !important;
+    background: linear-gradient(to right, #f7d8d8, #e0e7f9);
+    padding: 1px 16px 14px 7px;
+}
+div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before{
+    content: "";
+    height: 37px;
+    width: 1px;
+    display: block;
+    background: #000;
+    position: absolute;
+    left: -14px;
+    top: 1px;
+}
+div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after{
+    content: "BUBBLE PRICE";
+    font-size: 12px;
+    position: absolute;
+    bottom: 1px;
+    left: 9px;
+    font-weight: 500;
+}
