@@ -347,6 +347,9 @@ div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-compare-price:b
 }
 .userExist div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-compare-price:before {
   content: "SALE";
+  font-size: 12px;
+  position: absolute;
+  bottom: -9px;
 }
 .userExist div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-compare-price:before {
   content: "SALE";
