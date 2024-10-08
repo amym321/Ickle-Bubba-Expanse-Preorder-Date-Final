@@ -303,14 +303,14 @@ div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price {
   color: #000 !important;
   font-weight: 600 !important;
   position: relative;
-  margin-left: 28px !important;
-  background: linear-gradient(to right, #f7d8d8, #e0e7f9);
+  margin-left: 18px !important;
+  background: none;
   padding: 1px 16px 14px 7px;
 }
 
-.userNotExist div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price {
-  background: none;
-  margin-left: 18px !important;
+.userExist div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price {
+  background: linear-gradient(to right, #f7d8d8, #e0e7f9);
+  margin-left: 28px !important;
 }
 
 div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before {
@@ -320,16 +320,16 @@ div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before {
   display: block;
   background: #000;
   position: absolute;
-  left: -14px;
+  left: -6px;
   top: 1px;
 }
 
-.userNotExist div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before {
-  left: -6px;
+.userExist div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before {
+  left: -14px;
 }
 
 div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after {
-  content: "BUBBLE PRICE";
+  content: "SALE";
   font-size: 12px;
   position: absolute;
   bottom: 1px;
@@ -337,6 +337,6 @@ div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after {
   font-weight: 500;
 }
 
-.userNotExist div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after {
-  content: "SALE";
+.userExist div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after { 
+  content: "BUBBLE PRICE";
 }
