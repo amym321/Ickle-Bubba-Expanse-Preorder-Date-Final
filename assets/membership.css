@@ -247,6 +247,9 @@ div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price:b
     position: absolute;
     bottom: -9px;
 }
+.userNotExist div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price:before{
+    content: "RRP";
+}
 .gf_product-compare-price:after{
   display:none;
 }
