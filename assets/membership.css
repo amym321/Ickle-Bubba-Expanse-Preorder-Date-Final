@@ -261,6 +261,10 @@ div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price {
     background: linear-gradient(to right, #f7d8d8, #e0e7f9);
     padding: 1px 16px 14px 7px;
 }
+.userNotExist div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price {
+    background:none;
+    margin-left: 18px !important;
+}
 div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before{
     content: "";
     height: 37px;
@@ -270,6 +274,9 @@ div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before{
     position: absolute;
     left: -14px;
     top: 1px;
+}
+.userNotExist div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before{
+    left: -6px;
 }
 div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after{
     content: "BUBBLE PRICE";
