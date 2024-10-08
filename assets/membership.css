@@ -305,7 +305,7 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price {
   position: relative;
   margin-left: 18px !important;
   background: none;
-  padding: 1px 16px 14px 7px;
+  padding: 1px 16px 14px 7px !important;
 }
 
 .userExist div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price {
