@@ -257,11 +257,9 @@ div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price {
     color: #000 !important;
     font-weight: 600 !important;
     position: relative;
-    padding-left: 14px;
-    margin-left: 14px !important;
+    margin-left: 28px !important;
     background: linear-gradient(to right, #f7d8d8, #e0e7f9);
-    padding-bottom: 13px;
-    padding-top: 3px;
+    padding: 4px 16px 14px 7px;
 }
 div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before{
     content: "";
@@ -277,7 +275,7 @@ div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after{
     content: "BUBBLE PRICE";
     font-size: 12px;
     position: absolute;
-    bottom: 0px;
-    left: 16px;
+    bottom: 1px;
+    left: 9px;
     font-weight: 500;
 }
