@@ -283,23 +283,23 @@ div[data-name="orignalP"] {
   display: none;
 }
 
-div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-compare-price {
+div[data-extraclass=priceWrapper] #m-1725527550854 .gf_product-compare-price {
   text-decoration: line-through;
 }
-div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price:before {
+div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-compare-price:before {
   content: "RRP";
   font-size: 12px;
   position: absolute;
   bottom: -9px;
 }
-.userExist div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price:before {
+.userExist div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-compare-price:before {
   content: "SALE";
 }
 .gf_product-compare-price:after {
   display: none;
 }
 
-div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price {
+div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price {
   color: #000 !important;
   font-weight: 600 !important;
   position: relative;
@@ -308,12 +308,12 @@ div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price {
   padding: 1px 16px 14px 7px;
 }
 
-.userExist div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price {
+.userExist div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price {
   background: linear-gradient(to right, #f7d8d8, #e0e7f9);
   margin-left: 28px !important;
 }
 
-div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before {
+div[data-extraclass=priceWrapper] #m-1725527550854 .gf_product-price:before {
   content: "";
   height: 37px;
   width: 1px;
@@ -324,11 +324,11 @@ div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before {
   top: 1px;
 }
 
-.userExist div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before {
+.userExist div[data-extraclass=priceWrapper] #m-1725527550854 .gf_product-price:before {
   left: -14px;
 }
 
-div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after {
+div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:after {
   content: "SALE";
   font-size: 12px;
   position: absolute;
@@ -337,6 +337,6 @@ div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after {
   font-weight: 500;
 }
 
-.userExist div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after { 
+.userExist div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:after { 
   content: "BUBBLE PRICE";
 }
