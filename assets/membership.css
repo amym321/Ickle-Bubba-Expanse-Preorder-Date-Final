@@ -1,294 +1,345 @@
-.header__icons:has(.infoPopup){
-    position: relative;
+.header__icons:has(.infoPopup) {
+  position: relative;
 }
-.infoPopup{
-    background-color: #fecdc9;
-    position: absolute;
-    top: 41px;
-    right: 73px;
-    z-index: 11111111111;
-    width: 260px;
-    padding: 12px 14px;
-    border-radius: 7px;
-    box-shadow: 6px 6px 3px #0000001f;
+
+.infoPopup {
+  background-color: #fecdc9;
+  position: absolute;
+  top: 41px;
+  right: 73px;
+  z-index: 11111111111;
+  width: 260px;
+  padding: 12px 14px;
+  border-radius: 7px;
+  box-shadow: 6px 6px 3px #0000001f;
 }
-.infoPopup:has(.infoPopupMessage:empty){
-    display:none;
+
+.infoPopup:has(.infoPopupMessage:empty) {
+  display: none;
 }
-.infoPopupMessage{
-    margin: 0;
-    line-height: 15px;
-    font-size:14px;
+
+.infoPopupMessage {
+  margin: 0;
+  line-height: 15px;
+  font-size: 14px;
 }
-#membership-form{
-    display:none;
+
+#membership-form {
+  display: none;
 }
-.formField{
-    margin-bottom:12px;
+
+.formField {
+  margin-bottom: 12px;
 }
-.membershipButton{
-    padding: 8px 10px;
-    background: #fecdc9;
-    margin-top: 45px;
-    width: 100%;
-    font-size: 19px;
-    text-transform: uppercase;
-    border: none !important;
-    line-height: normal;
-    color: #474747;
-    cursor:pointer;
+
+.membershipButton {
+  padding: 8px 10px;
+  background: #fecdc9;
+  margin-top: 45px;
+  width: 100%;
+  font-size: 19px;
+  text-transform: uppercase;
+  border: none !important;
+  line-height: normal;
+  color: #474747;
+  cursor: pointer;
 }
+
 .membershipWrapper input[type="text"],
 .formWrapper input[type="date"],
-.formWrapper select{
-    width:100%;
-    height: 40px;
-    padding: 10px;
+.formWrapper select {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
 }
+
 .membershipWrapper input[type="text"]:focus-visible,
 .formWrapper input[type="date"]:focus-visible,
-.formWrapper select:focus-visible{
-    outline: none;
-    outline-offset: 0;
-    box-shadow: none;
-    border-color: #000000 !important;
+.formWrapper select:focus-visible {
+  outline: none;
+  outline-offset: 0;
+  box-shadow: none;
+  border-color: #000000 !important;
 }
-.checkboxWrapper{
-    margin-top: 20px;
-    display: flex;
-    gap: 12px;
+
+.checkboxWrapper {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
 }
+
 .formWrapper input,
-.formWrapper select{
-    border:1px solid #000000;
+.formWrapper select {
+  border: 1px solid #000000;
 }
-.formWrapper select{ 
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+
+.formWrapper select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
+
 .formField:has(select) {
-    position:relative;
+  position: relative;
 }
 
-      .editForm svg{
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
-      }
-      #setupArea{
-        padding-top:20px;
-      }
-      #setupArea .membershipButton{
-        visibility:hidden;
-      }
-      .membershipWrapper{
-        margin:50px 0;
-      }
-      .formWrapper{
-        max-width:400px;
-        margin: auto;
-        padding:25px 50px;
-        border: 2px solid #c2c2c2;
-        background-color:#fef2f4;
-      }
-      .formHeader{
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .formHeader > * {
-        margin:0;
-        line-height: normal;
-      }
-      .formHeader h3{
-        margin-bottom:5px;
-        font-weight: 700;
-        font-size: 40px;
-      }
-      #setupForm{
-        padding-top:20px;
-      }
-      .formWrapper label{
-        text-transform: uppercase;
-        font-size: 11px;
-        font-weight: 600;
-      }
-      .newsletterLabel{
-        line-height: normal;
-        font-size: 11px;
-        font-weight: 600;
-        margin:0;
-        position: relative;
-        top: -3px;
-      }
-      .checkboxWrapper input{
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        margin: 0;
-        opacity: 0;
-      }
-      .checkboxWrapper input:checked + label{
-        background-image: url(https://cdn.shopify.com/s/files/1/0446/8182/2364/files/19-191145_check-mark-checkbox-cheque-download-drawing-tick-right.png?v=1726816340);
-        background-size: 20px;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      .checkBox{
-        height: 30px;
-        width: 30px;
-        border: 1px solid silver;
-        display: block;
-        background-color: #fff;
-        border-radius: 3px;
-      }
-      #area_relationship:disabled{
-        background: transparent;
-      }
-      #area_dueDate:disabled{
-        color:rgb(161 156 156);
-      }
+.editForm svg {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
 
-      .formWrapper input[readonly="true"]:focus-visible,
-      .formWrapper input[readonly="true"]{
-        background: transparent;
-        border-color:silver !important;
-        color:silver !important;
-      }
-      .membershipformMsg{
-          margin-top: 30px;
-          margin-bottom: 60px;
-          color: red;
-          text-align: center;
-      }
-.thank-you .formWrapper{
-  padding: 25px 30px;
-  max-width: 450px;
+#setupArea {
+  padding-top: 20px;
 }
-.thankyou-content{
-  margin:30px 0;
-  display:grid;
-  gap:14px;
+
+#setupArea .membershipButton {
+  visibility: hidden;
 }
-.thankyou-content a{
-    background: #000;
-    color: #ffffff !important;
-    padding: 4px;
-    font-size: 18px;
-    display: block;
-    width: 100%;
-    min-width: 150px;
-    max-width: 200px;
-    text-align: center;
-    margin: auto;
+
+.membershipWrapper {
+  margin: 50px 0;
 }
-.thankyou-content img{
-    width: 45px;
-    height: 45px;
-    object-fit: cover;
-    border-radius: 50%;
+
+.formWrapper {
+  max-width: 400px;
+  margin: auto;
+  padding: 25px 50px;
+  border: 2px solid #c2c2c2;
+  background-color: #fef2f4;
 }
-.discount-badges{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom:0;
-  font-size:13px;
+
+.formHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.login-text-thank{
-  font-size:15px;
+
+.formHeader>* {
+  margin: 0;
   line-height: normal;
 }
 
- /* price design on pdp */
-div[data-extraclass="priceWrapper"] > div{
-  display:flex;
-  align-items:baseline;
-  padding:0;
+.formHeader h3 {
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 40px;
 }
-div[data-name="orignalP"]{
-  display:none;
+
+#setupForm {
+  padding-top: 20px;
 }
-#curVarPrice:not(:empty):before,#curVarPrice:not(:empty):after{
-  display:block;
+
+.formWrapper label {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
 }
-#curVarPrice{
-    font-size: 25px;
-    color: gray;
-    font-weight: 300;
-    position: relative;
-    padding-right: 14px;
-    margin-right: 14px;
-    text-decoration: line-through;
+
+.newsletterLabel {
+  line-height: normal;
+  font-size: 11px;
+  font-weight: 600;
+  margin: 0;
+  position: relative;
+  top: -3px;
 }
-#curVarPrice:after{
-    content: "RRP";
-    font-size: 12px;
-    position: absolute;
-    bottom: -13px;
-    left: 1px;
-    display:none;
+
+.checkboxWrapper input {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  opacity: 0;
 }
-#curVarPrice:before{
-    content: "";
-    height: 37px;
-    width: 1px;
-    display: block;
-    background: #000;
-    position: absolute;
-    right: 0;
-    top: 1px;
-    display:none;
+
+.checkboxWrapper input:checked+label {
+  background-image: url(https://cdn.shopify.com/s/files/1/0446/8182/2364/files/19-191145_check-mark-checkbox-cheque-download-drawing-tick-right.png?v=1726816340);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price:before{
-    content: "SALE";
-    font-size: 12px;
-    position: absolute;
-    bottom: -9px;
+
+.checkBox {
+  height: 30px;
+  width: 30px;
+  border: 1px solid silver;
+  display: block;
+  background-color: #fff;
+  border-radius: 3px;
 }
-.userNotExist div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-compare-price{
-  text-decoration:line-through;
+
+#area_relationship:disabled {
+  background: transparent;
 }
-.userNotExist div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price:before{
-    content: "RRP";
+
+#area_dueDate:disabled {
+  color: rgb(161 156 156);
 }
-.gf_product-compare-price:after{
-  display:none;
+
+.formWrapper input[readonly="true"]:focus-visible,
+.formWrapper input[readonly="true"] {
+  background: transparent;
+  border-color: silver !important;
+  color: silver !important;
 }
+
+.membershipformMsg {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  color: red;
+  text-align: center;
+}
+
+.thank-you .formWrapper {
+  padding: 25px 30px;
+  max-width: 450px;
+}
+
+.thankyou-content {
+  margin: 30px 0;
+  display: grid;
+  gap: 14px;
+}
+
+.thankyou-content a {
+  background: #000;
+  color: #ffffff !important;
+  padding: 4px;
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  min-width: 150px;
+  max-width: 200px;
+  text-align: center;
+  margin: auto;
+}
+
+.thankyou-content img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.discount-badges {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0;
+  font-size: 13px;
+}
+
+.login-text-thank {
+  font-size: 15px;
+  line-height: normal;
+}
+
+/* price design on pdp */
+
+div[data-extraclass="priceWrapper"]>div {
+  display: flex;
+  align-items: baseline;
+  padding: 0;
+}
+
+div[data-name="orignalP"] {
+  display: none;
+}
+
+#curVarPrice:not(:empty):before,
+#curVarPrice:not(:empty):after {
+  display: block;
+}
+
+#curVarPrice {
+  font-size: 25px;
+  color: gray;
+  font-weight: 300;
+  position: relative;
+  padding-right: 14px;
+  margin-right: 14px;
+  text-decoration: line-through;
+}
+
+#curVarPrice:after {
+  content: "RRP";
+  font-size: 12px;
+  position: absolute;
+  bottom: -13px;
+  left: 1px;
+  display: none;
+}
+
+#curVarPrice:before {
+  content: "";
+  height: 37px;
+  width: 1px;
+  display: block;
+  background: #000;
+  position: absolute;
+  right: 0;
+  top: 1px;
+  display: none;
+}
+
+div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price:before {
+  content: "SALE";
+  font-size: 12px;
+  position: absolute;
+  bottom: -9px;
+}
+
+.userNotExist div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-compare-price {
+  text-decoration: line-through;
+}
+
+.userNotExist div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-compare-price:before {
+  content: "RRP";
+}
+
+.gf_product-compare-price:after {
+  display: none;
+}
+
 div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price {
-    color: #000 !important;
-    font-weight: 600 !important;
-    position: relative;
-    margin-left: 28px !important;
-    background: linear-gradient(to right, #f7d8d8, #e0e7f9);
-    padding: 1px 16px 14px 7px;
+  color: #000 !important;
+  font-weight: 600 !important;
+  position: relative;
+  margin-left: 28px !important;
+  background: linear-gradient(to right, #f7d8d8, #e0e7f9);
+  padding: 1px 16px 14px 7px;
 }
+
 .userNotExist div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price {
-    background:none;
-    margin-left: 18px !important;
+  background: none;
+  margin-left: 18px !important;
 }
-div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before{
-    content: "";
-    height: 37px;
-    width: 1px;
-    display: block;
-    background: #000;
-    position: absolute;
-    left: -14px;
-    top: 1px;
+
+div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before {
+  content: "";
+  height: 37px;
+  width: 1px;
+  display: block;
+  background: #000;
+  position: absolute;
+  left: -14px;
+  top: 1px;
 }
-.userNotExist div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before{
-    left: -6px;
+
+.userNotExist div[data-extraclass=priceWrapper] #m-1725527550851 .gf_product-price:before {
+  left: -6px;
 }
-div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after{
-    content: "BUBBLE PRICE";
-    font-size: 12px;
-    position: absolute;
-    bottom: 1px;
-    left: 9px;
-    font-weight: 500;
+
+div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after {
+  content: "BUBBLE PRICE";
+  font-size: 12px;
+  position: absolute;
+  bottom: 1px;
+  left: 9px;
+  font-weight: 500;
 }
-.userNotExist div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after{
-    content: "SALE";
+
+.userNotExist div[data-extraclass="priceWrapper"] #m-1725527550851 .gf_product-price:after {
+  content: "SALE";
 }
