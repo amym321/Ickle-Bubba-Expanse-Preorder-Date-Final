@@ -366,7 +366,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const sendForm = async () => {
         const formData = new FormData(event.target);
         const formObject = {};
-        formData.forEach((value, key) => { formObject[key] = value; });
+        formObject.newsletter = "FALSE";
+        formData.forEach((value, key) => {
+          if (key === 'newsletter') {
+            formObject[key] = "TRUE";
+          } else {
+            formObject[key] = value;
+          }
+        });
         console.log(formObject)
         let checkStatus = await checkCustomerByEmail(formObject.customerEmail);
         console.log(checkStatus)
