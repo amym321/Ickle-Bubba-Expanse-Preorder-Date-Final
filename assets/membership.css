@@ -441,3 +441,10 @@ div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:after {
 .userExist div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:after { 
   content: "BUBBLE PRICE";
 }
+
+.hideCollectionPrice{
+  display:none;
+}
+.showCollectionPrice{
+  display:inline-block;
+}
