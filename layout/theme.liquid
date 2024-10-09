@@ -347,6 +347,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           document.querySelector('div[data-name="orignalP"]').style.display = 'block';
         }
         let collectionPrice = document.querySelectorAll('.collectionPrice');
+        console.log(collectionPrice)
         Array.from(collectionPrice).forEach((element)=>{
           element.classList.remove('hideCollectionPrice');
         })
