@@ -347,9 +347,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           document.querySelector('div[data-name="orignalP"]').style.display = 'block';
         }
         let collectionPrice = document.querySelectorAll('collectionPrice');
-        collectionPrice.forEach((element)=>{
-          element.classList.remove('hideCollectionPrice');
-        })
+        console.log(collectionPrice)
+        // collectionPrice.forEach((element)=>{
+        //   element.classList.remove('hideCollectionPrice');
+        // })
         
       }else{
         document.querySelector('#membership-form').style.display = 'block';
