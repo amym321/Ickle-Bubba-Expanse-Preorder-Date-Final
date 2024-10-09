@@ -365,23 +365,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const formObject = {};
         formData.forEach((value, key) => { formObject[key] = value; });
         console.log(formObject)
-        let checkStatus = await checkCustomerByEmail(formObject.customerEmail);
-        console.log(checkStatus)
-        if(checkStatus === 200){
-          try {
-            const response = await fetch(`${baseurl}/api/create-company`, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(formObject)
-            });
-            const jsonData = await response.json();
-            // window.location.href = "/pages/thankyou-page";
-          } catch (error) {
-            console.log('Error in sending form data:', error);
-          }
-        }else{
-            document.querySelector('.membershipformMsg').innerHTML = 'you are already subscribe, Please login';
-        }
+        // let checkStatus = await checkCustomerByEmail(formObject.customerEmail);
+        // console.log(checkStatus)
+        // if(checkStatus === 200){
+        //   try {
+        //     const response = await fetch(`${baseurl}/api/create-company`, {
+        //       method: 'POST',
+        //       headers: { 'Content-Type': 'application/json' },
+        //       body: JSON.stringify(formObject)
+        //     });
+        //     const jsonData = await response.json();
+        //     window.location.href = "/pages/thankyou-page";
+        //   } catch (error) {
+        //     console.log('Error in sending form data:', error);
+        //   }
+        // }else{
+        //     document.querySelector('.membershipformMsg').innerHTML = 'you are already subscribe, Please login';
+        // }
       };
       sendForm();
     });
