@@ -366,11 +366,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const sendForm = async () => {
         const formData = new FormData(event.target);
         const formObject = {};
-        formObject.newsletter = "FALSE";
         formData.forEach((value, key) => {
           if (key === 'newsletter') {
-            formObject[key] = "TRUE";
-          } else {
+            formObject[key] = value == "on" ? "TRUE" : "FALSE";
+          }else if (key === 'dueDate') {
+            const date = new Date(value);
+            if (!isNaN(date)) {
+              formObject[key] = Math.floor(date.getTime() / 1000);
+            }
+          }else {
             formObject[key] = value;
           }
         });
