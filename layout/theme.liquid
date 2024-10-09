@@ -312,6 +312,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="{{ 'membership.js' | asset_url }}" defer="defer"></script>
 
 <script>
+  document.addEventListener('DOMContentLoaded', function() {
   let test = 'http://localhost:5000';
   let live = 'https://app.progryss.com';
   let baseurl = test;
@@ -470,7 +471,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-
+  })
   </script>
   </body>
 </html>
