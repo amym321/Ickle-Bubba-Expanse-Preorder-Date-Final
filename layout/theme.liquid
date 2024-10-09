@@ -378,7 +378,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             formObject[key] = value;
           }
         });
-        console.log(formObject)
+        setTimeout(()=>{
+          console.log(formObject)
+        },3000)
         let checkStatus = await checkCustomerByEmail(formObject.customerEmail);
         console.log(checkStatus)
         if(checkStatus === 200){
