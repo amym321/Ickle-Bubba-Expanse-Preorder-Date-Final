@@ -190,6 +190,7 @@
 <style>@import url(//fonts.googleapis.com/css?family=Abril+Fatface|Amaranth|Anton|Arvo|Architects+Daughter|Berkshire+Swash|Bevan|Bitter|B612+Mono:400,700|Caveat|Chewy|Chilanka|Comfortaa|Concert+One|Courgette|Domine|Frijole|Fjalla+One|Josefin+Slab|Gloria+Hallelujah|Hepta+Slab:400,500,600,700|Josefin+Sans:400,600,700|Kaushan+Script|Knewave|Lexend+Mega|Libre+Baskerville|Lobster|Montserrat|Mansalva|Old+Standard+TT|Oleo+Script|Open+Sans|Orbitron:400,500,700|Oswald|PT+Sans|Pacifico|Passion+One|Permanent+Marker|Playfair+Display|Poppins|Prata|PT+Mono|Quicksand:400,500,600,700|Raleway|Righteous|Roboto|Rubik|Roboto:400,500,700|Satisfy|Shrikhand|Ubuntu|Work+Sans);</style>{% render 'gp-head' %}
 
 {{ 'membership.css' | asset_url | stylesheet_tag: preload: true }}
+
 </head>
 
 <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}" data-transitions="{{ settings.animate_page_transitions }}" data-button_style="{{ settings.button_style }}" data-edges="{{ settings.roundness }}" data-type_header_capitalize="{{ settings.type_header_capitalize }}" data-swatch_style="{{ settings.swatch_style }}" data-grid-style="{{ settings.product_grid_style }}">
@@ -273,85 +274,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <style>
     .gempage-editing .transition-body {
       opacity:1 !important;
@@ -392,7 +314,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
   let test = 'http://localhost:5000';
   let live = 'https://app.progryss.com';
-  let baseurl = live;
+  let baseurl = test;
   let setupForm = document.getElementById('setupForm');
 
   // Function to check customer status by email
@@ -418,17 +340,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if(data === 401){
         document.querySelector('#membership-form').style.display = 'none';
         document.querySelector('.site-nav__link:has(svg.icon-user)').setAttribute('href','https://ickle-bubba-sandbox.myshopify.com/pages/membership-page');
+        document.querySelector('div[data-name="orignalP1"]').style.display = 'block';
         document.querySelector('div[data-name="orignalP"]').style.display = 'block';
+        let pdpBody = document.querySelector('body.template-product')
+        pdpBody ? pdpBody.classList.add('userExist') : '';
       }else{
         document.querySelector('#membership-form').style.display = 'block';
+        document.querySelector('div[data-name="orignalP1"]').style.display = 'none';
         document.querySelector('div[data-name="orignalP"]').style.display = 'none';
+        let pdpBody = document.querySelector('body.template-product')
+        pdpBody ? pdpBody.classList.add('userNotExist') : '';
       }
     })
   {% else %}
-    document.querySelector('#membership-form').style.display = 'block'
+    document.querySelector('#membership-form').style.display = 'block';
+    let pdpBody = document.querySelector('body.template-product')
+    pdpBody ? pdpBody.classList.add('userNotExist') : '';
   {% endif %}
   
-  
+  console.log(setupForm)
   // Form submission handling
   if (setupForm) {
     setupForm.addEventListener('submit', function(event) {
@@ -436,8 +366,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const sendForm = async () => {
         const formData = new FormData(event.target);
         const formObject = {};
-        formData.forEach((value, key) => { formObject[key] = value; });
-        console.log(formObject)
+        formData.forEach((value, key) => {
+          if (key === 'newsletter') {
+            formObject[key] = value == "on" ? "TRUE" : "FALSE";
+          }else if (key === 'dueDate') {
+            const date = new Date(value);
+            if (!isNaN(date)) {
+              formObject[key] = Math.floor(date.getTime() / 1000);
+            }
+          }else {
+            formObject[key] = value;
+          }
+        });
+        setTimeout(()=>{
+          console.log(formObject)
+        },3000)
         let checkStatus = await checkCustomerByEmail(formObject.customerEmail);
         console.log(checkStatus)
         if(checkStatus === 200){
@@ -448,7 +391,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               body: JSON.stringify(formObject)
             });
             const jsonData = await response.json();
-            window.location.href = "/pages/thankyou-page";
+            // window.location.href = "/pages/thankyou-page";
           } catch (error) {
             console.log('Error in sending form data:', error);
           }
@@ -509,6 +452,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 //     }
 //   });
 // }
+
+
+
+
+
+
 
   </script>
   </body>
