@@ -421,7 +421,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-
+let closePopup = document.querySelector('.infoPopupClose');
+if(closePopup){
+  closePopup.addEventListener('click',()=>{
+    document.querySelector('.infoPopup').style.display = 'none';
+  })
+}
 
   
 // Edit and update button logic
