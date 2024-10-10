@@ -44,7 +44,9 @@
   color: #474747;
   cursor: pointer;
 }
-
+.membershipButton[disabled]{
+  background: silver !important;
+}
 .membershipWrapper input[type="text"],
 .formWrapper input[type="date"],
 .formWrapper select {
