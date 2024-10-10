@@ -414,6 +414,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             document.querySelector('.membershipformMsg').innerHTML = 'you are already subscribe, Please login';
         }
       };
+      document.querySelector('.membershipButton').disabled = true;
+      document.querySelector('.membershipButton').style.background = 'silver !important';
       sendForm();
     });
   }
