@@ -369,6 +369,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.querySelector('#membership-form').style.display = 'block';
     let pdpBody = document.querySelector('body.template-product')
     pdpBody ? pdpBody.classList.add('userNotExist') : '';
+    document.querySelector('.infoPopupMessage').innerHTML = 'For a personalized experience, <strong>LOG IN</strong> or <strong>CREATE AN ACCOUNT</strong>.';
   {% endif %}
   
   console.log(setupForm)
