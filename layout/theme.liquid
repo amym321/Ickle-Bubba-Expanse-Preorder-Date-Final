@@ -313,12 +313,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
   
-localStorage.setItem('popupState','true');
+
 let popupState = localStorage.getItem('popupState');
-if(popupState == 'true'){
-  document.querySelector('.infoPopup').style.display = 'block';
-}else{
+if(popupState == 'false'){
   document.querySelector('.infoPopup').style.display = 'none';
+}else{
+  document.querySelector('.infoPopup').style.display = 'block';
 }
 let closePopup = document.querySelector('.infoPopupClose');
 if(closePopup){
