@@ -34,7 +34,7 @@
 
 .membershipButton {
   padding: 8px 10px;
-  background: #fecdc9;
+  background: #fecdc9 !important;
   margin-top: 45px;
   width: 100%;
   font-size: 19px;
