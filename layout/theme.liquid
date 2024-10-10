@@ -314,7 +314,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
   
 localStorage.setItem('popupState','true');
-let popupState = localStorage('popupState');
+let popupState = localStorage.getItem('popupState');
 if(popupState == 'true'){
   document.querySelector('.infoPopup').style.display = 'block';
 }else{
