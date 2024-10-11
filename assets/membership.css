@@ -452,24 +452,3 @@ div[data-name="orignalP1"],div[data-name="orignalP"]{
     font-size: 21px;
   }
 }
-
-/* .bubblePricing .metaPriceRRP:before {
-  content: "";
-  height: 37px;
-  width: 1px;
-  display: block;
-  background: #000;
-  position: absolute;
-  right: 0;
-  top: 1px;
-  display: none;
-}
-
-.bubblePricing .metaPriceRRP:after {
-  content: "RRP";
-  font-size: 12px;
-  position: absolute;
-  bottom: -13px;
-  left: 1px;
-  display: none;
-} */
