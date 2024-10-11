@@ -454,8 +454,6 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
 }
 
 .normalPricing:has(.gf_product-compare-price:not(:empty)) .gf_product-price {
-  color: #000 !important;
-  font-weight: 600 !important;
   position: relative;
   margin-left: 18px !important;
   background: none;
