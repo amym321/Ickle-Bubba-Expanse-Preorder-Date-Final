@@ -329,15 +329,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 //   })
 // }
 
-{% if customer %}
-{% else %}
-  let memberPopup = document.querySelector('.infoPopup');
-  let formThankLocation = window.location.pathname;
-    console.log(formThankLocation)
-  if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
-    memberPopup.style.display = 'block';
-  }
-{% endif %}
+
 
 
   
@@ -364,9 +356,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   }
 
+  let memberPopup = document.querySelector('.infoPopup');
+  let formThankLocation = window.location.pathname;
+  {% if customer %}
+      checkCustomerByEmail({{customer.email | json }}).then((data)=> {
+        if(data === 401){
+
+
+          
+        }else{
+          if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
+            memberPopup.style.display = 'block';
+          } 
+        }
+      }
+  {% else %}
+    if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
+      memberPopup.style.display = 'block';
+    }
+  {% endif %}
+
   {% if customer %}
     checkCustomerByEmail({{customer.email | json }}).then((data)=> {
-      console.log(data)
       if(data === 401){
         document.querySelector('#membership-form').style.display = 'none';
         document.querySelector('.site-nav__link:has(svg.icon-user)').setAttribute('href','https://ickle-bubba-sandbox.myshopify.com/pages/membership-page');
