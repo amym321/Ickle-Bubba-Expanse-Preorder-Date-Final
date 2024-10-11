@@ -105,8 +105,8 @@
         let pdpBody = document.querySelector('body.template-product')
         pdpBody ? pdpBody.classList.add('userExist') : '';
         if(pdpBody){
-          document.querySelector('div[data-name="orignalP1"]').style.display = 'block';
-          document.querySelector('div[data-name="orignalP"]').style.display = 'block';
+          document.querySelector('div[data-name="orignalP1"]')?.style.display = 'block';
+          document.querySelector('div[data-name="orignalP"]')?.style.display = 'block';
         }
 
         window.onload = function() {
@@ -121,8 +121,8 @@
         let pdpBody = document.querySelector('body.template-product')
         pdpBody ? pdpBody.classList.add('userNotExist') : '';
         if(pdpBody){
-          document.querySelector('div[data-name="orignalP1"]').style.display = 'none';
-          document.querySelector('div[data-name="orignalP"]').style.display = 'none';
+          document.querySelector('div[data-name="orignalP1"]')?.style.display = 'none';
+          document.querySelector('div[data-name="orignalP"]')?.style.display = 'none';
         }
         document.querySelector('.infoPopupMessage').innerHTML = 'You are one step away from Bubble membership - <strong>Complete here!</strong>';
       }
