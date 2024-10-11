@@ -461,7 +461,7 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:after {
   font-weight: 500;
 }
 
-.normalPricing div[data-extraclass="priceWrapper"]:has(:not(.gf_product-compare-price:empty)) .gf_product-price:after {
+.normalPricing div[data-extraclass="priceWrapper"]:has(.gf_product-compare-price:not(:empty)) .gf_product-price:after {
   content: "SALE";
   font-size: 12px;
   position: absolute;
