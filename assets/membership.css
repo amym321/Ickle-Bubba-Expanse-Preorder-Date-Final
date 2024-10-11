@@ -421,11 +421,7 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
 
 
 
-div[data-extraclass="priceWrapper"]>div {
-  display: flex;
-  align-items: baseline;
-  padding: 0;
-}
+
 
 
 
@@ -469,6 +465,11 @@ div[data-extraclass="priceWrapper"]>div {
 }
 .showCollectionPrice{
   display:inline-block;
+}
+div[data-extraclass="priceWrapper"]>div {
+  display: flex;
+  align-items: baseline;
+  padding: 0;
 }
 div[data-name="orignalP1"],div[data-name="orignalP"]{
   display:none;
