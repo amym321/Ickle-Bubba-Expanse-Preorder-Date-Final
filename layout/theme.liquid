@@ -360,6 +360,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   let formThankLocation = window.location.pathname;
   {% if customer %}
       checkCustomerByEmail({{customer.email | json }}).then((data)=> {
+        console.log(data)
         if(data === 401){
 
 
