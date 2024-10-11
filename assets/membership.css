@@ -437,10 +437,6 @@ div[data-name="orignalP1"],div[data-name="orignalP"]{
 /* guest price id #m-1725527550854 end */ 
 
 /* bubble price  */
-/* .bubblePricing .metaPriceRRP:not(:empty):before,
-.bubblePricing .metaPriceRRP:not(:empty):after {
-  display: block;
-} */
 
 .bubblePricing .metaPriceRRP {
   font-size: 25px;
@@ -457,7 +453,7 @@ div[data-name="orignalP1"],div[data-name="orignalP"]{
   }
 }
 
-.bubblePricing .metaPriceRRP:before {
+/* .bubblePricing .metaPriceRRP:before {
   content: "";
   height: 37px;
   width: 1px;
@@ -476,4 +472,4 @@ div[data-name="orignalP1"],div[data-name="orignalP"]{
   bottom: -13px;
   left: 1px;
   display: none;
-}
+} */
