@@ -103,7 +103,7 @@
         document.querySelector('#membership-form').style.display = 'none';
         document.querySelector('.site-nav__link:has(svg.icon-user)').setAttribute('href','https://ickle-bubba-sandbox.myshopify.com/pages/membership-page');
         let pdpBody = document.querySelector('body.template-product')
-        pdpBody ? pdpBody.classList.add('userExist') : '';
+        pdpBody ? pdpBody.classList.add('bubblePricing') : '';
         if(pdpBody){
           let op1 = document.querySelector('div[data-name="orignalP1"]');
           op1 ? op1.style.display = 'block' : '' ;
@@ -121,7 +121,7 @@
       }else{
         document.querySelector('#membership-form').style.display = 'block';
         let pdpBody = document.querySelector('body.template-product')
-        pdpBody ? pdpBody.classList.add('userNotExist') : '';
+        pdpBody ? pdpBody.classList.add('normalPricing') : '';
         if(pdpBody){
           let op1 = document.querySelector('div[data-name="orignalP1"]');
           op1 ? op1.style.display = 'none' : '' ;
@@ -134,7 +134,7 @@
   {% else %}
     document.querySelector('#membership-form').style.display = 'block';
     let pdpBody = document.querySelector('body.template-product')
-    pdpBody ? pdpBody.classList.add('userNotExist') : '';
+    pdpBody ? pdpBody.classList.add('normalPricing') : '';
     document.querySelector('.infoPopupMessage').innerHTML = '<strong>Sign up</strong> to Bubble to get exclusive offers and more!';
   {% endif %}
 
