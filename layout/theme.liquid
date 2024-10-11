@@ -371,12 +371,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
     
   {% else %}
-    if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
-      memberPopup.style.display = 'block';
-    }
+
     
     let guestStorageKey = 'guestStorageKey';
     const popupClosedAt = localStorage.getItem(guestStorageKey);
+    if (popupClosedAt) {
+      const timestamp = parseInt(popupClosedAt, 10);
+      if (isNaN(timestamp) || is24HoursPassed(timestamp)) {
+        if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
+          memberPopup.style.display = 'block';
+        }
+      } 
+    }
     infoPopupClose.addEventListener("click", function(e) {
       e.preventDefault();
       // memberPopup.style.display = "none";
