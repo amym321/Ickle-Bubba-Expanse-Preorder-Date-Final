@@ -379,6 +379,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   {% if customer %}
     checkCustomerByEmail({{customer.email | json }}).then((data)=> {
+      console.log(data)
       if(data === 401){
         document.querySelector('#membership-form').style.display = 'none';
         document.querySelector('.site-nav__link:has(svg.icon-user)').setAttribute('href','https://ickle-bubba-sandbox.myshopify.com/pages/membership-page');
