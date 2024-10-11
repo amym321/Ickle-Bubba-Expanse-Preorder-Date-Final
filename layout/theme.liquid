@@ -362,6 +362,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       let userStorageKey = 'userStorageKey';
       infoPopupClose.addEventListener("click", function() {
         // memberPopup.style.display = "none";
+        e.preventDefault();
         const now = new Date().getTime();
         localStorage.setItem(guestStorageKey, now.toString());
       });
@@ -373,6 +374,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     let guestStorageKey = 'guestStorageKey';
     infoPopupClose.addEventListener("click", function() {
+      e.preventDefault();
       // memberPopup.style.display = "none";
       const now = new Date().getTime();
       localStorage.setItem(guestStorageKey, now.toString());
