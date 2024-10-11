@@ -328,8 +328,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 //     localStorage.setItem('popupState','false');
 //   })
 // }
-let formThankLocation = window.location.pathname.includes('member-form')
-console.log(formThankLocation)
+let formThankLocation = window.location.pathname;
+if( !formThankLocation.includes('member-form') || !formThankLocation.includes('thankyou')){
+  console.log(true)
+}
+
 
   
   let test = 'http://localhost:5000';
