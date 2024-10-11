@@ -351,9 +351,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (popupClosedAt) {
       const timestamp = parseInt(popupClosedAt, 10);
       if (isNaN(timestamp) || is24HoursPassed(timestamp)) {
-        
-      }
-      else{
         checkCustomerByEmail({{customer.email | json }}).then((data)=> {
           if(data === 401){
             // if user is created a company then no popup will show
@@ -363,6 +360,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             } 
           }
         })
+      }
+      else{
+        // nothing will happen bacause time remaining to show popup
       } 
     }else{
       checkCustomerByEmail({{customer.email | json }}).then((data)=> {
