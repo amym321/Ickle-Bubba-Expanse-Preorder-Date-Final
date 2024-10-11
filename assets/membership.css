@@ -486,6 +486,6 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   position: absolute;
   bottom: -9px;
 }
-.bubblePricing .module-wrap:has(.metaPriceRRP:empty){
+/* .bubblePricing .module-wrap:has(.metaPriceRRP:empty){
   display:none;
-}
+} */
