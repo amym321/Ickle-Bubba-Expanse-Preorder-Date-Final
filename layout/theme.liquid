@@ -316,6 +316,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   let test = 'http://localhost:5000';
   let live = 'https://app.progryss.com';
   let baseurl = live;
+  // let baseurl = test;
+  let setupForm = document.getElementById('setupForm');
 
   // Function to check customer status by email
   const checkCustomerByEmail = async(email) =>{
@@ -334,18 +336,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   }
 
-  // Function to check if 24 hours have passed
-  function is24HoursPassed(timestamp) {
-    const now = new Date().getTime();
-    const twentyFourHours = 24 * 60 * 60 * 1000; // milliseconds in 24 hours
-    return (now - timestamp) > twentyFourHours;
-  }
-
   let memberPopup = document.querySelector('.infoPopup');
   let formThankLocation = window.location.pathname;
   let infoPopupClose = document.querySelector('.infoPopupClose');
-  
-  // membership popup show/hide logic
+  // Function to check if 24 hours have passed
+  function is24HoursPassed(timestamp) {
+    const now = new Date().getTime();
+    const twentyFourHours = 1 * 60 * 1000; // milliseconds in 24 hours
+    return (now - timestamp) > twentyFourHours;
+  }
   {% if customer %}
     const userStorageKey = 'userStorageKey';
     const popupClosedAt = localStorage.getItem(userStorageKey);
@@ -367,14 +366,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       } 
     }else{
       checkCustomerByEmail({{customer.email | json }}).then((data)=> {
-        if(data === 401){
-          // if user is created a company then no popup will show
-        }else{
-          if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
-            memberPopup.style.display = 'block';
-          } 
-        }
-      })
+          if(data === 401){
+            // if user is created a company then no popup will show
+          }else{
+            if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
+              memberPopup.style.display = 'block';
+            } 
+          }
+        })
     }
   
     infoPopupClose.addEventListener("click", function(e) {
@@ -385,6 +384,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
     
   {% else %}
+
     
     let guestStorageKey = 'guestStorageKey';
     const popupClosedAt = localStorage.getItem(guestStorageKey);
@@ -402,7 +402,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         memberPopup.style.display = 'block';
       }
     }
-    
     infoPopupClose.addEventListener("click", function(e) {
       e.preventDefault();
       memberPopup.style.display = "none";
@@ -412,57 +411,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
   {% endif %}
 
+
+
   {% if customer %}
     checkCustomerByEmail({{customer.email | json }}).then((data)=> {
+      console.log(data)
       if(data === 401){
-        
         document.querySelector('#membership-form').style.display = 'none';
         document.querySelector('.site-nav__link:has(svg.icon-user)').setAttribute('href','https://ickle-bubba-sandbox.myshopify.com/pages/membership-page');
-        
         let pdpBody = document.querySelector('body.template-product')
         pdpBody ? pdpBody.classList.add('userExist') : '';
-        
         if(pdpBody){
           document.querySelector('div[data-name="orignalP1"]').style.display = 'block';
           document.querySelector('div[data-name="orignalP"]').style.display = 'block';
         }
 
         window.onload = function() {
-          let collectionPrice = document.querySelectorAll('.collectionPrice');
-          Array.from(collectionPrice).forEach((element)=>{
-            element.classList.remove('hideCollectionPrice');
-          })
+        let collectionPrice = document.querySelectorAll('.collectionPrice');
+        Array.from(collectionPrice).forEach((element)=>{
+          element.classList.remove('hideCollectionPrice');
+        })
         }
         
       }else{
-        
         document.querySelector('#membership-form').style.display = 'block';
-        
         let pdpBody = document.querySelector('body.template-product')
         pdpBody ? pdpBody.classList.add('userNotExist') : '';
-        
         if(pdpBody){
           document.querySelector('div[data-name="orignalP1"]').style.display = 'none';
           document.querySelector('div[data-name="orignalP"]').style.display = 'none';
         }
-        
         document.querySelector('.infoPopupMessage').innerHTML = 'You are one step away from <strong>Bubble</strong> membership.';
-        
       }
     })
   {% else %}
-    
     document.querySelector('#membership-form').style.display = 'block';
-    
     let pdpBody = document.querySelector('body.template-product')
     pdpBody ? pdpBody.classList.add('userNotExist') : '';
-    
     document.querySelector('.infoPopupMessage').innerHTML = 'Sign up to <strong>Bubble</strong> to get exclusive offers and more!';
-    
   {% endif %}
 
-  // Membership Form submission handling
-  let setupForm = document.getElementById('setupForm');
+  
+  console.log(setupForm)
+  // Form submission handling
   if (setupForm) {
     setupForm.addEventListener('submit', function(event) {
       event.preventDefault();
@@ -481,8 +472,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             formObject[key] = value;
           }
         });
-
+        setTimeout(()=>{
+          console.log(formObject)
+        },3000)
         let checkStatus = await checkCustomerByEmail(formObject.customerEmail);
+        console.log(checkStatus)
         if(checkStatus === 200){
           try {
             const response = await fetch(`${baseurl}/api/create-company`, {
