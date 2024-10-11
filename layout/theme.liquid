@@ -341,6 +341,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return (now - timestamp) > twentyFourHours;
   }
 
+  let memberPopup = document.querySelector('.infoPopup');
+  let formThankLocation = window.location.pathname;
+  let infoPopupClose = document.querySelector('.infoPopupClose');
+  
   // membership popup show/hide logic
   {% if customer %}
     const userStorageKey = 'userStorageKey';
