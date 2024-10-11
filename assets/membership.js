@@ -1,4 +1,6 @@
-  let test = 'http://localhost:5000';
+document.addEventListener('DOMContentLoaded', function() {
+
+let test = 'http://localhost:5000';
   let live = 'https://app.progryss.com';
   let baseurl = live;
   // let baseurl = test;
@@ -232,3 +234,4 @@
 //     }
 //   });
 // }
+});
