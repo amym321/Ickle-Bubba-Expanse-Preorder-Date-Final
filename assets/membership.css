@@ -268,14 +268,29 @@
 
 
 .normalPricing div[data-extraclass="priceWrapper"] .gf_product-price{
-  color: #000 !important;
-  font-weight: 600 !important;
-  position: relative;
-  /* margin-left: 18px !important; */
-  background: none;
-  /* padding: 1px 16px 14px 7px !important; */
+  
 }
 
+div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
+  content: "";
+  height: 37px;
+  width: 1px;
+  display: block;
+  background: #000;
+  position: absolute;
+  left: -6px;
+  top: 1px;
+}
+div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:before {
+  content: "";
+  height: 37px;
+  width: 1px;
+  display: block;
+  background: #000;
+  position: absolute;
+  left: -6px;
+  top: 1px;
+}
 
 /* price design on pdp */
 
@@ -404,23 +419,23 @@ div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-compare-price:b
 }
 
 /* third price */
-/* div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price {
+div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price {
   color: #000 !important;
   font-weight: 600 !important;
   position: relative;
   margin-left: 18px !important;
   background: none;
   padding: 1px 16px 14px 7px !important;
-} */
+}
 
-/* div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price {
+div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price {
   color: #000 !important;
   font-weight: 600 !important;
   position: relative;
   margin-left: 18px !important;
   background: none;
   padding: 1px 16px 14px 7px !important;
-} */
+}
 
 .bubblePricing div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price {
   background: linear-gradient(to right, #f7d8d8, #e0e7f9);
@@ -432,26 +447,7 @@ div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-compare-price:b
   margin-left: 28px !important;
 }
 
-/* div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
-  content: "";
-  height: 37px;
-  width: 1px;
-  display: block;
-  background: #000;
-  position: absolute;
-  left: -6px;
-  top: 1px;
-} */
-/* div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:before {
-  content: "";
-  height: 37px;
-  width: 1px;
-  display: block;
-  background: #000;
-  position: absolute;
-  left: -6px;
-  top: 1px;
-} */
+
 
 .bubblePricing div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   left: -14px;
