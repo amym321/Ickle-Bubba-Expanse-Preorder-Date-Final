@@ -346,26 +346,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return (now - timestamp) > twentyFourHours;
   }
   {% if customer %}
-      checkCustomerByEmail({{customer.email | json }}).then((data)=> {
-        console.log(data)
-        if(data === 401){
-
-
-          
-        }else{
-          if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
-            memberPopup.style.display = 'block';
-          } 
-        }
-      })
-    
-      let userStorageKey = 'userStorageKey';
-      infoPopupClose.addEventListener("click", function(e) {
-        // memberPopup.style.display = "none";
-        e.preventDefault();
-        const now = new Date().getTime();
-        localStorage.setItem(userStorageKey, now.toString());
-      });
+    const userStorageKey = 'userStorageKey';
+    const popupClosedAt = localStorage.getItem(userStorageKey);
+    if (popupClosedAt) {
+      const timestamp = parseInt(popupClosedAt, 10);
+      if (isNaN(timestamp) || is24HoursPassed(timestamp)) {
+        checkCustomerByEmail({{customer.email | json }}).then((data)=> {
+          if(data === 401){
+            // if user is created a company then no popup will show
+          }else{
+            if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
+              memberPopup.style.display = 'block';
+            } 
+          }
+        })
+      } 
+    }
+  
+    infoPopupClose.addEventListener("click", function(e) {
+      // memberPopup.style.display = "none";
+      e.preventDefault();
+      const now = new Date().getTime();
+      localStorage.setItem(userStorageKey, now.toString());
+    });
     
   {% else %}
     if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
@@ -373,6 +376,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
     
     let guestStorageKey = 'guestStorageKey';
+    const popupClosedAt = localStorage.getItem(guestStorageKey);
     infoPopupClose.addEventListener("click", function(e) {
       e.preventDefault();
       // memberPopup.style.display = "none";
