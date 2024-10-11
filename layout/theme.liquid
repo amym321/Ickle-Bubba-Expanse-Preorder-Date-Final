@@ -328,9 +328,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 //     localStorage.setItem('popupState','false');
 //   })
 // }
+let memberPopup = document.querySelector('.infoPopup');
 let formThankLocation = window.location.pathname;
 if( !formThankLocation.includes('member-form') || !formThankLocation.includes('thankyou')){
-  console.log(true)
+  memberPopup.style.display = 'block';
 }
 
 
