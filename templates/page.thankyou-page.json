@@ -48,7 +48,7 @@
       "settings": {
         "logoImage": "shopify://shop_images/ickle.png",
         "logoText": "Bubble",
-        "successMessage": "<p>Success!&lt;br&gt;You're now part of the Bubble family.</p>",
+        "successMessage": "<p>Success!</p><p>You're now part of the Bubble family.</p>",
         "description": "Log in to get special deals everywhere you see these labels:",
         "message": "You must be logged in to see your deals, so get started now!",
         "buttonText": "Browse Products",
