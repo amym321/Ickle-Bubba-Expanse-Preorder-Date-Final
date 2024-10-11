@@ -1,22 +1,22 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   
   "sections": {
-    "1728386794kfs18u06": {
+    "1728645198224tm6u8": {
       "type": "gem-page-default-product",
       "settings": {
       }
     }
   },
   "order": [
-    "1728386794kfs18u06"
+    "1728645198224tm6u8"
   ]
 }
