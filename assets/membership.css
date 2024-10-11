@@ -427,12 +427,7 @@ div[data-extraclass="priceWrapper"]>div {
   padding: 0;
 }
 
-div[data-name="orignalP"] {
-  display: none;
-}
-div[data-name="orignalP1"] {
-  display: none;
-}
+
 
 .template-product:has(.gf_product-compare-price:not(:empty)) #m-1728383719364 .gf_product-price {
   position: relative;
@@ -475,3 +470,4 @@ div[data-name="orignalP1"] {
 .showCollectionPrice{
   display:inline-block;
 }
+
