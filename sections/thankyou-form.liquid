@@ -1,7 +1,8 @@
 <div class='membershipWrapper thank-you'>
   <div class="formWrapper">
       <div class='formHeader'>
-        <h3>Bubble</h3>
+        <h3>{% if section.settings.logoImage != blank %}<img src="{{ section.settings.logoImage | img_url:"1920x" }}">{% else %}Bubble{% endif %}</h3>
+        
         <p style='font-size:18px;'>Success!</p>
         <p style='font-size:18px;'>You're now part of the Bubble family.</p>
       </div>
