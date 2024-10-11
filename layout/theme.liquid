@@ -377,7 +377,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   
     infoPopupClose.addEventListener("click", function(e) {
-      // memberPopup.style.display = "none";
+      memberPopup.style.display = "none";
       e.preventDefault();
       const now = new Date().getTime();
       localStorage.setItem(userStorageKey, now.toString());
