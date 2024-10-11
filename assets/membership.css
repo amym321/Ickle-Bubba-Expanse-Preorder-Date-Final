@@ -362,13 +362,13 @@ div[data-name="orignalP1"] {
   display: none;
 }
 
-.userNotExist .gf_product-compare-price {
+.normalPricing .gf_product-compare-price {
   text-decoration: line-through;
 }
 div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-compare-price {
   text-decoration: line-through;
 }
-.userExist div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-compare-price {
+.bubblePricing div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-compare-price {
   text-decoration: none;
 }
 div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-compare-price:before {
@@ -383,13 +383,13 @@ div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-compare-price:b
   position: absolute;
   bottom: -9px;
 }
-.userExist div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-compare-price:before {
+.bubblePricing div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-compare-price:before {
   content: "SALE";
   font-size: 12px;
   position: absolute;
   bottom: -9px;
 }
-.userExist div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-compare-price:before {
+.bubblePricing div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-compare-price:before {
   content: "SALE";
 }
 .gf_product-compare-price:after {
@@ -414,12 +414,12 @@ div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price {
   padding: 1px 16px 14px 7px !important;
 }
 
-.userExist div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price {
+.bubblePricing div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price {
   background: linear-gradient(to right, #f7d8d8, #e0e7f9);
   margin-left: 28px !important;
 }
 
-.userExist div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price {
+.bubblePricing div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price {
   background: linear-gradient(to right, #f7d8d8, #e0e7f9);
   margin-left: 28px !important;
 }
@@ -445,10 +445,10 @@ div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:before {
   top: 1px;
 }
 
-.userExist div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
+.bubblePricing div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   left: -14px;
 }
-.userExist div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:before {
+.bubblePricing div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:before {
   left: -14px;
 }
 
@@ -470,10 +470,10 @@ div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:after {
   font-weight: 500;
 }
 
-.userExist div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:after { 
+.bubblePricing div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:after { 
   content: "BUBBLE PRICE";
 }
-.userExist div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:after { 
+.bubblePricing div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:after { 
   content: "BUBBLE PRICE";
 }
 
