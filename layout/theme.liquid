@@ -394,11 +394,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
           memberPopup.style.display = 'block';
         }
+      }else{
+        // nothing will happen bacause time remaining to show popup
       } 
+    }else{
+      if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
+        memberPopup.style.display = 'block';
+      }
     }
     infoPopupClose.addEventListener("click", function(e) {
       e.preventDefault();
-      // memberPopup.style.display = "none";
+      memberPopup.style.display = "none";
       const now = new Date().getTime();
       localStorage.setItem(guestStorageKey, now.toString());
     });
