@@ -470,4 +470,6 @@ div[data-extraclass="priceWrapper"]>div {
 .showCollectionPrice{
   display:inline-block;
 }
-
+#curVarPrice1,#curVarPrice{
+  display:none;
+}
