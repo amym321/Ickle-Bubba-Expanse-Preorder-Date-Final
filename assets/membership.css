@@ -272,7 +272,7 @@
 
 /* price design on pdp */
 
-/* 
+
 
 div[data-name="orignalP"] {
   display: none;
@@ -411,16 +411,13 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
 .bubblePricing div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:before {
   left: -14px;
 }
- */
-
-
-/* 
+ 
 .bubblePricing div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:after { 
   content: "BUBBLE PRICE";
 }
 .bubblePricing div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:after { 
   content: "BUBBLE PRICE";
-} */
+} 
 
 
 
