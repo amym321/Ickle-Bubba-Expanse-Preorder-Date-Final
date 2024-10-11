@@ -274,13 +274,8 @@
 
 
 
-div[data-name="orignalP"] {
-  display: none;
-}
-div[data-name="orignalP1"] {
-  display: none;
-}
 
+/*
 #curVarPrice:not(:empty):before,
 #curVarPrice:not(:empty):after {
   display: block;
@@ -419,7 +414,7 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   content: "BUBBLE PRICE";
 } 
 
-
+*/
 
 
 
@@ -434,6 +429,13 @@ div[data-extraclass="priceWrapper"]>div {
   display: flex;
   align-items: baseline;
   padding: 0;
+}
+
+div[data-name="orignalP"] {
+  display: none;
+}
+div[data-name="orignalP1"] {
+  display: none;
 }
 
 .template-product:has(.gf_product-compare-price:not(:empty)) .gf_product-price {
