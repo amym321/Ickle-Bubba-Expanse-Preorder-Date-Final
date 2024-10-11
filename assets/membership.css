@@ -274,7 +274,7 @@
 
 /* price design on pdp */
 
-div[data-extraclass="priceWrapper"]>div {
+/* div[data-extraclass="priceWrapper"]>div {
   display: flex;
   align-items: baseline;
   padding: 0;
@@ -484,4 +484,4 @@ div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:after {
 }
 .showCollectionPrice{
   display:inline-block;
-}
+} */
