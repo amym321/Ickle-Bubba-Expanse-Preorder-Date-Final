@@ -6,9 +6,9 @@
       </div>
       <div class='thankyou-content'>
         <p class='login-text-thank'>{{ section.settings.description }}</p>
-        <p class='discount-badges'><img src='https://cdn.shopify.com/s/files/1/0715/7723/9830/files/panda.jpg?v=1725527880'><span>Special low prices for members</span></p>
-        <p class='discount-badges'><img src='https://cdn.shopify.com/s/files/1/0715/7723/9830/files/panda.jpg?v=1725527880'><span>Limited time offers exclusive for members</span></p>
-        <p class='discount-badges'><img src='https://cdn.shopify.com/s/files/1/0715/7723/9830/files/panda.jpg?v=1725527880'><span>Bubble members get extra discounts</span></p>
+        {% for block in section.blocks %}
+          <p class='discount-badges'><img src='{{ block.settings.blockImage | img_url:'1920x'}}'><span>{{ block.settings.blockTitle }}</span></p> 
+        {% endfor %}
         <p class='login-text-thank' style='margin-top:15px;'>{{ section.settings.message }}</p>
         {% if customer %}
           <a href='{{ section.settings.buttonUrl }}'>{{ section.settings.buttonText }}</a>
