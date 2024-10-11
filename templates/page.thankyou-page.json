@@ -17,6 +17,34 @@
     },
     "thankyou_form_fipfjm": {
       "type": "thankyou-form",
+      "blocks": {
+        "image_text_block_h9gjWn": {
+          "type": "image_text_block",
+          "settings": {
+            "blockImage": "shopify://shop_images/panda.jpg",
+            "blockTitle": "Special low prices for members"
+          }
+        },
+        "image_text_block_rYXiV6": {
+          "type": "image_text_block",
+          "settings": {
+            "blockImage": "shopify://shop_images/panda.jpg",
+            "blockTitle": "Limited time offers exclusive for members"
+          }
+        },
+        "image_text_block_JJH9Wq": {
+          "type": "image_text_block",
+          "settings": {
+            "blockImage": "shopify://shop_images/panda.jpg",
+            "blockTitle": "Bubble members get extra discounts"
+          }
+        }
+      },
+      "block_order": [
+        "image_text_block_h9gjWn",
+        "image_text_block_rYXiV6",
+        "image_text_block_JJH9Wq"
+      ],
       "settings": {
         "logoImage": "shopify://shop_images/ickle.png",
         "logoText": "Bubble",
