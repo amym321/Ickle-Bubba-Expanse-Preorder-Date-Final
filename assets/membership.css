@@ -369,12 +369,7 @@ div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-compare-price {
 .bubblePricing div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-compare-price {
   text-decoration: none;
 }
-/* div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-compare-price:before {
-  content: "RRP";
-  font-size: 12px;
-  position: absolute;
-  bottom: -9px;
-} */
+
 
 .bubblePricing div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-compare-price:before {
   content: "SALE";
@@ -389,14 +384,6 @@ div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-compare-price {
   display: none;
 }
 
-/* div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price {
-  color: #000 !important;
-  font-weight: 600 !important;
-  position: relative;
-  margin-left: 18px !important;
-  background: none;
-  padding: 1px 16px 14px 7px !important;
-} */
 
 
 
@@ -429,14 +416,7 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   left: -14px;
 }
 
-/* div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:after {
-  content: "SALE";
-  font-size: 12px;
-  position: absolute;
-  bottom: 1px;
-  left: 9px;
-  font-weight: 500;
-} */
+
 
 
 .bubblePricing div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:after { 
@@ -446,14 +426,16 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   content: "BUBBLE PRICE";
 }
 
+
+
+
+
 .hideCollectionPrice{
   display:none;
 }
 .showCollectionPrice{
   display:inline-block;
 }
-
-
 
 .template-product:has(.gf_product-compare-price:not(:empty)) .gf_product-price {
   position: relative;
