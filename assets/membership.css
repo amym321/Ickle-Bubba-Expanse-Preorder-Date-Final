@@ -277,7 +277,7 @@
 /* price design on pdp */
 
 
-#curVarPrice:not(:empty):before,
+/* #curVarPrice:not(:empty):before,
 #curVarPrice:not(:empty):after {
   display: block;
 }
@@ -472,3 +472,4 @@ div[data-name="orignalP1"] {
   position: absolute;
   bottom: -9px;
 }
+ */
