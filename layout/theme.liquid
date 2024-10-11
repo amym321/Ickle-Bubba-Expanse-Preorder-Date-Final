@@ -364,6 +364,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           }
         })
       } 
+    }else{
+      checkCustomerByEmail({{customer.email | json }}).then((data)=> {
+          if(data === 401){
+            // if user is created a company then no popup will show
+          }else{
+            if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
+              memberPopup.style.display = 'block';
+            } 
+          }
+        })
     }
   
     infoPopupClose.addEventListener("click", function(e) {
