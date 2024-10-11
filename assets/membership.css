@@ -425,6 +425,24 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
 
 
 
+
+
+ */
+
+.hideCollectionPrice{
+  display:none;
+}
+.showCollectionPrice{
+  display:inline-block;
+}
+div[data-extraclass="priceWrapper"]>div {
+  display: flex;
+  align-items: baseline;
+  padding: 0;
+}
+div[data-name="orignalP1"],div[data-name="orignalP"]{
+  display:none;
+}
 .template-product:has(.gf_product-compare-price:not(:empty)) #m-1728383719364 .gf_product-price {
   position: relative;
   margin-left: 18px !important;
@@ -457,20 +475,4 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   font-size: 12px;
   position: absolute;
   bottom: -9px;
-}
- */
-
-.hideCollectionPrice{
-  display:none;
-}
-.showCollectionPrice{
-  display:inline-block;
-}
-div[data-extraclass="priceWrapper"]>div {
-  display: flex;
-  align-items: baseline;
-  padding: 0;
-}
-div[data-name="orignalP1"],div[data-name="orignalP"]{
-  display:none;
 }
