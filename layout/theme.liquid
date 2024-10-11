@@ -342,7 +342,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // Function to check if 24 hours have passed
   function is24HoursPassed(timestamp) {
     const now = new Date().getTime();
-    const twentyFourHours = 24 * 60 * 60 * 1000; // milliseconds in 24 hours
+    const twentyFourHours = 1 * 60 * 1000; // milliseconds in 24 hours
     return (now - timestamp) > twentyFourHours;
   }
   {% if customer %}
