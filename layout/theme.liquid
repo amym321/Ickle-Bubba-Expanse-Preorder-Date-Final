@@ -364,7 +364,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // memberPopup.style.display = "none";
         e.preventDefault();
         const now = new Date().getTime();
-        localStorage.setItem(guestStorageKey, now.toString());
+        localStorage.setItem(userStorageKey, now.toString());
       });
     
   {% else %}
