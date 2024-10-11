@@ -419,12 +419,7 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
 
 
 
-.hideCollectionPrice{
-  display:none;
-}
-.showCollectionPrice{
-  display:inline-block;
-}
+
 
 div[data-extraclass="priceWrapper"]>div {
   display: flex;
@@ -473,3 +468,10 @@ div[data-name="orignalP1"] {
   bottom: -9px;
 }
  */
+
+.hideCollectionPrice{
+  display:none;
+}
+.showCollectionPrice{
+  display:inline-block;
+}
