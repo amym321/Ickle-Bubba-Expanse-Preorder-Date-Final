@@ -105,8 +105,10 @@
         let pdpBody = document.querySelector('body.template-product')
         pdpBody ? pdpBody.classList.add('userExist') : '';
         if(pdpBody){
-          document.querySelector('div[data-name="orignalP1"]').style.display = 'block';
-          document.querySelector('div[data-name="orignalP"]').style.display = 'block';
+          let op1 = document.querySelector('div[data-name="orignalP1"]');
+          op1 ? op1.style.display = 'block' : '' ;
+          let op = document.querySelector('div[data-name="orignalP"]');
+          op ? op.style.display = 'block' : '' ;
         }
 
         window.onload = function() {
