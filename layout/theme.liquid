@@ -314,20 +314,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
   
 
-let popupState = localStorage.getItem('popupState');
-if(popupState == 'false'){
-  document.querySelector('.infoPopup').style.display = 'none';
-}else{
-  document.querySelector('.infoPopup').style.display = 'block';
-}
-let closePopup = document.querySelector('.infoPopupClose');
-if(closePopup){
-  closePopup.addEventListener('click',(e)=>{
-    e.preventDefault();
-    document.querySelector('.infoPopup').style.display = 'none';
-    localStorage.setItem('popupState','false');
-  })
-}
+// let popupState = localStorage.getItem('popupState');
+// if(popupState == 'false'){
+//   document.querySelector('.infoPopup').style.display = 'none';
+// }else{
+//   document.querySelector('.infoPopup').style.display = 'block';
+// }
+// let closePopup = document.querySelector('.infoPopupClose');
+// if(closePopup){
+//   closePopup.addEventListener('click',(e)=>{
+//     e.preventDefault();
+//     document.querySelector('.infoPopup').style.display = 'none';
+//     localStorage.setItem('popupState','false');
+//   })
+// }
 
 
   
@@ -491,8 +491,6 @@ if(closePopup){
 
 
 
-
-console.log({{ customer | json }})
   </script>
   </body>
 </html>
