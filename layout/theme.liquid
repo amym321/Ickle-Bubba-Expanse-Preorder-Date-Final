@@ -312,27 +312,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="{{ 'membership.js' | asset_url }}" defer="defer"></script>
 
 <script>
-  
 
-// let popupState = localStorage.getItem('popupState');
-// if(popupState == 'false'){
-//   document.querySelector('.infoPopup').style.display = 'none';
-// }else{
-//   document.querySelector('.infoPopup').style.display = 'block';
-// }
-// let closePopup = document.querySelector('.infoPopupClose');
-// if(closePopup){
-//   closePopup.addEventListener('click',(e)=>{
-//     e.preventDefault();
-//     document.querySelector('.infoPopup').style.display = 'none';
-//     localStorage.setItem('popupState','false');
-//   })
-// }
-
-
-
-
-  
   let test = 'http://localhost:5000';
   let live = 'https://app.progryss.com';
   let baseurl = live;
@@ -358,6 +338,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   let memberPopup = document.querySelector('.infoPopup');
   let formThankLocation = window.location.pathname;
+  let infoPopupClose = document.querySelector('infoPopupClose');
+  // Function to check if 24 hours have passed
+  function is24HoursPassed(timestamp) {
+    const now = new Date().getTime();
+    const twentyFourHours = 24 * 60 * 60 * 1000; // milliseconds in 24 hours
+    return (now - timestamp) > twentyFourHours;
+  }
   {% if customer %}
       checkCustomerByEmail({{customer.email | json }}).then((data)=> {
         console.log(data)
@@ -371,11 +358,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           } 
         }
       })
+    
+      let userStorageKey = 'userStorageKey';
+      infoPopupClose.addEventListener("click", function() {
+        // memberPopup.style.display = "none";
+        const now = new Date().getTime();
+        localStorage.setItem(guestStorageKey, now.toString());
+      });
+    
   {% else %}
     if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
       memberPopup.style.display = 'block';
     }
+    
+    let guestStorageKey = 'guestStorageKey';
+    infoPopupClose.addEventListener("click", function() {
+      // memberPopup.style.display = "none";
+      const now = new Date().getTime();
+      localStorage.setItem(guestStorageKey, now.toString());
+    });
+    
   {% endif %}
+
+
 
   {% if customer %}
     checkCustomerByEmail({{customer.email | json }}).then((data)=> {
@@ -414,6 +419,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     pdpBody ? pdpBody.classList.add('userNotExist') : '';
     document.querySelector('.infoPopupMessage').innerHTML = 'Sign up to <strong>Bubble</strong> to get exclusive offers and more!';
   {% endif %}
+
   
   console.log(setupForm)
   // Form submission handling
