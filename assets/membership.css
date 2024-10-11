@@ -439,13 +439,13 @@ div[data-name="orignalP1"] {
   display: none;
 }
 
-.template-product:has(.gf_product-compare-price:not(:empty)) .gf_product-price {
+.template-product:has(.gf_product-compare-price:not(:empty)) #m-1728383719364 .gf_product-price {
   position: relative;
   margin-left: 18px !important;
   background: none;
   padding: 1px 16px 14px 7px !important;
 }
-.template-product:has(.gf_product-compare-price:not(:empty)) .gf_product-price:before {
+.template-product:has(.gf_product-compare-price:not(:empty)) #m-1728383719364 .gf_product-price:before {
   content: "";
   height: 37px;
   width: 1px;
@@ -455,7 +455,7 @@ div[data-name="orignalP1"] {
   left: -6px;
   top: 1px;
 }
-.template-product:has(.gf_product-compare-price:not(:empty)) .gf_product-price:after {
+.template-product:has(.gf_product-compare-price:not(:empty)) #m-1728383719364 .gf_product-price:after {
   content: "SALE";
   font-size: 12px;
   position: absolute;
@@ -463,10 +463,10 @@ div[data-name="orignalP1"] {
   left: 9px;
   font-weight: 500;
 }
-.template-product .gf_product-compare-price {
+.template-product #m-1728383719364 .gf_product-compare-price {
   text-decoration: line-through;
 }
-.template-product .gf_product-compare-price:before {
+.template-product #m-1728383719364 .gf_product-compare-price:before {
   content: "RRP";
   font-size: 12px;
   position: absolute;
