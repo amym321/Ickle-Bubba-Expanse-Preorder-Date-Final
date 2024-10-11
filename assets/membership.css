@@ -269,21 +269,17 @@
 
 
 
+
+/* price design on pdp */
+
+/* 
+
 div[data-name="orignalP"] {
   display: none;
 }
 div[data-name="orignalP1"] {
   display: none;
 }
-/* price design on pdp */
-
-/* div[data-extraclass="priceWrapper"]>div {
-  display: flex;
-  align-items: baseline;
-  padding: 0;
-}
-
-
 
 #curVarPrice:not(:empty):before,
 #curVarPrice:not(:empty):after {
@@ -435,6 +431,12 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
 }
 .showCollectionPrice{
   display:inline-block;
+}
+
+div[data-extraclass="priceWrapper"]>div {
+  display: flex;
+  align-items: baseline;
+  padding: 0;
 }
 
 .template-product:has(.gf_product-compare-price:not(:empty)) .gf_product-price {
