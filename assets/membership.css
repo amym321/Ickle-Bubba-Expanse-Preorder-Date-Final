@@ -452,7 +452,7 @@ div[data-name="orignalP1"],div[data-name="orignalP"]{
     font-size: 21px;
   }
 }
-.template-product.bubblePricing:has(.gf_product-compare-price:not(:empty)) #m-1725527550854 .gf_product-price:after {
+.bubblePricing:has(.gf_product-compare-price:not(:empty)) #m-1725527550854 .gf_product-price:after {
   content: "BUBBLE PRICE";
   font-size: 12px;
   position: absolute;
