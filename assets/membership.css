@@ -269,7 +269,12 @@
 
 
 
-
+div[data-name="orignalP"] {
+  display: none;
+}
+div[data-name="orignalP1"] {
+  display: none;
+}
 /* price design on pdp */
 
 /* div[data-extraclass="priceWrapper"]>div {
@@ -278,12 +283,7 @@
   padding: 0;
 }
 
-div[data-name="orignalP"] {
-  display: none;
-}
-div[data-name="orignalP1"] {
-  display: none;
-}
+
 
 #curVarPrice:not(:empty):before,
 #curVarPrice:not(:empty):after {
@@ -418,13 +418,13 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
  */
 
 
-
+/* 
 .bubblePricing div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:after { 
   content: "BUBBLE PRICE";
 }
 .bubblePricing div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:after { 
   content: "BUBBLE PRICE";
-}
+} */
 
 
 
