@@ -432,7 +432,7 @@ div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-compare-price:b
   margin-left: 28px !important;
 }
 
-div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
+/* div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   content: "";
   height: 37px;
   width: 1px;
@@ -441,8 +441,8 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   position: absolute;
   left: -6px;
   top: 1px;
-}
-div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:before {
+} */
+/* div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:before {
   content: "";
   height: 37px;
   width: 1px;
@@ -451,7 +451,7 @@ div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:before {
   position: absolute;
   left: -6px;
   top: 1px;
-}
+} */
 
 .bubblePricing div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   left: -14px;
@@ -460,7 +460,16 @@ div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:before {
   left: -14px;
 }
 
-div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:after {
+/* div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:after {
+  content: "SALE";
+  font-size: 12px;
+  position: absolute;
+  bottom: 1px;
+  left: 9px;
+  font-weight: 500;
+} */
+
+/* div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:after {
   content: "SALE";
   font-size: 12px;
   position: absolute;
@@ -468,16 +477,7 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:after {
   left: 9px;
   font-weight: 500;
 }
-
-div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:after {
-  content: "SALE";
-  font-size: 12px;
-  position: absolute;
-  bottom: 1px;
-  left: 9px;
-  font-weight: 500;
-}
-
+ */
 .bubblePricing div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:after { 
   content: "BUBBLE PRICE";
 }
