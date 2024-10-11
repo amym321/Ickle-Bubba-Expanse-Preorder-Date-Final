@@ -268,7 +268,7 @@
 
 
 .normalPricing div[data-extraclass="priceWrapper"] .gf_product-price{
-  margin-left:0;
+  margin-left:0 !important;
 }
 
 
