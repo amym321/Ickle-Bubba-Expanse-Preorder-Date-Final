@@ -472,3 +472,12 @@ div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-price:after {
     border: 1px solid black;
     outline: 2px solid #fff;
 }
+
+
+/* /////////// */
+.formHeader > div p{
+  font-size:18px;
+  margin:0;
+  text-align:center;
+  line-height:normal;
+}
