@@ -2,7 +2,7 @@
   <div class="formWrapper">
       <div class='formHeader'>
         <h3>{% if section.settings.logoImage != blank %}<img src="{{ section.settings.logoImage | img_url:"1920x" }}">{% else %}{{ section.settings.logoText }}{% endif %}</h3>
-        <div style='font-size:18px;'>{{ section.settings.successMessage }}</div>
+        <div>{{ section.settings.successMessage }}</div>
       </div>
       <div class='thankyou-content'>
         <p class='login-text-thank'>Log in to get special deals everywhere you see these labels:</p>
