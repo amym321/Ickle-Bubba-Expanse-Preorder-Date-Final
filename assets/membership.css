@@ -3,7 +3,7 @@
 }
 
 .infoPopup {
-  background-color: #fecdc9;
+  background:linear-gradient(96deg, rgba(255,204,204,1) 0%, rgba(232,239,255,1) 100%);
   position: absolute;
   top: 41px;
   right: 73px;
