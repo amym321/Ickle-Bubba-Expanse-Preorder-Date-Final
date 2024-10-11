@@ -267,7 +267,7 @@
 }
 
 
-.normalPricing div[data-extraclass="priceWrapper"]:has(.gf_product-compare-price:empty) .gf_product-price{
+.normalPricing div[data-extraclass="priceWrapper"] .gf_product-price{
   margin-left:0;
 }
 
