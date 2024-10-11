@@ -25,28 +25,28 @@
   "name": "Thankyou Form",
   "settings": [
     {
-      "type":"image_picker",
-      "id":"logoImage",
+      "type": "image_picker",
+      "id": "logoImage",
       "label": "Logo Image"
     },
     {
-      "type":"text",
-      "id":"logoText",
+      "type": "text",
+      "id": "logoText",
       "label": "Logo Text"
     },
     {
-      "type":"richtext",
-      "id":"successMessage",
+      "type": "richtext",
+      "id": "successMessage",
       "label": "Success Message"
     },
     {
-      "type":"text",
-      "id":"description",
+      "type": "text",
+      "id": "description",
       "label": "Description"
     },
     {
-      "type":"text",
-      "id":"message",
+      "type": "text",
+      "id": "message",
       "label": "Message"
     },
     {
@@ -54,21 +54,58 @@
       "content": "Button"
     },
     {
-      "type":"text",
-      "id":"buttonText",
-      "label": "Text"
+      "type": "text",
+      "id": "buttonText",
+      "label": "Button Text",
+      "default": "Continue Shopping"
     },
     {
-      "type":"url",
-      "id":"buttonUrl",
-      "label": "Url"
+      "type": "url",
+      "id": "buttonUrl",
+      "label": "Button URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image_text_block",
+      "name": "Image and Text Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "blockImage",
+          "label": "Block Image"
+        },
+        {
+          "type": "text",
+          "id": "blockTitle",
+          "label": "Block Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "textarea",
+          "id": "blockDescription",
+          "label": "Block Description",
+          "default": "Detailed description of the feature."
+        }
+      ]
     }
   ],
   "presets": [
     {
       "name": "Thankyou Form",
       "category": "Custom",
+      "blocks": [
+        {
+          "type": "image_text_block",
+          "settings": {
+            "blockImage": "shopify:\/\/shop_images\/default-image.jpg",
+            "blockTitle": "Welcome",
+            "blockDescription": "Thank you for your purchase! Here's what you can do next."
+          }
+        }
+      ]
     }
   ]
 }
+
 {% endschema %}
