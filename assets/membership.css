@@ -440,7 +440,30 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   background: linear-gradient(to right, #f7d8d8, #e0e7f9) !important;
   margin-left: 28px !important;
 }
-.bubblePricing .priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price:after,
 .bubblePricing .priceWrapper .gf_product-price:after{
-  content: "BUBBLE PRICE";
+  content: "BUBBLE PRICE" !important;
+}
+.bubblePricing .priceWrapper:has(.gf_product-compare-price:empty) .gf_product-price {
+  position: relative;
+  margin-left: 18px !important;
+  background: none;
+  padding: 1px 16px 14px 7px !important;
+}
+.bubblePricing .priceWrapper:has(.gf_product-compare-price:empty) .gf_product-price:before {
+  content: "";
+  height: 37px;
+  width: 1px;
+  display: block;
+  background: #000;
+  position: absolute;
+  left: -6px;
+  top: 1px;
+}
+.bubblePricing .priceWrapper:has(.gf_product-compare-price:empty) .gf_product-price:after {
+  content: "SALE";
+  font-size: 12px;
+  position: absolute;
+  bottom: 1px;
+  left: 9px;
+  font-weight: 500;
 }
