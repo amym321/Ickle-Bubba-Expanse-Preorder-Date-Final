@@ -425,7 +425,7 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
 .bubblePricing .rrpMetaprice:not(:empty):before {
   display:block;
 }
-.bubblePricing .priceWrapper .gf_product-compare-price:before {
+.bubblePricing .priceWrapper .priceWrapper .gf_product-compare-price:before {
   content: "SALE";
 }
 .bubblePricing .gf_product-price {
