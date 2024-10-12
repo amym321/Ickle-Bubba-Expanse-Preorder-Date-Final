@@ -127,7 +127,7 @@
             let comparePrice = document.querySelector('.priceWrapper .gf_product-compare-price').innerHTML;
             let rrpMeta = document.querySelector('.rrpMetaprice').innerHTML;
             if(rrpMeta == '' && comparePrice == ''){
-              document.querySelectorAll('.priceWrapper .gf_product-price').classList.add('noRRPnoCompare')
+              document.querySelector('.priceWrapper .gf_product-price').classList.add('noRRPnoCompare')
             }
           }
         }     
