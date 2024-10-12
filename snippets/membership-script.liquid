@@ -128,11 +128,9 @@
             let bubblePrice = document.querySelectorAll('.priceWrapper .gf_product-price');
             let rrpMeta = document.querySelector('.rrpMetaprice').innerHTML;
             let isAllBlank = false ;
-            // if(rrpMeta){
-              
-            //   isAllBlank = true;
-            // }
-            console.log(rrpMeta)
+            if(rrpMeta == ''){
+              isAllBlank = true;
+            }
             console.log(isAllBlank)
           }
         }     
