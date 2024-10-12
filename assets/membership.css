@@ -444,10 +444,3 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
 .bubblePricing .priceWrapper .gf_product-price:after{
   content: "BUBBLE PRICE";
 }
-.bubblePricing .priceWrapper .gf_product-price:after {
-  font-size: 12px;
-  position: absolute;
-  bottom: 1px;
-  left: 9px;
-  font-weight: 500;
-}
