@@ -432,7 +432,8 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   background: linear-gradient(to right, #f7d8d8, #e0e7f9) !important;
   margin-left: 28px !important;
 }
-.bubblePricing #systemPriceD .gf_product-price {
+.bubblePricing #systemPriceD .gf_product-price,
+.bubblePricing #systemPriceP .gf_product-price{
    color:#000 !important;
 }
 .bubblePricing .priceWrapper .gf_product-price {
