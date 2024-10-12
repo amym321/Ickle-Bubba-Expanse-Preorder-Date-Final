@@ -399,4 +399,8 @@
   .bubblePricing .rrpMetaprice {
     font-size: 18px;
   }
+  .bubblePricing #systemPriceD .gf_product-price,
+  .bubblePricing #systemPriceP .gf_product-price{
+     font-size:18px !important;
+  }
 }
