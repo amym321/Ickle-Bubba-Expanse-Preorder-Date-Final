@@ -390,6 +390,12 @@
   left: 9px;
   font-weight: 500;
 }
+.gf_product-price.noRRPnoCompare:after{
+  display:none;
+}
+.gf_product-price.noRRPnoCompare{
+  background:none !important;
+}
 @media screen and (max-width:767px){
   .bubblePricing .rrpMetaprice {
     font-size: 21px;
