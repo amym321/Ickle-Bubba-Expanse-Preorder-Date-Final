@@ -390,10 +390,10 @@
   left: 9px;
   font-weight: 500;
 }
-.gf_product-price.noRRPnoCompare:after{
+.bubblePricing .priceWrapper .gf_product-price.noRRPnoCompare:after{
   display:none;
 }
-.gf_product-price.noRRPnoCompare{
+.bubblePricing .priceWrapper .gf_product-price.noRRPnoCompare{
   background:none !important;
 }
 @media screen and (max-width:767px){
