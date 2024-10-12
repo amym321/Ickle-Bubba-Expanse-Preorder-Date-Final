@@ -25,12 +25,14 @@
   let memberPopup = document.querySelector('.infoPopup');
   let formThankLocation = window.location.pathname;
   let infoPopupClose = document.querySelector('.infoPopupClose');
+  
   // Function to check if 24 hours have passed
   function is24HoursPassed(timestamp) {
     const now = new Date().getTime();
     const twentyFourHours = 24 * 60 * 60 * 1000; // milliseconds in 24 hours
     return (now - timestamp) > twentyFourHours;
   }
+  
   {% if customer %}
     const userStorageKey = 'userStorageKey';
     const popupClosedAt = localStorage.getItem(userStorageKey);
@@ -71,7 +73,6 @@
     
   {% else %}
 
-    
     let guestStorageKey = 'guestStorageKey';
     const popupClosedAt = localStorage.getItem(guestStorageKey);
     if (popupClosedAt) {
@@ -97,6 +98,8 @@
     
   {% endif %}
 
+  
+  // multiple operations
   {% if customer %}
     checkCustomerByEmail({{customer.email | json }}).then((data)=> {
       if(data === 401){
@@ -139,7 +142,6 @@
   {% endif %}
 
   
-  console.log(setupForm)
   // Form submission handling
   if (setupForm) {
     setupForm.addEventListener('submit', function(event) {
@@ -184,12 +186,7 @@
       sendForm();
     });
   }
-
-
-
-
-
-  
+ 
 // Edit and update button logic
 // let editBtn = document.querySelector('.editForm svg');
 // let updateBtn = document.querySelector('#setupArea .membershipButton');
