@@ -452,3 +452,6 @@ div[data-name="orignalP1"],div[data-name="orignalP"]{
     font-size: 21px;
   }
 }
+#systemPrice .gf_product-price{
+  color:#000000 !important;
+}
