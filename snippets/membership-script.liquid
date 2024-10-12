@@ -116,10 +116,10 @@
           // no design on bubble price if rrp and compare price are blank
           let comparePrice = document.querySelectorAll('.priceWrapper .gf_product-compare-price');
           let bubblePrice = document.querySelectorAll('.priceWrapper .gf_product-price');
-          let rrpMeta = document.querySelector('.rrpMetaprice');
+          let rrpMeta = document.querySelector('.rrpMetaprice').innerHTML;
           let isAllBlank = false ;
           if(rrpMeta){
-            console.log(rrpMeta.innerText)
+            console.log(rrpMeta)
             isAllBlank = true;
           }
           console.log(isAllBlank)
