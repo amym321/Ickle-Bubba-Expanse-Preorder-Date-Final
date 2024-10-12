@@ -109,7 +109,7 @@
         pdpBody ? pdpBody.classList.add('bubblePricing') : '';
         if(pdpBody){
           let isAllBlank = false ;
-          let rrpMetaprice = document.querySelectorAll('.rrpMetaprice');
+          let rrpMetaprice = document.querySelectorAll('.rrpMetaprice')[0];
           rrpMetaprice.forEach((element)=>{
             element.style.display = 'block';
             if(element.innerHTML == '' ){
