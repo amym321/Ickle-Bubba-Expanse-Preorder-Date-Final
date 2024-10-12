@@ -198,6 +198,7 @@ observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
     // You can add your logic here to handle the change
     getVariantMetafieldValue(newValue, 'custom', 'rrp')
     .then(value => {
+      console.log(value)
       if(value !== null){
         let rrpMetapriceArray = document.querySelectorAll('.rrpMetaprice');
         rrpMetapriceArray.forEach((element)=>{
