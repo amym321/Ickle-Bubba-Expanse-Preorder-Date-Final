@@ -382,6 +382,9 @@
   background: none;
   padding: 1px 16px 14px 7px !important;
 }
+.bubblePricing .priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price{
+  margin-left: 28px !important;
+}
 
 .bubblePricing .priceWrapper:has(.gf_product-compare-price:empty) .gf_product-price:after {
   font-size: 12px;
