@@ -349,11 +349,7 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
 /* bubble price  */
 /* 
 
-@media screen and (max-width:767px){
-  .bubblePricing .metaPriceRRP {
-    font-size: 21px;
-  }
-}
+
 #systemPrice .gf_product-prices .gf_product-price{
   color:#000000 !important;
 } */
@@ -414,6 +410,11 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   padding-right: 14px;
   margin-right: 14px;
   text-decoration: line-through;
+}
+@media screen and (max-width:767px){
+  .bubblePricing .rrpMetaprice {
+    font-size: 21px;
+  }
 }
 .bubblePricing .rrpMetaprice:before {
   content: "RRP";
