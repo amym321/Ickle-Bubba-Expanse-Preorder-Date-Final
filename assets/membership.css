@@ -426,13 +426,14 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   content: "";
   height: 37px;
   width: 1px;
-  display: block;
   background: #000;
   position: absolute;
   right: -1px;
   top: 1px;
+  display:none;
 }
-.bubblePricing .rrpMetaprice:not(:empty):before {
+.bubblePricing .rrpMetaprice:not(:empty):before,
+.bubblePricing .rrpMetaprice:not(:empty):after{
   display:block;
 }
 
