@@ -123,12 +123,12 @@
           })
 
           if(pdpBody){
-              // no design on bubble price if rrp and compare price are blank
-            let comparePrice = document.querySelectorAll('.priceWrapper .gf_product-compare-price');
+            // no design on bubble price if rrp and compare price are blank
+            let comparePrice = document.querySelector('.priceWrapper .gf_product-compare-price').innerHTML;
             let bubblePrice = document.querySelectorAll('.priceWrapper .gf_product-price');
             let rrpMeta = document.querySelector('.rrpMetaprice').innerHTML;
             let isAllBlank = false ;
-            if(rrpMeta == ''){
+            if(rrpMeta == '' && comparePrice == ''){
               isAllBlank = true;
             }
             console.log(isAllBlank)
