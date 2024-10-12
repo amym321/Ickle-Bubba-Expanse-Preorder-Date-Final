@@ -122,16 +122,14 @@
             element.classList.remove('hideCollectionPrice');
           })
 
+          // no design on bubble price if rrp and compare price are blank
           if(pdpBody){
-            // no design on bubble price if rrp and compare price are blank
             let comparePrice = document.querySelector('.priceWrapper .gf_product-compare-price').innerHTML;
-            let bubblePrice = document.querySelectorAll('.priceWrapper .gf_product-price');
+            let bubblePrice = ;
             let rrpMeta = document.querySelector('.rrpMetaprice').innerHTML;
-            let isAllBlank = false ;
             if(rrpMeta == '' && comparePrice == ''){
-              isAllBlank = true;
+              document.querySelectorAll('.priceWrapper .gf_product-price').classList.add('noRRPnoCompare')
             }
-            console.log(isAllBlank)
           }
         }     
       }else{
