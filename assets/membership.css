@@ -420,6 +420,10 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   font-size: 12px;
   position: absolute;
   bottom: -14px;
+  display:none;
+}
+.bubblePricing .rrpMetaprice:not(:empty):before {
+  display:block;
 }
 .bubblePricing .priceWrapper .gf_product-compare-price:before {
   content: "SALE";
