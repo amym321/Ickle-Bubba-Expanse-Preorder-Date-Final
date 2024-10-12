@@ -377,14 +377,14 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   display:none;
 }
 
-/* guest price id #m-1728383719364 */ 
-.template-product:has(.gf_product-compare-price:not(:empty)) #m-1728383719364 .gf_product-price {
+/* guest price */ 
+.priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price {
   position: relative;
   margin-left: 18px !important;
   background: none;
   padding: 1px 16px 14px 7px !important;
 }
-.template-product:has(.gf_product-compare-price:not(:empty)) #m-1728383719364 .gf_product-price:before {
+.priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price:before {
   content: "";
   height: 37px;
   width: 1px;
@@ -394,7 +394,7 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   left: -6px;
   top: 1px;
 }
-.template-product:has(.gf_product-compare-price:not(:empty)) #m-1728383719364 .gf_product-price:after {
+.priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price:after {
   content: "SALE";
   font-size: 12px;
   position: absolute;
@@ -402,10 +402,10 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   left: 9px;
   font-weight: 500;
 }
-.template-product #m-1728383719364 .gf_product-compare-price {
+.priceWrapper .gf_product-compare-price {
   text-decoration: line-through;
 }
-.template-product #m-1728383719364 .gf_product-compare-price:before {
+.priceWrapper .gf_product-compare-price:before {
   content: "RRP";
   font-size: 12px;
   position: absolute;
@@ -415,8 +415,7 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
 
 
 
-/* guest price id #m-1725527550854 */ 
-.template-product:has(.gf_product-compare-price:not(:empty)) #m-1725527550854 .gf_product-price {
+/* .template-product:has(.gf_product-compare-price:not(:empty)) #m-1725527550854 .gf_product-price {
   position: relative;
   margin-left: 18px !important;
   background: none;
@@ -448,6 +447,6 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   font-size: 12px;
   position: absolute;
   bottom: -9px;
-}
-/* guest price id #m-1725527550854 end */ 
+} */
+
 
