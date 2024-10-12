@@ -266,8 +266,14 @@
     outline: 2px solid #fff;
 }
 
-
-
+/* collection price css */
+.hideCollectionPrice{
+  display:none;
+}
+.showCollectionPrice{
+  display:inline-block;
+}
+/* collection price css end */
 
 
 
@@ -278,10 +284,6 @@
 
 
 /*
-
-
-
-
 
 div[data-extraclass="priceWrapper"] #m-1728383719364 .gf_product-compare-price {
   text-decoration: line-through;
@@ -347,13 +349,8 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
 
 
 
-.hideCollectionPrice{
-  display:none;
-}
-.showCollectionPrice{
-  display:inline-block;
-}
-div[data-extraclass="priceWrapper"]>div {
+
+.priceWrapper > div {
   display: flex;
   align-items: baseline;
   padding: 0;
