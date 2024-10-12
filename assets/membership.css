@@ -432,6 +432,13 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   background: linear-gradient(to right, #f7d8d8, #e0e7f9) !important;
   margin-left: 28px !important;
 }
+.bubblePricing #systemPriceD .gf_product-price {
+   color:#000 !important;
+}
+.bubblePricing .priceWrapper .gf_product-price {
+  background: linear-gradient(to right, #f7d8d8, #e0e7f9) !important;
+  margin-left: 28px !important;
+}
 .bubblePricing .priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price:after,
 .bubblePricing .priceWrapper .gf_product-price:after{
   content: "BUBBLE PRICE";
