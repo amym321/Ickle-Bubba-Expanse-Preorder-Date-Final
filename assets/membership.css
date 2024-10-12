@@ -418,3 +418,6 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
 .bubblePricing .priceWrapper .gf_product-compare-price:before {
   content: "SALE";
 }
+.bubblePricing .priceWrapper .gf_product-price:after {
+  content: "BUBBLE PRICE";
+}
