@@ -108,19 +108,20 @@
         let pdpBody = document.querySelector('body.template-product')
         pdpBody ? pdpBody.classList.add('bubblePricing') : '';
         if(pdpBody){
-          let isAllBlank = false ;
-          let rrpMetaprice = document.querySelectorAll('.rrpMetaprice')[0];
+          let rrpMetaprice = document.querySelectorAll('.rrpMetaprice');
           rrpMetaprice.forEach((element)=>{
             element.style.display = 'block';
-            if(element.innerHTML == '' ){
-              console.log(element.innerText)
-              isAllBlank = true;
-            }
           })
 
           // no design on bubble price if rrp and compare price are blank
           let comparePrice = document.querySelectorAll('.priceWrapper .gf_product-compare-price');
           let bubblePrice = document.querySelectorAll('.priceWrapper .gf_product-price');
+          let rrpMeta = document.querySelectorAll('.rrpMetaprice');
+          let isAllBlank = false ;
+          if(element.innerHTML == '' ){
+            console.log(element.innerText)
+            isAllBlank = true;
+          }
           console.log(isAllBlank)
 
         }
