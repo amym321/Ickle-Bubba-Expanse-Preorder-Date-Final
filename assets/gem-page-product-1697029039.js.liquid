@@ -81,7 +81,7 @@ const variantElement = document.querySelector('div.module[data-current-variant]'
 
 getVariantMetafieldValue(variantElement.getAttribute('data-current-variant'), 'custom', 'rrp')
     .then(value => {
-      document.getElementById('curVarPrice').innerHTML = `£${value}`;
+      value !== null ? document.getElementById('curVarPrice1').innerHTML = `£${value}` : '' ;
     })
     .catch(error => console.error(error));
     
@@ -91,7 +91,7 @@ observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
     // You can add your logic here to handle the change
     getVariantMetafieldValue(newValue, 'custom', 'rrp')
     .then(value => {
-      document.getElementById('curVarPrice').innerHTML = `£${value}`;
+      value !== null ? document.getElementById('curVarPrice1').innerHTML = `£${value}` : '' ;
     })
     .catch(error => console.error(error));
     
@@ -99,14 +99,7 @@ observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
 
 })( window.GemQuery || jQuery );
     (function(jQuery) {
-    var $module = jQuery('#m-1725527550854').children('.module');
-    $module.gfV3ProductPrice({
-        displayCurrency: true
-    });
-})(window.GemQuery || jQuery);
-  
-    (function(jQuery) {
-    var $module = jQuery('#m-1728381085022').children('.module');
+    var $module = jQuery('#m-1728712347411').children('.module');
     $module.gfV3ProductPrice({
         displayCurrency: true
     });
