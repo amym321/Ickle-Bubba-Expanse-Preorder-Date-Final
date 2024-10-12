@@ -460,7 +460,6 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   top: 1px;
 }
 .bubblePricing .priceWrapper:has(.gf_product-compare-price:empty) .gf_product-price:after {
-  content: "SALE";
   font-size: 12px;
   position: absolute;
   bottom: 1px;
