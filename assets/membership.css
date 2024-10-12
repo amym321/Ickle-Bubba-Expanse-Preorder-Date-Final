@@ -350,11 +350,11 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
 
 
 
-/* .priceWrapper > div {
+.priceWrapper > div {
   display: flex;
   align-items: baseline;
   padding: 0;
-} */
+}
 .rrpMetaprice{
   display:none;
 }
