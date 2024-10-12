@@ -419,7 +419,7 @@ div[data-extraclass="priceWrapper"] #m-1725527550854 .gf_product-price:before {
   content: "RRP";
   font-size: 12px;
   position: absolute;
-  bottom: -9px;
+  bottom: -14px;
 }
 .bubblePricing .priceWrapper .gf_product-compare-price:before {
   content: "SALE";
