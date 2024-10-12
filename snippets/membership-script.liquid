@@ -113,8 +113,17 @@
             element.style.display = 'block';
           })
 
-          window.onload = function() {
-            // no design on bubble price if rrp and compare price are blank
+
+
+        }
+        window.onload = function() {
+          let collectionPrice = document.querySelectorAll('.collectionPrice');
+          Array.from(collectionPrice).forEach((element)=>{
+            element.classList.remove('hideCollectionPrice');
+          })
+
+          if(pdpBody){
+              // no design on bubble price if rrp and compare price are blank
             let comparePrice = document.querySelectorAll('.priceWrapper .gf_product-compare-price');
             let bubblePrice = document.querySelectorAll('.priceWrapper .gf_product-price');
             let rrpMeta = document.querySelector('.rrpMetaprice').innerHTML;
@@ -126,13 +135,6 @@
             console.log(rrpMeta)
             console.log(isAllBlank)
           }
-
-        }
-        window.onload = function() {
-          let collectionPrice = document.querySelectorAll('.collectionPrice');
-          Array.from(collectionPrice).forEach((element)=>{
-            element.classList.remove('hideCollectionPrice');
-          })
         }     
       }else{
         document.querySelector('#membership-form').style.display = 'block';
