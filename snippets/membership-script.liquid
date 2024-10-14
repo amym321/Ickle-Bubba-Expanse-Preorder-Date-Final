@@ -42,6 +42,7 @@
         checkCustomerByEmail({{customer.email | json }}).then((data)=> {
           if(data === 401){
             // if user is created a company then no popup will show
+            
           }else{
             if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
               memberPopup.style.display = 'block';
@@ -103,6 +104,10 @@
   {% if customer %}
     checkCustomerByEmail({{customer.email | json }}).then((data)=> {
       if(data === 401){
+        let bubbleBanner = document.querySelector('.bubbleBanner');
+        if(bubbleBanner){
+          bubbleBanner.style.display = 'block';
+        }
         document.querySelector('#membership-form').style.display = 'none';
         document.querySelector('.site-nav__link:has(svg.icon-user)').setAttribute('href','https://ickle-bubba-sandbox.myshopify.com/pages/membership-page');
         let pdpBody = document.querySelector('body.template-product')
@@ -112,9 +117,6 @@
           rrpMetaprice.forEach((element)=>{
             element.style.display = 'block';
           })
-
-
-
         }
         window.onload = function() {
           let collectionPrice = document.querySelectorAll('.collectionPrice');
@@ -132,11 +134,20 @@
           // }
         }     
       }else{
+        let guestBanner = document.querySelector('.guestBanner');
+        if(guestBanner){
+          guestBanner.style.display = 'block';
+        }
         document.querySelector('#membership-form').style.display = 'block';
         document.querySelector('.infoPopupMessage').innerHTML = 'You are one step away from Bubble membership - <strong>Complete here!</strong>';
+        
       }
     })
   {% else %}
+    let guestBanner = document.querySelector('.guestBanner');
+    if(guestBanner){
+      guestBanner.style.display = 'block';
+    }
     document.querySelector('#membership-form').style.display = 'block';
     document.querySelector('.infoPopupMessage').innerHTML = '<strong>Sign up</strong> to Bubble to get exclusive offers and more!';
   {% endif %}
