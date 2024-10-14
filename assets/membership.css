@@ -424,3 +424,6 @@
 .priceWrapper:has(.rrpMetaprice:empty) .gf_product-compare-price{
   text-decoration:line-through;
 }
+.cartBanner img{
+  width:100%;
+}
