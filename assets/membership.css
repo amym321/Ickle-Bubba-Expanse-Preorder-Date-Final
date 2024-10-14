@@ -427,3 +427,7 @@
 .cartBanner img{
   width:100%;
 }
+.cartBanner .guestBanner,
+.cartBanner .bubbleBanner{
+  display:none;
+}
