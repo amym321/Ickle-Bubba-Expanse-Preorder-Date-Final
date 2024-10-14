@@ -1,6 +1,33 @@
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "Cart Banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id":"guestBanner",
+        "label": "Guest User Banner"
+      },
+      {
+        "type": "url",
+        "id":"guestBannerLink",
+        "label": "Guest Banner Link"
+      },
+      {
+        "type": "image_picker",
+        "id":"companyBanner",
+        "label": "Bubble User Banner"
+      },
+      {
+        "type": "url",
+        "id":"bubbleBannerLink",
+        "label": "Bubble Banner Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Cart Banner",
+        "category":"section"
+      }
+    ]
   }
 {% endschema %}
