@@ -410,6 +410,7 @@
 }
 .priceWrapper:has(.rrpMetaprice:empty) .gf_product-compare-price:empty + .gf_product-price{
   background:none !important;
+  padding-left: 0 !important;
 }
 .priceWrapper:has(.rrpMetaprice:empty) .gf_product-compare-price:empty + .gf_product-price:after {
   display:none !important;
