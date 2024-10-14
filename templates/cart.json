@@ -1,1 +1,47 @@
-{"sections":{"main":{"type":"main-cart","settings":{}},"recently-viewed":{"type":"recently-viewed","disabled":true,"settings":{}},"1681209448d90dc5d3":{"type":"apps","disabled":true,"blocks":{"45523596-1f7a-4e6a-9ca3-844072b7e866":{"type":"shopify:\/\/apps\/klarna-on-site-messaging\/blocks\/app-block\/b95936a9-74b6-4a95-8103-6a1b6459c25e","settings":{"data_key":"top-strip-promotion-auto-size","locale_option":"geolocation","locale_fallback":"","theme":"light","topPadding":"0","bottomPadding":"0"}}},"block_order":["45523596-1f7a-4e6a-9ca3-844072b7e866"],"settings":{"full_width":false,"space_around":true}}},"order":["main","recently-viewed","1681209448d90dc5d3"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "cart_banner_TQ8Qd7": {
+      "type": "cart-banner",
+      "settings": {
+        "guestBanner": "shopify://shop_images/New_Project_1.jpg",
+        "guestBannerLink": "#",
+        "companyBanner": "shopify://shop_images/New_Project.jpg",
+        "bubbleBannerLink": "#"
+      }
+    },
+    "main": {
+      "type": "main-cart",
+      "settings": {
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1681209448d90dc5d3": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    }
+  },
+  "order": [
+    "cart_banner_TQ8Qd7",
+    "main",
+    "recently-viewed",
+    "1681209448d90dc5d3"
+  ]
+}
