@@ -421,6 +421,6 @@
 .bubblePricing .priceWrapper .gf_product-compare-price{
   text-decoration:none;
 }
-.priceWrapper:has(.rrpMetaprice:empty) .gf_product-compare-price:empty{
+.priceWrapper:has(.rrpMetaprice:empty) .gf_product-compare-price{
   text-decoration:line-through;
 }
