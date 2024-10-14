@@ -21,29 +21,29 @@
         "image_text_block_h9gjWn": {
           "type": "image_text_block",
           "settings": {
-            "blockImage": "shopify://shop_images/panda.jpg",
-            "blockTitle": "Special low prices for members"
-          }
-        },
-        "image_text_block_rYXiV6": {
-          "type": "image_text_block",
-          "settings": {
-            "blockImage": "shopify://shop_images/panda.jpg",
-            "blockTitle": "Limited time offers exclusive for members"
+            "blockImage": "shopify://shop_images/Lower_Prices_Icon_e9c9c877-ecf6-403d-8f9b-6fce6c9242e0.webp",
+            "blockTitle": "Lower prices for bubble members on our best sellers"
           }
         },
         "image_text_block_JJH9Wq": {
           "type": "image_text_block",
           "settings": {
-            "blockImage": "shopify://shop_images/panda.jpg",
-            "blockTitle": "Bubble members get extra discounts"
+            "blockImage": "shopify://shop_images/Queue_Jump_Icon_d79d00db-40a5-4270-a598-91a1f7dc6c9f.webp",
+            "blockTitle": "Queue jump ournewest products plusearly entry to sales"
+          }
+        },
+        "image_text_block_rYXiV6": {
+          "type": "image_text_block",
+          "settings": {
+            "blockImage": "shopify://shop_images/Limited_Time_Icon_6c956c2f-0c00-4e80-b280-b7ec6b04b4a5.webp",
+            "blockTitle": "Limited time offers exclusive for members"
           }
         }
       },
       "block_order": [
         "image_text_block_h9gjWn",
-        "image_text_block_rYXiV6",
-        "image_text_block_JJH9Wq"
+        "image_text_block_JJH9Wq",
+        "image_text_block_rYXiV6"
       ],
       "settings": {
         "logoImage": "shopify://shop_images/ickle.png",
