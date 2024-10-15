@@ -380,10 +380,11 @@
 .bubblePricing .priceWrapper .gf_product-price {
   background: linear-gradient(to right, #f7d8d8, #e0e7f9) !important;
   margin-left: 28px !important;
+  top:2px;
 }
 .bubblePricing .priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price:before{
   left:-14px;
-  top:6px;
+  top:4px;
 }
 .bubblePricing #systemPriceD .gf_product-price,
 .bubblePricing #systemPriceP .gf_product-price{
