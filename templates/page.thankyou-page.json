@@ -46,9 +46,9 @@
         "image_text_block_rYXiV6"
       ],
       "custom_css": [
-        ".thank-you .formWrapper {padding: 0px 30px 25px;}",
+        ".thank-you .formWrapper {padding: 0px 0px 25px;}",
         ".thankyou-content {margin: 30px 50px;}",
-        ".formHeader img{padding-bottom: 20px;}"
+        ".formHeader img {padding-bottom: 20px;}"
       ],
       "settings": {
         "logoImage": "shopify://shop_images/Bubble_White_Curve_Logo_Desktop.webp",
