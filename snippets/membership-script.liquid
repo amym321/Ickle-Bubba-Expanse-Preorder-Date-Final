@@ -117,6 +117,9 @@
           // Function to track URL changes in real-time (including history state changes)
 // Function to track URL changes and extract the variant ID
 function trackVariantIDFromURLChanges() {
+    // Variable to store the current variant ID
+    let currentVariantID = null;
+
     // Function to extract variant ID from URL
     function getVariantIDFromURL(url) {
         const urlObj = new URL(url);
@@ -124,19 +127,22 @@ function trackVariantIDFromURLChanges() {
     }
 
     // Initial variant ID extraction on page load
-    const initialVariantID = getVariantIDFromURL(window.location.href);
-    if (initialVariantID) {
-        console.log('Initial Variant ID:', initialVariantID);
+    currentVariantID = getVariantIDFromURL(window.location.href);
+    if (currentVariantID) {
+        console.log('Initial Variant ID:', currentVariantID);
     } else {
         console.log('No variant ID found in the initial URL.');
     }
 
+    // Function to handle and return the current variant ID
+    function getCurrentVariantID() {
+        return currentVariantID;
+    }
+
     // Track changes via 'popstate' event (back/forward navigation)
     window.addEventListener('popstate', function () {
-        const variantID = getVariantIDFromURL(window.location.href);
-        if (variantID) {
-            console.log('Variant ID on popstate:', variantID);
-        }
+        currentVariantID = getVariantIDFromURL(window.location.href);
+        console.log('Variant ID on popstate:', currentVariantID);
     });
 
     // Override 'pushState' and 'replaceState' to catch URL updates
@@ -145,31 +151,32 @@ function trackVariantIDFromURLChanges() {
 
     history.pushState = function () {
         originalPushState.apply(this, arguments);
-        const variantID = getVariantIDFromURL(window.location.href);
-        if (variantID) {
-            console.log('Variant ID on pushState:', variantID);
-        }
+        currentVariantID = getVariantIDFromURL(window.location.href);
+        console.log('Variant ID on pushState:', currentVariantID);
     };
 
     history.replaceState = function () {
         originalReplaceState.apply(this, arguments);
-        const variantID = getVariantIDFromURL(window.location.href);
-        if (variantID) {
-            console.log('Variant ID on replaceState:', variantID);
-        }
+        currentVariantID = getVariantIDFromURL(window.location.href);
+        console.log('Variant ID on replaceState:', currentVariantID);
     };
 
     // Optional: Handle 'hashchange' event if needed
     window.addEventListener('hashchange', function () {
-        const variantID = getVariantIDFromURL(window.location.href);
-        if (variantID) {
-            console.log('Variant ID (hashchange):', variantID);
-        }
+        currentVariantID = getVariantIDFromURL(window.location.href);
+        console.log('Variant ID (hashchange):', currentVariantID);
     });
+
+    // Return a function to access the current variant ID
+    return getCurrentVariantID;
 }
 
 // Call the function to start tracking variant ID changes
-trackVariantIDFromURLChanges();
+const getCurrentVariantID = trackVariantIDFromURLChanges();
+
+// Usage example: You can call getCurrentVariantID() to get the current variant ID at any time
+console.log('Current Variant ID:', getCurrentVariantID());
+
 
 
 
