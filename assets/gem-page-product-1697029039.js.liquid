@@ -26,36 +26,7 @@
     
   (function( jQuery ){
 
-function observeAttributeChange(element, attributeName, callback) {
-    // Create a new MutationObserver instance
-    const observer = new MutationObserver((mutationsList) => {
-        for (const mutation of mutationsList) {
-            // Check if the attribute we're interested in has changed
-            if (mutation.type === 'attributes' && mutation.attributeName === attributeName) {
-                const newValue = element.getAttribute(attributeName);
-                callback(newValue); // Call the callback with the new value
-            }
-        }
-    });
 
-    // Start observing the element for attribute changes
-    observer.observe(element, {
-        attributes: true // Observe changes to attributes
-    });
-}
-
-// Usage example
-document.addEventListener('DOMContentLoaded', function() {
-    const variantElement = document.querySelector('div.module[data-current-variant]');
-    console.log(variantElement)
-    if (variantElement) {
-        observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
-            // Handle the attribute change here
-            console.log('Variant changed to:', newValue);
-        });
-    }
-});
-console.log('hello')
 })( window.GemQuery || jQuery );
     (function(jQuery) {
     var $module = jQuery('#m-1728383719364').children('.module');
