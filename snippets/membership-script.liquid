@@ -109,10 +109,10 @@
         }
         document.querySelector('#membership-form').style.display = 'none';
         document.querySelector('.site-nav__link:has(svg.icon-user)').setAttribute('href','https://ickle-bubba-sandbox.myshopify.com/pages/membership-page');
-        let pdpBody = document.querySelector('body')
-        pdpBody ? pdpBody.classList.add('bubblePricing') : '';
-        window.scrollBy(0, 15);
+       
         window.onload = function() {
+           let pdpBody = document.querySelector('body')
+        pdpBody ? pdpBody.classList.add('bubblePricing') : '';
           let collectionPrice = document.querySelectorAll('.collectionPrice');
           Array.from(collectionPrice).forEach((element)=>{
             element.classList.remove('hideCollectionPrice');
