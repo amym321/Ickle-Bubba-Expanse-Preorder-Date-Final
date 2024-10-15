@@ -129,11 +129,6 @@ function trackVariantIDFromURLChanges() {
     // Initial variant ID extraction on page load
     currentVariantID = getVariantIDFromURL(window.location.href);
 
-    // Function to handle and return the current variant ID
-    function getCurrentVariantID() {
-        return currentVariantID;
-    }
-
     // Track changes via 'popstate' event (back/forward navigation)
     window.addEventListener('popstate', function () {
         currentVariantID = getVariantIDFromURL(window.location.href);
@@ -159,7 +154,7 @@ function trackVariantIDFromURLChanges() {
     });
 
     // Return a function to access the current variant ID
-    return getCurrentVariantID();
+    return currentVariantID;
 }
 
 // Call the function to start tracking variant ID changes
