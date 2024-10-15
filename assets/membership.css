@@ -380,7 +380,7 @@
   position: relative;
   margin-left: 0 !important;
   background: none;
-  padding: 1px 16px 14px 7px !important;
+  padding: 5px 16px 18px 7px !important;
 }
 .bubblePricing .priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price{
   margin-left: 28px !important;
