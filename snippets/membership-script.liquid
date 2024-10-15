@@ -127,11 +127,6 @@ function trackVariantIDFromURLChanges() {
 
     // Initial variant ID extraction on page load
     currentVariantID = getVariantIDFromURL(window.location.href);
-    if (currentVariantID) {
-        console.log('Initial Variant ID:', currentVariantID);
-    } else {
-        console.log('No variant ID found in the initial URL.');
-    }
 
     // Function to handle and return the current variant ID
     function getCurrentVariantID() {
