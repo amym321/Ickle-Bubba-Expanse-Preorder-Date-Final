@@ -132,7 +132,6 @@ function trackVariantIDFromURLChanges() {
     // Track changes via 'popstate' event (back/forward navigation)
     window.addEventListener('popstate', function () {
         currentVariantID = getVariantIDFromURL(window.location.href);
-        console.log('Updated Variant ID on popstate:', currentVariantID);
     });
 
     // Override 'pushState' and 'replaceState' to catch URL updates
@@ -142,19 +141,16 @@ function trackVariantIDFromURLChanges() {
     history.pushState = function () {
         originalPushState.apply(this, arguments);
         currentVariantID = getVariantIDFromURL(window.location.href);
-        console.log('Updated Variant ID on pushState:', currentVariantID);
     };
 
     history.replaceState = function () {
         originalReplaceState.apply(this, arguments);
         currentVariantID = getVariantIDFromURL(window.location.href);
-        console.log('Updated Variant ID on replaceState:', currentVariantID);
     };
 
     // Optional: Handle 'hashchange' event if needed
     window.addEventListener('hashchange', function () {
         currentVariantID = getVariantIDFromURL(window.location.href);
-        console.log('Updated Variant ID on hashchange:', currentVariantID);
     });
 
     // Return a function to access the current variant ID
@@ -170,7 +166,7 @@ let finalVariantID;
 // Function to update the final variant ID whenever needed
 function updateFinalVariantID() {
     finalVariantID = getCurrentVariantID();
-    console.log('Final Variant ID:', finalVariantID); // Log the final variant ID
+    console.log(finalVariantID); // Log the final variant ID
 }
 
 // Initial call to set finalVariantID
