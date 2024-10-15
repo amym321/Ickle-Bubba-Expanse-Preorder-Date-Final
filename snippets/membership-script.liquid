@@ -114,8 +114,8 @@
         pdpBody ? pdpBody.classList.add('bubblePricing') : '';
         if(pdpBody){
           console.log('hell')
-// Function to track URL changes and extract the latest variant ID
-function trackLatestVariantID() {
+// Function to track URL changes and extract the variant ID
+function trackVariantIDFromURLChanges() {
     // Variable to store the current variant ID
     let currentVariantID = null;
 
@@ -127,16 +127,22 @@ function trackLatestVariantID() {
 
     // Initial variant ID extraction on page load
     currentVariantID = getVariantIDFromURL(window.location.href);
-    console.log('Initial Variant ID:', currentVariantID); // Log initial value
+    if (currentVariantID) {
+        console.log('Initial Variant ID:', currentVariantID);
+    } else {
+        console.log('No variant ID found in the initial URL.');
+    }
 
-    // Function to update the current variant ID
-    function updateVariantID() {
-        currentVariantID = getVariantIDFromURL(window.location.href);
-        console.log('Updated Variant ID:', currentVariantID); // Log the updated value
+    // Function to handle and return the current variant ID
+    function getCurrentVariantID() {
+        return currentVariantID;
     }
 
     // Track changes via 'popstate' event (back/forward navigation)
-    window.addEventListener('popstate', updateVariantID);
+    window.addEventListener('popstate', function () {
+        currentVariantID = getVariantIDFromURL(window.location.href);
+        console.log('Variant ID on popstate:', currentVariantID);
+    });
 
     // Override 'pushState' and 'replaceState' to catch URL updates
     const originalPushState = history.pushState;
@@ -144,33 +150,31 @@ function trackLatestVariantID() {
 
     history.pushState = function () {
         originalPushState.apply(this, arguments);
-        updateVariantID();
+        currentVariantID = getVariantIDFromURL(window.location.href);
+        console.log('Variant ID on pushState:', currentVariantID);
     };
 
     history.replaceState = function () {
         originalReplaceState.apply(this, arguments);
-        updateVariantID();
+        currentVariantID = getVariantIDFromURL(window.location.href);
+        console.log('Variant ID on replaceState:', currentVariantID);
     };
 
     // Optional: Handle 'hashchange' event if needed
-    window.addEventListener('hashchange', updateVariantID);
+    window.addEventListener('hashchange', function () {
+        currentVariantID = getVariantIDFromURL(window.location.href);
+        console.log('Variant ID (hashchange):', currentVariantID);
+    });
 
     // Return a function to access the current variant ID
-    return () => currentVariantID;
+    return getCurrentVariantID;
 }
 
 // Call the function to start tracking variant ID changes
-const getCurrentVariantID = trackLatestVariantID();
+const getCurrentVariantID = trackVariantIDFromURLChanges();
 
-// Example usage: Get the latest variant ID whenever needed
-function getLatestVariantID() {
-    const latestVariantID = getCurrentVariantID(); // Retrieve the current variant ID
-    return latestVariantID; // Return the latest variant ID
-}
-
-// Call this function wherever you need to get the latest variant ID
-console.log(getLatestVariantID()); // Logs the current variant ID
-
+// Usage example: You can call getCurrentVariantID() to get the current variant ID at any time
+console.log('Current Variant ID:', getCurrentVariantID());
 
 
 
