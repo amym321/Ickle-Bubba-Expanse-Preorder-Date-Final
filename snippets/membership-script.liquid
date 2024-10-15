@@ -114,6 +114,54 @@
         pdpBody ? pdpBody.classList.add('bubblePricing') : '';
         if(pdpBody){
           console.log('hell')
+          // Function to track URL changes in real-time (including history state changes)
+function trackURLChanges() {
+    let currentURL = window.location.href;
+
+    // Track changes via 'popstate' event (back/forward navigation)
+    window.addEventListener('popstate', function () {
+        console.log('URL changed to:', window.location.href);
+        currentURL = window.location.href;
+        // Handle URL change here (e.g., trigger actions or updates)
+    });
+
+    // If variant switching uses pushState or replaceState, we need to override those methods
+    const originalPushState = history.pushState;
+    const originalReplaceState = history.replaceState;
+
+    // Intercept 'pushState' calls
+    history.pushState = function () {
+        originalPushState.apply(this, arguments);
+        const newURL = window.location.href;
+        if (newURL !== currentURL) {
+            currentURL = newURL;
+            console.log('URL updated via pushState to:', newURL);
+            // Handle URL change here (e.g., trigger actions or updates)
+        }
+    };
+
+    // Intercept 'replaceState' calls
+    history.replaceState = function () {
+        originalReplaceState.apply(this, arguments);
+        const newURL = window.location.href;
+        if (newURL !== currentURL) {
+            currentURL = newURL;
+            console.log('URL updated via replaceState to:', newURL);
+            // Handle URL change here (e.g., trigger actions or updates)
+        }
+    };
+
+    // Optional: Listen to 'hashchange' event (if your URL uses hashes)
+    window.addEventListener('hashchange', function () {
+        console.log('URL hash changed to:', window.location.href);
+        currentURL = window.location.href;
+        // Handle URL change here (e.g., trigger actions or updates)
+    });
+}
+
+// Call the function to start tracking URL changes
+trackURLChanges();
+
         }
         window.onload = function() {
           
