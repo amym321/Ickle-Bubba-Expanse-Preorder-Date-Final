@@ -48,7 +48,8 @@
       "custom_css": [
         ".thank-you .formWrapper {padding: 0px 0px 25px;}",
         ".thankyou-content {margin: 30px 50px;}",
-        ".formHeader img {padding-bottom: 20px;}"
+        ".formHeader img {padding-bottom: 20px;}",
+        ".login-text-thank {text-align: center;}"
       ],
       "settings": {
         "logoImage": "shopify://shop_images/Bubble_White_Curve_Logo_Desktop.webp",
