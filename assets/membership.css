@@ -447,3 +447,6 @@
 .cartBanner .bubbleBanner{
   display:none;
 }
+.bubblePricing .priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price {
+    padding: 5px 16px 18px 7px !important;
+}
