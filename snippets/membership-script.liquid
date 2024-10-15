@@ -114,7 +114,6 @@
         pdpBody ? pdpBody.classList.add('bubblePricing') : '';
         if(pdpBody){
           console.log('hell')
-          // Function to track URL changes in real-time (including history state changes)
 // Function to track URL changes and extract the latest variant ID
 function trackLatestVariantID() {
     // Variable to store the current variant ID
@@ -128,11 +127,16 @@ function trackLatestVariantID() {
 
     // Initial variant ID extraction on page load
     currentVariantID = getVariantIDFromURL(window.location.href);
+    console.log('Initial Variant ID:', currentVariantID); // Log initial value
+
+    // Function to update the current variant ID
+    function updateVariantID() {
+        currentVariantID = getVariantIDFromURL(window.location.href);
+        console.log('Updated Variant ID:', currentVariantID); // Log the updated value
+    }
 
     // Track changes via 'popstate' event (back/forward navigation)
-    window.addEventListener('popstate', function () {
-        currentVariantID = getVariantIDFromURL(window.location.href);
-    });
+    window.addEventListener('popstate', updateVariantID);
 
     // Override 'pushState' and 'replaceState' to catch URL updates
     const originalPushState = history.pushState;
@@ -140,18 +144,16 @@ function trackLatestVariantID() {
 
     history.pushState = function () {
         originalPushState.apply(this, arguments);
-        currentVariantID = getVariantIDFromURL(window.location.href);
+        updateVariantID();
     };
 
     history.replaceState = function () {
         originalReplaceState.apply(this, arguments);
-        currentVariantID = getVariantIDFromURL(window.location.href);
+        updateVariantID();
     };
 
     // Optional: Handle 'hashchange' event if needed
-    window.addEventListener('hashchange', function () {
-        currentVariantID = getVariantIDFromURL(window.location.href);
-    });
+    window.addEventListener('hashchange', updateVariantID);
 
     // Return a function to access the current variant ID
     return () => currentVariantID;
@@ -160,29 +162,14 @@ function trackLatestVariantID() {
 // Call the function to start tracking variant ID changes
 const getCurrentVariantID = trackLatestVariantID();
 
-// Usage example: Store the latest variant ID in a variable
-let finalVariantID;
-
-// Function to update the final variant ID whenever needed
-function updateFinalVariantID() {
-    finalVariantID = getCurrentVariantID(); // Get the latest variant ID
+// Example usage: Get the latest variant ID whenever needed
+function getLatestVariantID() {
+    const latestVariantID = getCurrentVariantID(); // Retrieve the current variant ID
+    return latestVariantID; // Return the latest variant ID
 }
 
-// Initial call to set finalVariantID
-updateFinalVariantID();
-
-// Example: Call this function whenever you need the latest variant ID
-// This could be placed in your variant switcher logic
-function onVariantChange() {
-    updateFinalVariantID(); // Call this to refresh finalVariantID when the variant changes
-}
-
-// This can be called when a variant switcher is clicked
-// onVariantChange();
-
-// Example usage
-console.log(finalVariantID); // Log the latest variant ID
-
+// Call this function wherever you need to get the latest variant ID
+console.log(getLatestVariantID()); // Logs the current variant ID
 
 
 
