@@ -117,19 +117,25 @@
           // Function to track URL changes in real-time (including history state changes)
 // Function to track URL changes and extract the variant ID
 function trackVariantIDFromURLChanges() {
-    let currentURL = window.location.href;
-
     // Function to extract variant ID from URL
     function getVariantIDFromURL(url) {
         const urlObj = new URL(url);
         return urlObj.searchParams.get('variant');
     }
 
+    // Initial variant ID extraction on page load
+    const initialVariantID = getVariantIDFromURL(window.location.href);
+    if (initialVariantID) {
+        console.log('Initial Variant ID:', initialVariantID);
+    } else {
+        console.log('No variant ID found in the initial URL.');
+    }
+
     // Track changes via 'popstate' event (back/forward navigation)
     window.addEventListener('popstate', function () {
         const variantID = getVariantIDFromURL(window.location.href);
         if (variantID) {
-            console.log('Variant ID:', variantID);
+            console.log('Variant ID on popstate:', variantID);
         }
     });
 
@@ -139,26 +145,20 @@ function trackVariantIDFromURLChanges() {
 
     history.pushState = function () {
         originalPushState.apply(this, arguments);
-        const newURL = window.location.href;
-        const variantID = getVariantIDFromURL(newURL);
+        const variantID = getVariantIDFromURL(window.location.href);
         if (variantID) {
-            console.log('Variant ID:', variantID);
+            console.log('Variant ID on pushState:', variantID);
         }
     };
 
     history.replaceState = function () {
         originalReplaceState.apply(this, arguments);
-        const newURL = window.location.href;
-        const variantID = getVariantIDFromURL(newURL);
+        const variantID = getVariantIDFromURL(window.location.href);
         if (variantID) {
-            console.log('Variant ID:', variantID);
+            console.log('Variant ID on replaceState:', variantID);
         }
     };
 
-    const variantID = getVariantIDFromURL(window.location.href);
-    if (variantID) {
-        console.log('Variant ID (hashchange):', variantID);
-    }
     // Optional: Handle 'hashchange' event if needed
     window.addEventListener('hashchange', function () {
         const variantID = getVariantIDFromURL(window.location.href);
@@ -170,6 +170,7 @@ function trackVariantIDFromURLChanges() {
 
 // Call the function to start tracking variant ID changes
 trackVariantIDFromURLChanges();
+
 
 
         }
