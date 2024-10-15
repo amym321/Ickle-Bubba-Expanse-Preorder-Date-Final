@@ -290,7 +290,7 @@
   position: relative;
   margin-left: 18px !important;
   background: none;
-  padding: 1px 16px 14px 7px !important;
+  padding: 5px 16px 18px 7px !important;
 }
 .priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price:before {
   content: "";
@@ -306,7 +306,7 @@
   content: "SALE";
   font-size: 12px;
   position: absolute;
-  bottom: 1px;
+  bottom: 5px;
   left: 9px;
   font-weight: 500;
 }
