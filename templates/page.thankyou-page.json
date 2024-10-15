@@ -55,8 +55,8 @@
       "settings": {
         "logoImage": "shopify://shop_images/Bubble_White_Curve_Logo_Desktop.webp",
         "logoText": "Bubble",
-        "successMessage": "<p>Success!</p><p>You're now part of the Bubble family.</p>",
-        "description": "Login to get access to bubble benefits, including:",
+        "successMessage": "<h1>SUCCESS!</h1>",
+        "description": "YOU'RE NOW PART OF THE BUBBLE FAMILY.<br><br>Login to get access to bubble benefits, including:",
         "message": "You must be logged in to see your deals, so get started now!",
         "buttonText": "Browse Products",
         "buttonUrl": "shopify://collections"
