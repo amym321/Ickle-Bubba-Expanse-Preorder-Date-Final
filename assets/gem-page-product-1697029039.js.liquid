@@ -11,6 +11,8 @@
   
     const storedItem = localStorage.getItem('bubblePrice');
     const parentDiv = document.querySelector('body.template-product')
+    console.log(storedItem)
+    console.log(parentDiv)
     if (storedItem == true) {
       parentDiv.classList.add('bubblePricing');
     }
