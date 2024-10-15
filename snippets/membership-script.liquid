@@ -128,21 +128,10 @@ function trackVariantIDFromURLChanges() {
 
     // Initial variant ID extraction on page load
     currentVariantID = getVariantIDFromURL(window.location.href);
-    if (currentVariantID) {
-        console.log('Initial Variant ID:', currentVariantID);
-    } else {
-        console.log('No variant ID found in the initial URL.');
-    }
-
-    // Function to handle and return the current variant ID
-    function getCurrentVariantID() {
-        return currentVariantID;
-    }
 
     // Track changes via 'popstate' event (back/forward navigation)
     window.addEventListener('popstate', function () {
         currentVariantID = getVariantIDFromURL(window.location.href);
-        console.log('Variant ID on popstate:', currentVariantID);
     });
 
     // Override 'pushState' and 'replaceState' to catch URL updates
@@ -152,31 +141,28 @@ function trackVariantIDFromURLChanges() {
     history.pushState = function () {
         originalPushState.apply(this, arguments);
         currentVariantID = getVariantIDFromURL(window.location.href);
-        console.log('Variant ID on pushState:', currentVariantID);
     };
 
     history.replaceState = function () {
         originalReplaceState.apply(this, arguments);
         currentVariantID = getVariantIDFromURL(window.location.href);
-        console.log('Variant ID on replaceState:', currentVariantID);
     };
 
     // Optional: Handle 'hashchange' event if needed
     window.addEventListener('hashchange', function () {
         currentVariantID = getVariantIDFromURL(window.location.href);
-        console.log('Variant ID (hashchange):', currentVariantID);
     });
 
     // Return a function to access the current variant ID
-    return getCurrentVariantID;
+    return () => currentVariantID;
 }
 
 // Call the function to start tracking variant ID changes
 const getCurrentVariantID = trackVariantIDFromURLChanges();
 
-// Usage example: You can call getCurrentVariantID() to get the current variant ID at any time
-console.log('Current Variant ID:', getCurrentVariantID());
-
+// Usage example: Store the final variant ID in a variable
+const finalVariantID = getCurrentVariantID();
+console.log('final',finalVariantID)
 
 
 
