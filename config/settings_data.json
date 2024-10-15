@@ -364,22 +364,22 @@
       },
       "16422382648059844097": {
         "type": "shopify://apps/boost-ai-search-discovery/blocks/instant-search-app-embedded/7fc998ae-a150-4367-bab8-505d8a4503f7",
-        "disabled": true,
+        "disabled": false,
         "settings": {
-        }
-      },
-      "3b1d8bef-5d38-480b-b1b6-11e7e7ff3103": {
-        "type": "shopify://apps/boost-ai-search-discovery/blocks/boost-sd-ssr/7fc998ae-a150-4367-bab8-505d8a4503f7",
-        "disabled": true,
-        "settings": {
-          "templateId": "bdAqk5v8Wf"
         }
       },
       "18228966181090706294": {
         "type": "shopify://apps/selleasy/blocks/app-embed/790c1a03-a71f-4bc1-9869-00dad526d3c2",
-        "disabled": true,
+        "disabled": false,
         "settings": {
           "storefrontAccessToken": ""
+        }
+      },
+      "3b1d8bef-5d38-480b-b1b6-11e7e7ff3103": {
+        "type": "shopify://apps/boost-ai-search-discovery/blocks/boost-sd-ssr/7fc998ae-a150-4367-bab8-505d8a4503f7",
+        "disabled": false,
+        "settings": {
+          "templateId": "bdAqk5v8Wf"
         }
       }
     }
