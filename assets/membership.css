@@ -313,8 +313,10 @@
 .priceWrapper .gf_product-compare-price {
   text-decoration: line-through;
 }
-.priceWrapper .gf_product-price {
-  min-width:100px !important;
+@media screen and (max-width:767px){
+  .priceWrapper .gf_product-price {
+    min-width:100px !important;
+  }
 }
 .priceWrapper .gf_product-compare-price:before {
   content: "RRP";
