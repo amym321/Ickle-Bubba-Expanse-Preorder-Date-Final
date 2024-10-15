@@ -383,6 +383,7 @@
 }
 .bubblePricing .priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price:before{
   left:-14px;
+  top:6px;
 }
 .bubblePricing #systemPriceD .gf_product-price,
 .bubblePricing #systemPriceP .gf_product-price{
