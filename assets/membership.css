@@ -317,7 +317,7 @@
   content: "SALE";
   font-size: 12px;
   position: absolute;
-  bottom: 5px;
+  bottom: 1px;
   left: 9px;
   font-weight: 500;
 }
@@ -405,7 +405,7 @@
 .bubblePricing .priceWrapper:has(.gf_product-compare-price:empty) .gf_product-price:after {
   font-size: 12px;
   position: absolute;
-  bottom: 1px;
+  bottom: 5px;
   left: 9px;
   font-weight: 500;
 }
