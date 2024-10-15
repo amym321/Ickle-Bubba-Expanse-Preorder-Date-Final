@@ -115,8 +115,8 @@
         if(pdpBody){
           console.log('hell')
           // Function to track URL changes in real-time (including history state changes)
-// Function to track URL changes and extract the variant ID
-function trackVariantIDFromURLChanges() {
+// Function to track URL changes and extract the latest variant ID
+function trackLatestVariantID() {
     // Variable to store the current variant ID
     let currentVariantID = null;
 
@@ -158,15 +158,14 @@ function trackVariantIDFromURLChanges() {
 }
 
 // Call the function to start tracking variant ID changes
-const getCurrentVariantID = trackVariantIDFromURLChanges();
+const getCurrentVariantID = trackLatestVariantID();
 
-// Usage example: Store the final variant ID in a variable
+// Usage example: Store the latest variant ID in a variable
 let finalVariantID;
 
 // Function to update the final variant ID whenever needed
 function updateFinalVariantID() {
-    finalVariantID = getCurrentVariantID();
-    console.log(finalVariantID); // Log the final variant ID
+    finalVariantID = getCurrentVariantID(); // Get the latest variant ID
 }
 
 // Initial call to set finalVariantID
@@ -175,11 +174,15 @@ updateFinalVariantID();
 // Example: Call this function whenever you need the latest variant ID
 // This could be placed in your variant switcher logic
 function onVariantChange() {
-    updateFinalVariantID(); // Call this to refresh the finalVariantID when the variant changes
+    updateFinalVariantID(); // Call this to refresh finalVariantID when the variant changes
 }
 
 // This can be called when a variant switcher is clicked
 // onVariantChange();
+
+// Example usage
+console.log(finalVariantID); // Log the latest variant ID
+
 
 
 
