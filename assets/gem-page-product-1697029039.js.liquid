@@ -47,7 +47,7 @@ function observeAttributeChange(element, attributeName, callback) {
 // Usage example
 document.addEventListener('DOMContentLoaded', function() {
     const variantElement = document.querySelector('div.module[data-current-variant]');
-    
+    console.log(variantElement)
     if (variantElement) {
         observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
             // Handle the attribute change here
