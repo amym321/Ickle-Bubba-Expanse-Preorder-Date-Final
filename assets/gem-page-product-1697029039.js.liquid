@@ -5,12 +5,16 @@
 	It is automatically generated from GEMPAGES BUILDER
 	Try to edit page with the live editor.
 {% endcomment %}
-
-    (function( jQuery ){
+(function( jQuery ){
   var $module = jQuery('#m-1725527550793').children('.module');
   $module.gfV3Product();
-})( window.GemQuery || jQuery );
   
+    const storedItem = localStorage.getItem('bubblePrice');
+    const parentDiv = document.querySelector('body.template-product')
+    if (storedItem == true) {
+      parentDiv.classList.add('bubblePricing');
+    }
+})( window.GemQuery || jQuery );
     
   
     
