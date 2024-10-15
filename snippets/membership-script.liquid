@@ -99,13 +99,10 @@
     
   {% endif %}
 
-  {% assign is_authorized = false %}
   // multiple operations
   {% if customer %}
     checkCustomerByEmail({{customer.email | json }}).then((data)=> {
       if(data === 401){
-        {% assign is_authorized = true %}
-        console.log('s',{{is_authorized | json}})
         let bubbleBanner = document.querySelector('.bubbleBanner');
         if(bubbleBanner){
           bubbleBanner.style.display = 'block';
