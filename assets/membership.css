@@ -57,12 +57,12 @@
   display:none;
 }
 .membershipButton img{
-  display:none;
+  /* display:none; */
+  width:27px;
+  margin:auto;
 }
 .membershipButton[disabled] img{
   display:block;
-  width:27px;
-  margin:auto;
 }
 .membershipWrapper input[type="text"],
 .formWrapper input[type="date"],
