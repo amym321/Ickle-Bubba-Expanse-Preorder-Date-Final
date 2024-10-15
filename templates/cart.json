@@ -12,7 +12,6 @@
     "cart_banner_TQ8Qd7": {
       "type": "cart-banner",
       "settings": {
-        "guestBanner": "shopify://shop_images/Screenshot_2024-10-14_123630.png",
         "guestBannerLink": "#",
         "companyBanner": "shopify://shop_images/Screenshot_2024-10-14_123630.png",
         "bubbleBannerLink": "#"
