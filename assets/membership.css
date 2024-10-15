@@ -51,7 +51,18 @@
   cursor: pointer;
 }
 .membershipButton[disabled]{
-  background: silver !important;
+  background: #b3b3b3 !important;
+}
+.membershipButton[disabled] span{
+  display:none;
+}
+.membershipButton img{
+  display:none;
+}
+.membershipButton[disabled] img{
+  display:block;
+  width:27px;
+  margin:auto;
 }
 .membershipWrapper input[type="text"],
 .formWrapper input[type="date"],
