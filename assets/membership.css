@@ -450,3 +450,6 @@
 .bubblePricing .priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price {
     padding: 5px 16px 18px 7px !important;
 }
+.bubblePricing .priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price:after{
+      bottom: 5px;
+}
