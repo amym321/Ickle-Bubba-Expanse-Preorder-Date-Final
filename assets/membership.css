@@ -292,9 +292,9 @@
   align-items: baseline;
   padding: 0;
 }
-/* .rrpMetaprice{
-  display:none;
-} */
+.rrpMetaprice{
+  display:block;
+}
 
 /* guest price */ 
 .priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price {
