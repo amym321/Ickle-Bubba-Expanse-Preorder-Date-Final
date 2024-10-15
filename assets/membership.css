@@ -346,6 +346,7 @@
   padding-right: 14px;
   margin-right: 14px;
   text-decoration: line-through;
+  display:block;
 }
 
 .bubblePricing .rrpMetaprice:before {
