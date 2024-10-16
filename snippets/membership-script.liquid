@@ -133,7 +133,7 @@
           const variantElement = document.querySelector('div.module[data-current-variant]');
           observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
               variandId = newValue;
-              let c = document.getElementById(`#${variandId}`);
+              let c = document.getElementById(`${variandId}`);
               console.log(c)
           });
         }
