@@ -64,6 +64,10 @@
   width:27px;
   margin:auto;
 }
+.membershipButton .membershipButtonLoader p{
+  font-weight:12px;
+  margin-top:10px;
+}
 .membershipButton[disabled] .membershipButtonLoader{
   display:block;
 }
