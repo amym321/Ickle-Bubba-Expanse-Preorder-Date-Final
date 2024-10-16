@@ -114,51 +114,56 @@
         pdpBody ? pdpBody.classList.add('bubblePricing') : '';
         if(pdpBody){ 
 
-                function observeAttributeChange(element, attributeName, callback) {
-              // Create a new MutationObserver instance
-              const observer = new MutationObserver((mutationsList) => {
-                  for (const mutation of mutationsList) {
-                      // Check if the attribute we're interested in has changed
-                      if (mutation.type === 'attributes' && mutation.attributeName === attributeName) {
-                          const newValue = element.getAttribute(attributeName);
-                          callback(newValue);
-                      }
-                  }
-              });
-              // Start observing the element for attribute changes
-              observer.observe(element, {
-                  attributes: true
-              });
-          }
-          
+// Monitor element attribute value
+const variantElement = document.querySelector('div.module[data-current-variant]');
+if (!variantElement) {
+  console.error('Variant element not found.');
+} else {
+  let c = variantElement.getAttribute('data-current-variant');
+  console.log('Initial value c:', c);
 
-      // monitor element attribute value
-          const variantElement = document.querySelector('div.module[data-current-variant]');
-          let c = variantElement.getAttribute('data-current-variant');
-          console.log('of',c)
-          observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
-            let d = false;
-            d = newValue;
-            console.log('inf',d)
-          });
-          
+  let attributeChanged = false;
+  let d = null;
 
-          
-  // if(d){
-              // let rrpArray = document.querySelectorAll('.rrpMetaprice');
-              // rrpArray.forEach((element)=>{
-              //   element.style.display = 'none';
-              // })
-              // document.getElementById(`${d}`).style.display = 'block';
-              // console.log('final',d)
-            // }else{
-              // let rrpArray = document.querySelectorAll('.rrpMetaprice');
-              // rrpArray.forEach((element)=>{
-              //   element.style.display = 'none';
-              // })
-              // document.getElementById(`${c}`).style.display = 'block';
-            //   console.log('final',c)
-            // }
+  // Function to observe changes to a specific attribute
+  function observeAttributeChange(element, attributeName, callback) {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === attributeName) {
+          const newValue = element.getAttribute(attributeName);
+          callback(newValue);
+        }
+      });
+    });
+
+    observer.observe(element, {
+      attributes: true,
+      attributeFilter: [attributeName],
+    });
+  }
+
+  // Immediate check if the attribute has already changed
+  const currentAttributeValue = variantElement.getAttribute('data-current-variant');
+  if (currentAttributeValue !== c) {
+    attributeChanged = true;
+    d = currentAttributeValue;
+    console.log('Attribute has already changed. Value of d:', d);
+  }
+
+  observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
+    attributeChanged = true;
+    d = newValue;
+    console.log('Observer function ran. Value of d:', d);
+  });
+
+  // You can perform any actions based on whether the attribute has changed
+  if (attributeChanged) {
+    console.log('Attribute changed. Value of d:', d);
+  } else {
+    console.log('Attribute did not change. Value of c:', c);
+  }
+}
+
 
           
   
