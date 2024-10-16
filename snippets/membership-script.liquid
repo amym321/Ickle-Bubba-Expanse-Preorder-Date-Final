@@ -137,19 +137,26 @@
           let c = variantElement.getAttribute('data-current-variant');
           console.log('of',c)
           observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
-            c = newValue;
-            console.log('inf',c)
+            let d = false;
+            d = newValue;
+            console.log('inf',d)
+            if(d){
+              // let rrpArray = document.querySelectorAll('.rrpMetaprice');
+              // rrpArray.forEach((element)=>{
+              //   element.style.display = 'none';
+              // })
+              // document.getElementById(`${d}`).style.display = 'block';
+              console.log('final',d)
+            }else{
+              // let rrpArray = document.querySelectorAll('.rrpMetaprice');
+              // rrpArray.forEach((element)=>{
+              //   element.style.display = 'none';
+              // })
+              // document.getElementById(`${c}`).style.display = 'block';
+              console.log('final',c)
+            }
           });
-          // if(variantId){
-          //     let rrpArray = document.querySelectorAll('.rrpMetaprice');
-          //     rrpArray.forEach((element)=>{
-          //       element.style.display = 'none';
-          //     })
-          //     document.getElementById(`${variandId}`).style.display = 'block';
-          //     console.log('final',variantId)
-          //   }else{
-          //     console.log('final',c)
-          //   }
+          
 
           
 
