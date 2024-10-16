@@ -115,9 +115,6 @@
         if(pdpBody){
           console.log('hell')
           
-function getVariantId(){
-    let variandId ;
-    // Function to monitor attribute changes
     function observeAttributeChange(element, attributeName, callback) {
         // Create a new MutationObserver instance
         const observer = new MutationObserver((mutationsList) => {
@@ -138,16 +135,13 @@ function getVariantId(){
 
     // Usage example
     const variantElement = document.querySelector('div.module[data-current-variant]');
-    variandId = variantElement.getAttribute(attributeName);
+    let variandId = variantElement.getAttribute('data-current-variant');
+    console.log(variandId)
         
     observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
         variandId = newValue;
+        console.log(variandId)
     });
-
-    return variandId
-}
-let c = getVariantId();
-console.log(c)
 
 
 
