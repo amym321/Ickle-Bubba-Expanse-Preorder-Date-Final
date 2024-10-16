@@ -131,7 +131,7 @@
               });
           }
           
-$( document ).ready(function() {
+
       // monitor element attribute value
           const variantElement = document.querySelector('div.module[data-current-variant]');
           let c = variantElement.getAttribute('data-current-variant');
@@ -139,13 +139,18 @@ $( document ).ready(function() {
           observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
             variandId = newValue;
             console.log('inf',variandId)
-            let rrpArray = document.querySelectorAll('.rrpMetaprice');
-            rrpArray.forEach((element)=>{
-              element.style.display = 'none';
-            })
-            document.getElementById(`${variandId}`).style.display = 'block';
+            if(variantId){
+              // let rrpArray = document.querySelectorAll('.rrpMetaprice');
+              // rrpArray.forEach((element)=>{
+              //   element.style.display = 'none';
+              // })
+              // document.getElementById(`${variandId}`).style.display = 'block';
+              console.log(variandId)
+            }else{
+              console.log(c)
+            }
           });
-});
+
           
 
 
