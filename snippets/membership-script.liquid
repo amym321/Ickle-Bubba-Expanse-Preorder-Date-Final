@@ -130,6 +130,7 @@
                   attributes: true
               });
           }
+          window.onload = function() {
           // monitor element attribute value
           const variantElement = document.querySelector('div.module[data-current-variant]');
           let c = variantElement.getAttribute('data-current-variant');
@@ -143,7 +144,7 @@
             })
             document.getElementById(`${variandId}`).style.display = 'block';
           });
-
+          }
           
   
         }   
