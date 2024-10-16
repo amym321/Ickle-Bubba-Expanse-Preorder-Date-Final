@@ -112,42 +112,32 @@
         document.querySelector('.site-nav__link:has(svg.icon-user)').setAttribute('href','https://ickle-bubba-sandbox.myshopify.com/pages/membership-page');
         let pdpBody = document.querySelector('body.template-product')
         pdpBody ? pdpBody.classList.add('bubblePricing') : '';
-        if(pdpBody){
-          console.log('hell')
-          
-    function observeAttributeChange(element, attributeName, callback) {
-        // Create a new MutationObserver instance
-        const observer = new MutationObserver((mutationsList) => {
-            for (const mutation of mutationsList) {
-                // Check if the attribute we're interested in has changed
-                if (mutation.type === 'attributes' && mutation.attributeName === attributeName) {
-                    const newValue = element.getAttribute(attributeName);
-                    callback(newValue);
-                }
-            }
-        });
-
-        // Start observing the element for attribute changes
-        observer.observe(element, {
-            attributes: true // Observe changes to attributes
-        });
-    }
-
-    // Usage example
-    const variantElement = document.querySelector('div.module[data-current-variant]');
-    // let variandId = variantElement.getAttribute('data-current-variant');
-        
-    observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
-        variandId = newValue;
-        console.log(variandId)
-    });
-
-
-
-
+        if(pdpBody){   
+          function observeAttributeChange(element, attributeName, callback) {
+              // Create a new MutationObserver instance
+              const observer = new MutationObserver((mutationsList) => {
+                  for (const mutation of mutationsList) {
+                      // Check if the attribute we're interested in has changed
+                      if (mutation.type === 'attributes' && mutation.attributeName === attributeName) {
+                          const newValue = element.getAttribute(attributeName);
+                          callback(newValue);
+                      }
+                  }
+              });
+      
+              // Start observing the element for attribute changes
+              observer.observe(element, {
+                  attributes: true
+              });
+          }
+      
+          const variantElement = document.querySelector('div.module[data-current-variant]');
+          observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
+              variandId = newValue;
+              console.log(variandId)
+          });
         }
         window.onload = function() {
-          
           let collectionPrice = document.querySelectorAll('.collectionPrice');
           Array.from(collectionPrice).forEach((element)=>{
             element.classList.remove('hideCollectionPrice');
