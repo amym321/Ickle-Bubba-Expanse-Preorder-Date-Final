@@ -135,22 +135,21 @@
       // monitor element attribute value
           const variantElement = document.querySelector('div.module[data-current-variant]');
           let c = variantElement.getAttribute('data-current-variant');
-          let variantId ;
           console.log('of',c)
           observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
-            variantId = newValue;
-            console.log('inf',variantId)
+            c = newValue;
+            console.log('inf',c)
           });
-          if(variantId){
-              // let rrpArray = document.querySelectorAll('.rrpMetaprice');
-              // rrpArray.forEach((element)=>{
-              //   element.style.display = 'none';
-              // })
-              // document.getElementById(`${variandId}`).style.display = 'block';
-              console.log('final',variantId)
-            }else{
-              console.log('final',c)
-            }
+          // if(variantId){
+          //     let rrpArray = document.querySelectorAll('.rrpMetaprice');
+          //     rrpArray.forEach((element)=>{
+          //       element.style.display = 'none';
+          //     })
+          //     document.getElementById(`${variandId}`).style.display = 'block';
+          //     console.log('final',variantId)
+          //   }else{
+          //     console.log('final',c)
+          //   }
 
           
 
