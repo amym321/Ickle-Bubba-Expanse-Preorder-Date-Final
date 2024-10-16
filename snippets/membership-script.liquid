@@ -132,6 +132,7 @@
           }
           // monitor element attribute value
           const variantElement = document.querySelector('div.module[data-current-variant]');
+          window.onload = function() {
           observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
               variandId = newValue;
               console.log(variandId)
@@ -141,7 +142,7 @@
               })
               document.getElementById(`${variandId}`).style.display = 'block';
           });
-            
+          } 
   
         }   
         window.onload = function() {
