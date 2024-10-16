@@ -152,14 +152,12 @@
           
           observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
             if(newValue){
-              if(initialVariant !== null){
                 let rrpArray = document.querySelectorAll('.rrpMetaprice');
                 rrpArray.forEach((element)=>{
                   element.style.display = 'none';
                 })
                 document.getElementById(`${newValue}`).style.display = 'block';
               }
-            }
             console.log('inf',newValue)
           });
         }   
