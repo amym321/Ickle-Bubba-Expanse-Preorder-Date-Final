@@ -133,6 +133,7 @@
           const variantElement = document.querySelector('div.module[data-current-variant]');
           observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
               variandId = newValue;
+              console.log(variandId)
               let rrpArray = document.querySelectorAll('.rrpMetaprice');
               rrpArray.forEach((element)=>{
                 element.style.display = 'none';
