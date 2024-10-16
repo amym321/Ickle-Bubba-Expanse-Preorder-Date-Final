@@ -133,6 +133,10 @@
           const variantElement = document.querySelector('div.module[data-current-variant]');
           observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
               variandId = newValue;
+              let rrpArray = document.querySelectorAll('.rrpMetaprice');
+              rrpArray.forEach((element)=>{
+                element.style.display = 'none';
+              })
               document.getElementById(`${variandId}`).style.display = 'block';
           });
         }
