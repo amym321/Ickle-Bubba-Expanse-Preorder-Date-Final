@@ -137,15 +137,15 @@
           let c = variantElement.getAttribute('data-current-variant');
           console.log('of',c)
           observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
-            variandId = newValue;
-            console.log('inf',variandId)
+            variantId = newValue;
+            console.log('inf',variantId)
             if(variantId){
               // let rrpArray = document.querySelectorAll('.rrpMetaprice');
               // rrpArray.forEach((element)=>{
               //   element.style.display = 'none';
               // })
               // document.getElementById(`${variandId}`).style.display = 'block';
-              console.log('final',variandId)
+              console.log('final',variantId)
             }else{
               console.log('final',c)
             }
