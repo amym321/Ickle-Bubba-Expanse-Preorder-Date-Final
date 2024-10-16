@@ -114,34 +114,40 @@
         pdpBody ? pdpBody.classList.add('bubblePricing') : '';
         if(pdpBody){
           console.log('hell')
-// Function to monitor attribute changes
-function observeAttributeChange(element, attributeName, callback) {
-    // Create a new MutationObserver instance
-    const observer = new MutationObserver((mutationsList) => {
-        for (const mutation of mutationsList) {
-            // Check if the attribute we're interested in has changed
-            if (mutation.type === 'attributes' && mutation.attributeName === attributeName) {
-                const newValue = element.getAttribute(attributeName);
-                callback(newValue);
+          
+function getVariantId(){
+    let variandId ;
+    // Function to monitor attribute changes
+    function observeAttributeChange(element, attributeName, callback) {
+        // Create a new MutationObserver instance
+        const observer = new MutationObserver((mutationsList) => {
+            for (const mutation of mutationsList) {
+                // Check if the attribute we're interested in has changed
+                if (mutation.type === 'attributes' && mutation.attributeName === attributeName) {
+                    const newValue = element.getAttribute(attributeName);
+                    callback(newValue);
+                }
             }
-        }
+        });
+
+        // Start observing the element for attribute changes
+        observer.observe(element, {
+            attributes: true // Observe changes to attributes
+        });
+    }
+
+    // Usage example
+    const variantElement = document.querySelector('div.module[data-current-variant]');
+    variandId = variantElement.getAttribute(attributeName);
+        
+    observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
+        variandId = newValue;
     });
 
-    // Start observing the element for attribute changes
-    observer.observe(element, {
-        attributes: true // Observe changes to attributes
-    });
+    return variandId
 }
-
-// Usage example
-const variantElement = document.querySelector('div.module[data-current-variant]');
-    
-observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
-  
-   console.log('variant-id',newValue)
-    
-});
-
+let c = getVariantId();
+console.log(c)
 
 
 
