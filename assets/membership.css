@@ -426,13 +426,13 @@
      font-size:18px !important;
   }
 }
-.priceWrapper:has(:not(.rrpMetaprice)) .gf_product-compare-price + .gf_product-price{
+/* .priceWrapper:has(:not(.rrpMetaprice)) .gf_product-compare-price:empty) + .gf_product-price{
   background:none !important;
   padding-left: 0 !important;
 }
-.priceWrapper:has(:not(.rrpMetaprice)) .gf_product-compare-price + .gf_product-price:after {
+.priceWrapper:has(:not(.rrpMetaprice)) .gf_product-compare-price:empty + .gf_product-price:after {
   display:none !important;
-}
+} */
 .bubblePricing .priceWrapper .gf_product-compare-price:after{
   display:none;
 }
