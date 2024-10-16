@@ -135,12 +135,9 @@
 
         // monitor element attribute value
           const variantElement = document.querySelector('div.module[data-current-variant]');
-          let c = variantElement.getAttribute('data-current-variant');
-          console.log('of',c)
           const urlParams = new URLSearchParams(window.location.search);
           const variantId = urlParams.get('variant');
           console.log('url',variantId)
-          console.log('of',variantId)
           observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
             let d = false;
             d = newValue;
