@@ -114,7 +114,6 @@
         pdpBody ? pdpBody.classList.add('bubblePricing') : '';
         if(pdpBody){ 
 
-          document.addEventListener("load", ()=>{
                 function observeAttributeChange(element, attributeName, callback) {
               // Create a new MutationObserver instance
               const observer = new MutationObserver((mutationsList) => {
@@ -143,7 +142,6 @@
               document.getElementById(`${variandId}`).style.display = 'block';
           });
             
-          });
   
         }   
         window.onload = function() {
