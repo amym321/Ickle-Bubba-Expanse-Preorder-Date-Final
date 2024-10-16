@@ -113,8 +113,8 @@
         let pdpBody = document.querySelector('body.template-product')
         pdpBody ? pdpBody.classList.add('bubblePricing') : '';
         if(pdpBody){ 
-           window.onload = function() {
-          function observeAttributeChange(element, attributeName, callback) {
+     document.addEventListener("load",() =>{
+       function observeAttributeChange(element, attributeName, callback) {
               // Create a new MutationObserver instance
               const observer = new MutationObserver((mutationsList) => {
                   for (const mutation of mutationsList) {
@@ -141,7 +141,7 @@
               })
               document.getElementById(`${variandId}`).style.display = 'block';
           });
-        }
+        })
       }
         window.onload = function() {
           let collectionPrice = document.querySelectorAll('.collectionPrice');
