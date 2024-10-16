@@ -132,7 +132,8 @@
           }
           
 
-      // monitor element attribute value
+      setTimeout(()=>{
+        // monitor element attribute value
           const variantElement = document.querySelector('div.module[data-current-variant]');
           let c = variantElement.getAttribute('data-current-variant');
           console.log('of',c)
@@ -141,6 +142,7 @@
             d = newValue;
             console.log('inf',d)
           });
+      },1000)
           
 
           
