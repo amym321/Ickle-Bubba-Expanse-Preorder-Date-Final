@@ -56,12 +56,15 @@
 .membershipButton[disabled] span{
   display:none;
 }
-.membershipButton img{
+.membershipButton .membershipButtonLoader{
   display:none;
+
+}
+.membershipButton .membershipButtonLoader img{
   width:27px;
   margin:auto;
 }
-.membershipButton[disabled] img{
+.membershipButton[disabled] .membershipButtonLoader{
   display:block;
 }
 .membershipWrapper input[type="text"],
