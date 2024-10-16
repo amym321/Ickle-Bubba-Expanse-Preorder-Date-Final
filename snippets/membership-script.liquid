@@ -124,7 +124,6 @@
                       }
                   }
               });
-      
               // Start observing the element for attribute changes
               observer.observe(element, {
                   attributes: true
@@ -134,7 +133,7 @@
           const variantElement = document.querySelector('div.module[data-current-variant]');
           observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
               variandId = newValue;
-              console.log(variandId)
+              document.querySelector(`.rrpMetaprice#${variandId}`).style.display = 'block';
           });
         }
         window.onload = function() {
