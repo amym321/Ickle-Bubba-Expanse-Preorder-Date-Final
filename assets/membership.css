@@ -455,3 +455,20 @@
 .bubblePricing .priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price:after{
       bottom: 5px;
 }
+.thank-you .formWrapper {
+  padding: 0px 0px 25px;
+}
+.thankyou-content {
+  margin: 30px 50px;
+}
+.formHeader img {
+  padding-bottom: 20px;
+}
+.login-text-thank {
+  text-align: center;
+}
+.thankyou-content a {
+  background: #212121;
+  padding: 10px;
+  border-radius: 2px;
+}
