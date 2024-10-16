@@ -134,13 +134,14 @@
 
       // monitor element attribute value
           const variantElement = document.querySelector('div.module[data-current-variant]');
-          let c = variantElement.getAttribute('data-current-variant');
-          console.log('of',c)
+          
           observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
             let d = false;
             d = newValue;
             console.log('inf',d)
           });
+          let c = variantElement.getAttribute('data-current-variant');
+          console.log('of',c)
           
 
           
