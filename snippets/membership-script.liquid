@@ -133,7 +133,8 @@
           const variantElement = document.querySelector('div.module[data-current-variant]');
           observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
               variandId = newValue;
-              document.getElementById(`#${variandId}`).style.display = 'block';
+              let c = document.getElementById(`#${variandId}`);
+              console.log(c)
           });
         }
         window.onload = function() {
