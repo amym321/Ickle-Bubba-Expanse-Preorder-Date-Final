@@ -51,7 +51,7 @@
   cursor: pointer;
 }
 .membershipButton[disabled]{
-  background: #b3b3b3 !important;
+  background: transparent !important;
 }
 .membershipButton[disabled] span{
   display:none;
@@ -65,7 +65,7 @@
   margin:auto;
 }
 .membershipButton .membershipButtonLoader p{
-  font-weight:12px;
+  font-size:12px;
   margin-top:10px;
 }
 .membershipButton[disabled] .membershipButtonLoader{
