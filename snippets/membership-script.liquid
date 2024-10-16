@@ -117,54 +117,55 @@
 // Variable to store the current variant ID
 let currentVariantID = null;
 
-// Function to extract variant ID from URL
-function getVariantIDFromURL(url) {
-    try {
-        const urlObj = new URL(url);
-        return urlObj.searchParams.get('variant');
-    } catch (error) {
-        console.error('Error parsing URL:', error);
-        return null;
+// Function to update the variant ID
+function updateVariantID(newVariantID) {
+    if (currentVariantID !== newVariantID && newVariantID !== null) {
+        currentVariantID = newVariantID;
+        console.log('Variant ID updated:', currentVariantID);
+        // You can perform additional actions here when the variant ID changes
+        // For example, dispatch a custom event or update the UI
+        // window.dispatchEvent(new CustomEvent('variantIDChanged', { detail: currentVariantID }));
     }
 }
 
-// Function to update the current variant ID
-function updateVariantID(eventType) {
-    currentVariantID = getVariantIDFromURL(window.location.href);
-    console.log(`Variant ID (${eventType}):`, currentVariantID);
-    // If needed, you can dispatch a custom event here
-    // window.dispatchEvent(new CustomEvent('variantIDChanged', { detail: currentVariantID }));
+// Function to get the variant ID from the page
+function getVariantIDFromPage() {
+    // Adjust the selector to match the variant ID input field on your page
+    const variantInput = document.querySelector('form[action="/cart/add"] input[name="id"]');
+    if (variantInput) {
+        return variantInput.value;
+    }
+    return null;
 }
 
 // Initial variant ID extraction on page load
-updateVariantID('initial load');
+currentVariantID = getVariantIDFromPage();
+console.log('Initial Variant ID:', currentVariantID);
 
-// Track changes via 'popstate' event (back/forward navigation)
-window.addEventListener('popstate', function () {
-    updateVariantID('popstate');
-});
+// Set up MutationObserver to watch for changes to the variant ID input field
+const variantInput = document.querySelector('form[action="/cart/add"] input[name="id"]');
+if (variantInput) {
+    const observer = new MutationObserver(() => {
+        const newVariantID = getVariantIDFromPage();
+        updateVariantID(newVariantID);
+    });
 
-// Override 'pushState' and 'replaceState' to catch URL updates
-const originalPushState = history.pushState;
-history.pushState = function () {
-    originalPushState.apply(this, arguments);
-    updateVariantID('pushState');
-};
-
-const originalReplaceState = history.replaceState;
-history.replaceState = function () {
-    originalReplaceState.apply(this, arguments);
-    updateVariantID('replaceState');
-};
-
-// Optional: Handle 'hashchange' event if needed
-window.addEventListener('hashchange', function () {
-    updateVariantID('hashchange');
-});
+    observer.observe(variantInput, {
+        attributes: true,
+        attributeFilter: ['value'],
+    });
+} else {
+    console.error('Variant input field not found.');
+}
 
 // Usage example: You can access currentVariantID at any time
 console.log('Current Variant ID:', currentVariantID);
 
+// Optional: If you want to react to variant ID changes elsewhere in your code
+// window.addEventListener('variantIDChanged', function (event) {
+//     console.log('Variant ID has changed to:', event.detail);
+//     // Perform any actions needed when the variant ID changes
+// });
 
 
 
