@@ -135,8 +135,7 @@
 
     // Usage example
     const variantElement = document.querySelector('div.module[data-current-variant]');
-    let variandId = variantElement.getAttribute('data-current-variant');
-    // console.log(variandId)
+    // let variandId = variantElement.getAttribute('data-current-variant');
         
     observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
         variandId = newValue;
