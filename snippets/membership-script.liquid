@@ -120,7 +120,7 @@ if (!variantElement) {
   console.error('Variant element not found.');
 } else {
   let c = variantElement.getAttribute('data-current-variant');
-  console.log('Initial value c:', c);
+  // console.log('Initial value c:', c);
 
   let attributeChanged = false;
   let d = null;
@@ -147,13 +147,13 @@ if (!variantElement) {
   if (currentAttributeValue !== c) {
     attributeChanged = true;
     d = currentAttributeValue;
-    console.log('Attribute has already changed. Value of d:', d);
+    // console.log('Attribute has already changed. Value of d:', d);
   }
 
   observeAttributeChange(variantElement, 'data-current-variant', (newValue) => {
     attributeChanged = true;
     d = newValue;
-    console.log('Observer function ran. Value of d:', d);
+    // console.log('Observer function ran. Value of d:', d);
   });
 
   // You can perform any actions based on whether the attribute has changed
