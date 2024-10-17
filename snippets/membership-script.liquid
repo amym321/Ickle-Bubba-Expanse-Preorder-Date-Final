@@ -105,7 +105,6 @@
   {% if customer %}
     checkCustomerByEmail({{customer.email | json }}).then((data)=> {
       if(data === 401){
-        console.log(globalCustomer)
         let questionRelationship = document.querySelector('#setupArea select')
         if(questionRelationship){
           questionRelationship.value = globalCustomer.relationship;
