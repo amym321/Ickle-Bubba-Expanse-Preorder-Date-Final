@@ -12,7 +12,6 @@
     "cart_banner_TQ8Qd7": {
       "type": "cart-banner",
       "settings": {
-        "guestBanner": "shopify://shop_images/IBLI-Snowdon-Classic-Cot-Bed-Summer2023-04_GREEN_Picture_Frames__1_e17d7ccc-e084-4475-b724-95dc7ded2c1f.webp",
         "guestBannerLink": "#",
         "companyBanner": "shopify://shop_images/Screenshot_2024-10-14_123630.png",
         "bubbleBannerLink": "#"
