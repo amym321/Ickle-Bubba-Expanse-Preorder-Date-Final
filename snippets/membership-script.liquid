@@ -261,7 +261,7 @@ if (updateBtn) {
       return;
     }
 
-    let obj = { relationship: rel, due: new Date(due.getTime() / 1000)), id: globalCustomer._id };
+    let obj = { relationship: rel, due: new Date(due.getTime() / 1000), id: globalCustomer._id };
 
     try {
       document.querySelector('.membershipAreaButton').disabled = true;
