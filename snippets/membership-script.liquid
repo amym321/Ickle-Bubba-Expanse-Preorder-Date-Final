@@ -112,7 +112,7 @@
         }
         let questionDuedate = document.querySelector('#setupArea input')
         if(questionDuedate){
-          questionDuedate.value = globalCustomer.dueDate;
+          questionDuedate.value = new Date(globalCustomer.dueDate)s;
         }
         let bubbleBanner = document.querySelector('.bubbleBanner');
         if(bubbleBanner){
