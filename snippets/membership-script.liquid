@@ -253,6 +253,7 @@ if (editBtn) {
 if (updateBtn) {
   updateBtn.addEventListener('click', async (e) => {
     e.preventDefault();
+    document.querySelector('.membershipButton').disabled = true;
     let rel = document.querySelector('#area_relationship').value;
     let due = document.querySelector('#area_dueDate').value;
   
