@@ -282,7 +282,24 @@
     border: 1px solid black;
     outline: 2px solid #fff;
 }
-
+.cartBanner img{
+  width:100%;
+}
+.cartBanner .guestBanner,
+.cartBanner .bubbleBanner{
+  display:none;
+}
+.formHeader img {
+  padding-bottom: 20px;
+}
+.login-text-thank {
+  text-align: center;
+}
+.thankyou-content a {
+  background: #212121;
+  padding: 10px;
+  border-radius: 2px;
+}
 /* collection price css */
 .hideCollectionPrice{
   display:none;
@@ -292,7 +309,7 @@
 }
 /* collection price css end */
 
-/* price design on pdp */
+/* guest price */ 
 .priceWrapper > div {
   display: flex;
   align-items: baseline;
@@ -301,8 +318,6 @@
 .rrpMetaprice{
   display:none;
 }
-
-/* guest price */ 
 .priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price {
   position: relative;
   margin-left: 18px !important;
@@ -341,7 +356,7 @@
   position: absolute;
   bottom: -9px;
 }
-/* guest price  end */ 
+/* guest price css end */ 
 
 /* bubble price */
 .bubblePricing .rrpMetaprice {
@@ -448,28 +463,10 @@
 .priceWrapper:has(.rrpMetaprice:empty) .gf_product-compare-price{
   text-decoration:line-through;
 }
-.cartBanner img{
-  width:100%;
-}
-.cartBanner .guestBanner,
-.cartBanner .bubbleBanner{
-  display:none;
-}
 .bubblePricing .priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price {
     padding: 5px 16px 18px 7px !important;
 }
 .bubblePricing .priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price:after{
       bottom: 5px;
 }
-
-.formHeader img {
-  padding-bottom: 20px;
-}
-.login-text-thank {
-  text-align: center;
-}
-.thankyou-content a {
-  background: #212121;
-  padding: 10px;
-  border-radius: 2px;
-}
+/* bubble price css end*/
