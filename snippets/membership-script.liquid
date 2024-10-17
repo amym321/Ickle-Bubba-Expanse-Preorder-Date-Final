@@ -229,48 +229,48 @@
   }
  
 // Edit and update button logic
-// let editBtn = document.querySelector('.editForm svg');
-// let updateBtn = document.querySelector('#setupArea .membershipButton');
+let editBtn = document.querySelector('.editForm svg');
+let updateBtn = document.querySelector('#setupArea .membershipButton');
 
-// if (editBtn) {
-//   editBtn.addEventListener('click', function() {
-//     document.querySelector('#area_relationship').disabled = false;
-//     document.querySelector('#area_dueDate').disabled = false;
-//     updateBtn.style.visibility = 'visible';
-//   });
-// }
+if (editBtn) {
+  editBtn.addEventListener('click', function() {
+    document.querySelector('#area_relationship').disabled = false;
+    document.querySelector('#area_dueDate').disabled = false;
+    updateBtn.style.visibility = 'visible';
+  });
+}
 
-// if (updateBtn) {
-//   updateBtn.addEventListener('click', async (e) => {
-//     e.preventDefault();
-//     let rel = document.querySelector('#area_relationship').value;
-//     let due = document.querySelector('#area_dueDate').value;
+if (updateBtn) {
+  updateBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    let rel = document.querySelector('#area_relationship').value;
+    let due = document.querySelector('#area_dueDate').value;
 
-//     if (!rel || !due) {
-//       alert('Please fill in both fields before submitting.');
-//       return;
-//     }
+    if (!rel || !due) {
+      alert('Please fill in both fields before submitting.');
+      return;
+    }
 
-//     let obj = { relationship: rel, due: due, id: globalCustomer._id };
+    let obj = { relationship: rel, due: due, id: globalCustomer._id };
 
-//     try {
-//       const response = await fetch(`${baseurl}/api/update-company`, {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify(obj)
-//       });
+    try {
+      const response = await fetch(`${baseurl}/api/update-company`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(obj)
+      });
 
-//       if (response.ok) {
-//         document.querySelector('#area_relationship').disabled = true;
-//         document.querySelector('#area_dueDate').disabled = true;
-//         updateBtn.style.visibility = 'hidden';
-//       } else {
-//         console.log('Error updating company');
-//       }
-//     } catch (error) {
-//       console.log('Error updating company:', error);
-//     }
-//   });
-// }
+      if (response.ok) {
+        document.querySelector('#area_relationship').disabled = true;
+        document.querySelector('#area_dueDate').disabled = true;
+        updateBtn.style.visibility = 'hidden';
+      } else {
+        console.log('Error updating company');
+      }
+    } catch (error) {
+      console.log('Error updating company:', error);
+    }
+  });
+}
 
   </script>
