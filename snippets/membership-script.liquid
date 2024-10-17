@@ -4,6 +4,7 @@
   let live = 'https://dashboard.icklebubba.com';
   let baseurl = live;
   let setupForm = document.getElementById('setupForm');
+  let globalCustomer;
 
   // Function to check customer status by email
   const checkCustomerByEmail = async(email) =>{
@@ -103,6 +104,14 @@
   {% if customer %}
     checkCustomerByEmail({{customer.email | json }}).then((data)=> {
       if(data === 401){
+        let questionRelationship = document.querySelector('#setupArea select')
+        if(questionRelationship){
+          questionRelationship.value = globalCustomer.relationship;
+        }
+        let questionDuedate = document.querySelector('#setupArea input')
+        if(questionDuedate){
+          questionDuedate.value = globalCustomer.dueDate;
+        }
         let bubbleBanner = document.querySelector('.bubbleBanner');
         if(bubbleBanner){
           bubbleBanner.style.display = 'block';
