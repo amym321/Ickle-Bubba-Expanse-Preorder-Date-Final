@@ -17,6 +17,7 @@
         body: JSON.stringify({email:email})
       }); 
       const data = await response.json();
+      globalCustomer = data ;
       return response.status
     } catch (error) {
       console.log('Error fetching customer data:', error);
