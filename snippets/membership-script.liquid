@@ -230,7 +230,7 @@
  
 // Edit and update button logic
 let editBtn = document.querySelector('.editForm svg');
-let updateBtn = document.querySelector('#setupArea .membershipButton');
+let updateBtn = document.querySelector('#setupArea .membershipAreaButton');
 
 if (editBtn) {
   editBtn.addEventListener('click', function() {
@@ -245,7 +245,7 @@ if (updateBtn) {
     e.preventDefault();
     let rel = document.querySelector('#area_relationship').value;
     let due = document.querySelector('#area_dueDate').value;
-
+  
     if (!rel || !due) {
       alert('Please fill in both fields before submitting.');
       return;
