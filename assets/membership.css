@@ -168,8 +168,7 @@
   font-size: 40px;
 }
 
-#setupForm,
-#setupArea{
+.formStyle{
   padding-top: 20px;
   margin:25px 45px;
 }
