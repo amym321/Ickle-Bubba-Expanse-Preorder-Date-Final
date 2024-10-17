@@ -2,7 +2,7 @@
   <div class="formWrapper">
       <div class='formHeader'>
         <h3>{% if section.settings.logoImage != blank %}<img src="{{ section.settings.logoImage | img_url:"1920x" }}">{% else %}{{ section.settings.logoText }}{% endif %}</h3>
-        <p>{{ section.settings.textContent }}</p>
+        <div style="font-size:12px;">{{ section.settings.textContent }}</div>
       </div>
       <form id="setupForm">  
           <div class='formField'>
