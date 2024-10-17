@@ -152,7 +152,7 @@
 .formWrapper {
   max-width: 400px;
   margin: auto;
-  padding: 25px 50px;
+  /* padding: 25px 50px; */
   border: 2px solid #c2c2c2;
   background-color: #fef2f4;
 }
