@@ -1,7 +1,7 @@
 <div>
   <div class="cartBanner">
-    <a class="guestBanner" href="{{ section.settings.guestBannerLink }}"><img src='{{ section.settings.guestBanner | img_url:'1920x'}}'></a>
-    <a class="bubbleBanner" href="{{ section.settings.bubbleBannerLink }}"><img src='{{ section.settings.companyBanner | img_url:'1920x'}}'></a>
+    {% if section.settings.guestBanner != blank %}<a class="guestBanner" href="{{ section.settings.guestBannerLink }}"><img src='{{ section.settings.guestBanner | img_url:'1920x'}}'></a>{% endif %}
+    {% if section.settings.companyBanner != blank %}<a class="bubbleBanner" href="{{ section.settings.bubbleBannerLink }}"><img src='{{ section.settings.companyBanner | img_url:'1920x'}}'></a>{% endif %}
   </div>
 </div>
 {% schema %}
