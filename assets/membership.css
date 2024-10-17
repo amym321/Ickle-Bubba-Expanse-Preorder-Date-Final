@@ -38,7 +38,8 @@
   margin-bottom: 12px;
 }
 
-.membershipButton {
+.membershipButton,
+.membershipAreaButton{
   padding: 8px 10px;
   background: #fecdc9 !important;
   margin-top: 45px;
@@ -50,25 +51,31 @@
   color: #474747;
   cursor: pointer;
 }
-.membershipButton[disabled]{
+.membershipButton[disabled],
+.membershipAreaButton[disabled]{
   background: transparent !important;
 }
-.membershipButton[disabled] span{
+.membershipButton[disabled] span,
+.membershipAreaButton[disabled] span{
   display:none;
 }
-.membershipButton .membershipButtonLoader{
+.membershipButton .membershipButtonLoader,
+.membershipAreaButton .membershipButtonLoader{
   display:none;
 
 }
-.membershipButton .membershipButtonLoader img{
+.membershipButton .membershipButtonLoader img,
+.membershipAreaButton .membershipButtonLoader img{
   width:27px;
   margin:auto;
 }
-.membershipButton .membershipButtonLoader p{
+.membershipButton .membershipButtonLoader p,
+.membershipAreaButton .membershipButtonLoader p{
   font-size:12px;
   margin-top:10px;
 }
-.membershipButton[disabled] .membershipButtonLoader{
+.membershipButton[disabled] .membershipButtonLoader,
+.membershipAreaButton[disabled] .membershipButtonLoader{
   display:block;
 }
 .membershipWrapper input[type="text"],
@@ -131,7 +138,7 @@
   padding-top: 20px;
 }
 
-#setupArea .membershipButton {
+#setupArea .membershipAreaButton {
   visibility: hidden;
 }
 
