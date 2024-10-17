@@ -4,6 +4,7 @@
          <h3>{% if section.settings.logoImage != blank %}<img src="{{ section.settings.logoImage | img_url:"1920x" }}">{% else %}{{ section.settings.logoText }}{% endif %}</h3>
         <p style="font-weight:600;">CREATE YOUR ACCOUNT</p>
         <p>BEGIN YOUR BUBBLE JOURNEY HERE</p>
+        <p>{{ section.settings.textContent }}</p>
       </div>
       <form id="setupForm">  
           <div class='formField'>
