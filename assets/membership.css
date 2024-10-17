@@ -235,11 +235,6 @@
   text-align: center;
 }
 
-.thank-you .formWrapper {
-  padding: 25px 30px;
-  max-width: 450px;
-}
-
 .thankyou-content {
   margin: 30px 0;
   display: grid;
@@ -468,9 +463,7 @@
 .bubblePricing .priceWrapper:has(.gf_product-compare-price:not(:empty)) .gf_product-price:after{
       bottom: 5px;
 }
-.thank-you .formWrapper {
-  padding: 0px 0px 25px;
-}
+
 .thankyou-content {
   margin: 30px 50px;
 }
