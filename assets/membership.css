@@ -137,10 +137,6 @@
   cursor: pointer;
 }
 
-#setupArea {
-  padding-top: 20px;
-}
-
 #setupArea .membershipAreaButton {
   visibility: hidden;
 }
@@ -174,8 +170,10 @@
   font-size: 40px;
 }
 
-#setupForm {
+#setupForm,
+#setupArea{
   padding-top: 20px;
+  margin:25px 45px;
 }
 
 .formWrapper label {
