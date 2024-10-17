@@ -51,6 +51,9 @@
   color: #474747;
   cursor: pointer;
 }
+.membershipAreaButton{
+  margin-bottom:30px;
+}
 .membershipButton[disabled],
 .membershipAreaButton[disabled]{
   background: transparent !important;
