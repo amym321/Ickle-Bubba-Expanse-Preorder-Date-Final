@@ -300,14 +300,6 @@
   padding: 10px;
   border-radius: 2px;
 }
-/* collection price css */
-.hideCollectionPrice{
-  display:none;
-}
-.showCollectionPrice{
-  display:inline-block;
-}
-/* collection price css end */
 
 /* guest price */ 
 .priceWrapper > div {
@@ -470,3 +462,12 @@
       bottom: 5px;
 }
 /* bubble price css end*/
+
+/* collection price css */
+.hideCollectionPrice{
+  display:none;
+}
+.showCollectionPrice{
+  display:inline-block;
+}
+/* collection price css end */
