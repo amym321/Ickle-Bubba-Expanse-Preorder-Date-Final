@@ -219,7 +219,6 @@
         let checkStatus = await checkCustomerByEmail(formObject.customerEmail);
         console.log(checkStatus)
         if(checkStatus === 200){
-          console.log(formObject)
           // try {
           //   const response = await fetch(`${baseurl}/api/create-company`, {
           //     method: 'POST',
@@ -234,6 +233,7 @@
         }else{
             document.querySelector('.membershipformMsg').innerHTML = 'You are already subscribed. Please login';
         }
+        console.log(formObject)
       };
       document.querySelector('.membershipButton').disabled = true;
       sendForm();
