@@ -215,6 +215,7 @@
             formObject[key] = value;
           }
         });
+        formObject.customerCookie = exponea.configuration.customer.cookie;
         let checkStatus = await checkCustomerByEmail(formObject.customerEmail);
         console.log(checkStatus)
         if(checkStatus === 200){
@@ -225,10 +226,7 @@
               body: JSON.stringify(formObject)
             });
             const jsonData = await response.json();
-            if(response.status == 200){
-              sendCustomerCookie(formObject)
-            }
-             // window.location.href = "/pages/thankyou-page";
+             window.location.href = "/pages/thankyou-page";
           } catch (error) {
             console.log('Error in sending form data:', error);
           }
@@ -286,65 +284,5 @@ if (updateBtn) {
     }
   });
 }
-
- async function sendCustomerCookie(formObject) {
-    const { firstName, lastName, customerEmail, dueDate, relationship, newsletter} = formObject;
-    let customerCookie = exponea.configuration.customer.cookie;
-    const apiKeyId = 'lvusdreat1uvushq07om7ystlgxcqi3bhqeu6rss7vmh4twoi9vp302jtz8xm16c';
-    const apiSecret = 'rhuqfgnnzgmceo36ya5cyq1he26jflbhba97azql6so9rklsnoc2hj5qwark8h25';
-    const projectId = '3990d784-a2f7-11ed-8b3b-ae3f7c7b92f2';
-    const url = `https://api.uk.exponea.com/track/v2/projects/${projectId}/batch`;
-
-    const base64Credentials = btoa(`${apiKeyId}:${apiSecret}`);
-    const headers = new Headers({
-        'Authorization': `Basic ${base64Credentials}`,
-        'Content-Type': 'application/json'
-    });
-
-    const bodyData = JSON.stringify(
-        {
-            "commands": [
-                {
-                    "name": "customers/events",
-                    "data": {
-                        "event_type": "member",
-                        "customer_ids": {
-                            "email_id": `${customerEmail}`,
-                            "cookie": `${customerCookie}`
-                        },
-                        "properties": {
-                            "first_name": `${firstName}`,
-                            "last_name": `${lastName}`,
-                            "relationship": `${relationship}`,
-                            "birth_or_due_date": `${dueDate}`,
-                            "marketing_consent": `${newsletter == "TRUE" ? "accept" : "reject" }`
-                        }
-                    }
-                },
-                {
-                    "name": "customers",
-                    "data": {
-                        "customer_ids": {
-                            "email_id": `${customerEmail}`,
-                            "cookie": `${customerCookie}`
-                        },
-                        "properties": {
-                            "relationship": `${relationship}`,
-                            "birth_or_due_date": `${dueDate}`
-                        }
-                    }
-                }
-            ]
-        })
-
-    fetch(url, {
-        method: 'POST',
-        headers: headers,
-        body: bodyData
-    })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error('Error:', error));
-};
 
   </script>
