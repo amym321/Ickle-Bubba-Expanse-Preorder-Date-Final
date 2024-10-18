@@ -6,6 +6,7 @@
       </div>
       <div class='thankyou-content formStyle'>
         <p class='login-text-thank'>{{ section.settings.description }}</p>
+        <p class='login-text-thank2'>{{ section.settings.description2 }}</p>
         {% for block in section.blocks %}
           <p class='discount-badges'><img src='{{ block.settings.blockImage | img_url:'1920x'}}'><span>{{ block.settings.blockTitle }}</span></p> 
         {% endfor %}
