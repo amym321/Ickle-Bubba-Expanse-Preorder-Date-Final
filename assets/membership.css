@@ -267,14 +267,26 @@
   font-size: 13px;
 }
 
-.login-text-thank {
-  font-size: 15px;
-  line-height: normal;
-  margin: 0px;
+.discount-badges span {
+  font-size: 14px;
+  line-height: 1.3em;
   letter-spacing: 3px;
-  text-transform: uppercase;
+  font-weight: 400!;
 }
 
+.login-text-thank {
+  font-size: 18px;
+  line-height: 1.3em;
+  letter-spacing: 3px;
+  font-weight: 300;
+}
+.login-text-thank2 {
+  font-size: 14px;
+  line-height: 1.3em;
+  letter-spacing: 3px;
+  font-weight: 400!;
+  text-align: center;
+}
 .thankyou-success-message h1{
   letter-spacing: 3px;
   text-transform: uppercase;
