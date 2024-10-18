@@ -280,6 +280,7 @@
   letter-spacing: 3px;
   font-weight: 300;
 }
+
 .login-text-thank2 {
   font-size: 14px;
   line-height: 1.3em;
@@ -287,6 +288,7 @@
   font-weight: 400!;
   text-align: center;
 }
+
 .thankyou-success-message h1{
   letter-spacing: 3px;
   text-transform: uppercase;
