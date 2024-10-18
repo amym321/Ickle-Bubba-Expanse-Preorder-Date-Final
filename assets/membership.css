@@ -279,6 +279,7 @@
   letter-spacing: 3px;
   text-transform: uppercase;
   margin: 0px;
+  font-size: 20px;
 }
 .infoPopupClose{
   position: absolute;
