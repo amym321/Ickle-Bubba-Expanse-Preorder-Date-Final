@@ -46,8 +46,6 @@
         "image_text_block_JJH9Wq"
       ],
       "custom_css": [
-        ".formStyle {margin: 0px 45px 25px 45px;}",
-        ".thankyou-success-message h1, .login-text-thank{margin: 0px; letter-spacing: 3px; text-transform: uppercase;}",
         ".login-text-thank {font-size: 18px; line-height: 1.3em; letter-spacing: 3px; font-weight: 300 !important;}",
         ".login-text-thank2 {font-size: 14px; line-height: 1.3em; letter-spacing: 3px; font-weight: 400!; text-align: center;}",
         ".discount-badges span {font-size: 14px; line-height: 1.3em; letter-spacing: 3px; font-weight: 400!;}"

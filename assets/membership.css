@@ -170,7 +170,7 @@
 
 .formStyle{
   padding-top: 20px;
-  margin:25px 45px;
+  margin: 0px 45px 25px 45px;
 }
 
 .formWrapper label {
@@ -270,7 +270,11 @@
 .login-text-thank {
   font-size: 15px;
   line-height: normal;
+  margin: 0px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
+
 
 .infoPopupClose{
   position: absolute;
