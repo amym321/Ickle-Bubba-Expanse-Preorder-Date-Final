@@ -275,7 +275,10 @@
   text-transform: uppercase;
 }
 
-
+.thankyou-success-message h1{
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
 .infoPopupClose{
   position: absolute;
     background: #fff;
