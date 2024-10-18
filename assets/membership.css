@@ -278,6 +278,7 @@
 .thankyou-success-message h1{
   letter-spacing: 3px;
   text-transform: uppercase;
+  margin: 0px;
 }
 .infoPopupClose{
   position: absolute;
