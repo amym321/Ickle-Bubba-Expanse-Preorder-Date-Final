@@ -285,3 +285,26 @@ if (updateBtn) {
 }
 
   </script>
+<form id="customForm" action="/submit" method="post">
+    <!-- Other form fields -->
+    <input type="hidden" id="brEngagementCookieField" name="brEngagementCookie">
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Ensure Exponea SDK is initialized
+        exponea.onReady(function() {
+            // Get the customer cookie
+            let brEngagementCookieValue = exponea.configuration.customer.cookie;
+
+            let cookieInput = document.getElementById("brEngagementCookieField");
+            // Set the cookie value to the hidden input field
+            if (brEngagementCookieValue) {
+                cookieInput.value = brEngagementCookieValue;
+            }
+            console.log(cookieInput.value)
+        });
+    });
+  
+</script>
