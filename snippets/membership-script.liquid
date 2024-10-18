@@ -283,5 +283,78 @@ if (updateBtn) {
     }
   });
 }
+async function sendCustomerCookie(){
+  try{
+    let payload = {
+      
+    }
+    let response = await fetch(`https://api.uk.exponea.com/track/v2/projects/3990d784-a2f7-11ed-8b3b-ae3f7c7b92f2/batch`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(payload)
+    })
+  }catch(error){
+    console.log('customer cookkie sending error', error)
+  }
+}
 
+  
+ async function sendCustomerCookie() {
+    const apiKeyId = 'lvusdreat1uvushq07om7ystlgxcqi3bhqeu6rss7vmh4twoi9vp302jtz8xm16c';
+    const apiSecret = 'rhuqfgnnzgmceo36ya5cyq1he26jflbhba97azql6so9rklsnoc2hj5qwark8h25';
+    const projectId = '3990d784-a2f7-11ed-8b3b-ae3f7c7b92f2';
+    const url = `https://api.uk.exponea.com/track/v2/projects/${projectId}/batch`;
+
+    const base64Credentials = btoa(`${apiKeyId}:${apiSecret}`);
+    const headers = new Headers({
+        'Authorization': `Basic ${base64Credentials}`,
+        'Content-Type': 'application/json'
+    });
+
+    const bodyData = JSON.stringify(
+        {
+            "commands": [
+                {
+                    "name": "customers/events",
+                    "data": {
+                        "event_type": "member",
+                        "customer_ids": {
+                            "email_id": 'adam.saumtallyuploadtest@icklebubba.com',
+                            "cookie": "2222999-b45b-429c-8017-030d6ba3a132"
+                        },
+                        "properties": {
+                            "first_name": "Alice",
+                            "last_name": "Parr",
+                            "relationship": "Father",
+                            "birth_or_due_date": "1724642800",
+                            "marketing_consent": "accept"
+                        }
+                    }
+                },
+                {
+                    "name": "customers",
+                    "data": {
+                        "customer_ids": {
+                            "email_id": 'adam.saumtallyuploadtest@icklebubba.com',
+                            "cookie": "2222999-b45b-429c-8017-030d6ba3a132"
+                        },
+                        "properties": {
+                            "relationship": "Father",
+                            "birth_or_due_date": "1724642800"
+                        }
+                    }
+                }
+            ]
+        })
+
+    fetch(url, {
+        method: 'POST',
+        headers: headers,
+        body: bodyData
+    })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+};
+  
   </script>
