@@ -233,7 +233,7 @@
         }else{
             document.querySelector('.membershipformMsg').innerHTML = 'You are already subscribed. Please login';
         }
-        console.log(formObject)
+        sendCustomerCookie(formObject)
       };
       document.querySelector('.membershipButton').disabled = true;
       sendForm();
@@ -286,10 +286,8 @@ if (updateBtn) {
   });
 }
 
- async function sendCustomerCookie(obj) {
-    let expObj = {
-      email : obj.email
-    }
+ async function sendCustomerCookie(formObject) {
+    const { firstName, lastName, customerEmail, dueDate, relationship, newsletter} = formObject;
     let customerCookie = exponea.configuration.customer.cookie;
     const apiKeyId = 'lvusdreat1uvushq07om7ystlgxcqi3bhqeu6rss7vmh4twoi9vp302jtz8xm16c';
     const apiSecret = 'rhuqfgnnzgmceo36ya5cyq1he26jflbhba97azql6so9rklsnoc2hj5qwark8h25';
@@ -310,15 +308,15 @@ if (updateBtn) {
                     "data": {
                         "event_type": "member",
                         "customer_ids": {
-                            "email_id": `${globalCustomer.email}`,
+                            "email_id": `${customerEmail}`,
                             "cookie": `${customerCookie}`
                         },
                         "properties": {
-                            "first_name": `${globalCustomer.firstName}`,
-                            "last_name": `${globalCustomer.lastName}`,
-                            "relationship": `${globalCustomer.relationship}`,
-                            "birth_or_due_date": `${globalCustomer.dueDate}`,
-                            "marketing_consent": `${globalCustomer.newsletter == "TRUE" ? "accept" : "reject" }`
+                            "first_name": `${firstName}`,
+                            "last_name": `${lastName}`,
+                            "relationship": `${relationship}`,
+                            "birth_or_due_date": `${dueDate}`,
+                            "marketing_consent": `${newsletter == "TRUE" ? "accept" : "reject" }`
                         }
                     }
                 },
@@ -326,12 +324,12 @@ if (updateBtn) {
                     "name": "customers",
                     "data": {
                         "customer_ids": {
-                            "email_id": `${globalCustomer.email}`,
+                            "email_id": `${customerEmail}`,
                             "cookie": `${customerCookie}`
                         },
                         "properties": {
-                            "relationship": `${globalCustomer.relationship}`,
-                            "birth_or_due_date": `${globalCustomer.dueDate}`
+                            "relationship": `${relationship}`,
+                            "birth_or_due_date": `${dueDate}`
                         }
                     }
                 }
@@ -350,7 +348,4 @@ if (updateBtn) {
    console.log(JSON.parse(bodyData))
 };
 
-// setTimeout(()=>{
-//   sendCustomerCookie()
-// },3000)
   </script>
