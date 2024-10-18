@@ -306,15 +306,15 @@ if (updateBtn) {
                     "data": {
                         "event_type": "member",
                         "customer_ids": {
-                            "email_id": 'adam.saumtallyuploadtest@icklebubba.com',
-                            "cookie": "2222999-b45b-429c-8017-030d6ba3a132"
+                            "email_id": `${globalCustomer.email}`,
+                            "cookie": `${customerCookie}`
                         },
                         "properties": {
-                            "first_name": "Alice",
-                            "last_name": "Parr",
-                            "relationship": "Father",
-                            "birth_or_due_date": "1724642800",
-                            "marketing_consent": "accept"
+                            "first_name": `${globalCustomer.firstName}`,
+                            "last_name": `${globalCustomer.lastName}`,
+                            "relationship": `${globalCustomer.relationship}`,
+                            "birth_or_due_date": `${globalCustomer.dueDate}`,
+                            "marketing_consent": `${globalCustomer.newsletter == "TRUE" ? "accept" : "reject" }`
                         }
                     }
                 },
@@ -322,12 +322,12 @@ if (updateBtn) {
                     "name": "customers",
                     "data": {
                         "customer_ids": {
-                            "email_id": 'adam.saumtallyuploadtest@icklebubba.com',
-                            "cookie": "2222999-b45b-429c-8017-030d6ba3a132"
+                            "email_id": `${globalCustomer.email}`,
+                            "cookie": `${customerCookie}`
                         },
                         "properties": {
-                            "relationship": "Father",
-                            "birth_or_due_date": "1724642800"
+                            "relationship": `${globalCustomer.relationship}`,
+                            "birth_or_due_date": `${globalCustomer.dueDate}`
                         }
                     }
                 }
