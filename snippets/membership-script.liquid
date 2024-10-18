@@ -1,12 +1,5 @@
 <script>
-     setTimeout(()=>{
-        console.log(window.exponea.configuration)
-     },3000)
-</script>
-<script>
-let cok = exponea.configuration.customer.cookie;
-  console.log('cok',cok)
-  
+ 
   let test = 'http://localhost:5000';
   let live = 'https://dashboard.icklebubba.com';
   let baseurl = live;
@@ -292,6 +285,7 @@ if (updateBtn) {
 }
 
  async function sendCustomerCookie() {
+    let customerCookie = await exponea.configuration.customer.cookie;
     const apiKeyId = 'lvusdreat1uvushq07om7ystlgxcqi3bhqeu6rss7vmh4twoi9vp302jtz8xm16c';
     const apiSecret = 'rhuqfgnnzgmceo36ya5cyq1he26jflbhba97azql6so9rklsnoc2hj5qwark8h25';
     const projectId = '3990d784-a2f7-11ed-8b3b-ae3f7c7b92f2';
@@ -339,15 +333,17 @@ if (updateBtn) {
             ]
         })
 
-    fetch(url, {
-        method: 'POST',
-        headers: headers,
-        body: bodyData
-    })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error('Error:', error));
+    // fetch(url, {
+    //     method: 'POST',
+    //     headers: headers,
+    //     body: bodyData
+    // })
+    //     .then(response => response.json())
+    //     .then(data => console.log(data))
+    //     .catch(error => console.error('Error:', error));
+   console.log(customerCookie)
+   console.log(bodyData)
 };
 
-
+sendCustomerCookie()
   </script>
