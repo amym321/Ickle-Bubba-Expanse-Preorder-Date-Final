@@ -285,7 +285,7 @@ if (updateBtn) {
 }
 
  async function sendCustomerCookie() {
-    let customerCookie = await exponea.configuration.customer.cookie;
+    let customerCookie = exponea.configuration.customer.cookie;
     const apiKeyId = 'lvusdreat1uvushq07om7ystlgxcqi3bhqeu6rss7vmh4twoi9vp302jtz8xm16c';
     const apiSecret = 'rhuqfgnnzgmceo36ya5cyq1he26jflbhba97azql6so9rklsnoc2hj5qwark8h25';
     const projectId = '3990d784-a2f7-11ed-8b3b-ae3f7c7b92f2';
@@ -345,5 +345,7 @@ if (updateBtn) {
    console.log(bodyData)
 };
 
-sendCustomerCookie()
+setTimeout(()=>{
+  sendCustomerCookie()
+},2000)
   </script>
