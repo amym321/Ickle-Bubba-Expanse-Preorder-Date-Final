@@ -1,6 +1,5 @@
 <script>
-    let cok = exponea.configuration.customer.cookie;
-  console.log('cok',cok)
+
   
   let test = 'http://localhost:5000';
   let live = 'https://dashboard.icklebubba.com';
@@ -285,21 +284,6 @@ if (updateBtn) {
     }
   });
 }
-async function sendCustomerCookie(){
-  try{
-    let payload = {
-      
-    }
-    let response = await fetch(`https://api.uk.exponea.com/track/v2/projects/3990d784-a2f7-11ed-8b3b-ae3f7c7b92f2/batch`,{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify(payload)
-    })
-  }catch(error){
-    console.log('customer cookkie sending error', error)
-  }
-}
-
   
  async function sendCustomerCookie() {
     const apiKeyId = 'lvusdreat1uvushq07om7ystlgxcqi3bhqeu6rss7vmh4twoi9vp302jtz8xm16c';
@@ -359,5 +343,6 @@ async function sendCustomerCookie(){
         .catch(error => console.error('Error:', error));
 };
 
-
+  let cok = exponea.configuration.customer.cookie;
+  console.log('cok',cok)
   </script>
