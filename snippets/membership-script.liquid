@@ -219,17 +219,18 @@
         let checkStatus = await checkCustomerByEmail(formObject.customerEmail);
         console.log(checkStatus)
         if(checkStatus === 200){
-          try {
-            const response = await fetch(`${baseurl}/api/create-company`, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(formObject)
-            });
-            const jsonData = await response.json();
-             window.location.href = "/pages/thankyou-page";
-          } catch (error) {
-            console.log('Error in sending form data:', error);
-          }
+          console.log(formObject)
+          // try {
+          //   const response = await fetch(`${baseurl}/api/create-company`, {
+          //     method: 'POST',
+          //     headers: { 'Content-Type': 'application/json' },
+          //     body: JSON.stringify(formObject)
+          //   });
+          //   const jsonData = await response.json();
+          //    window.location.href = "/pages/thankyou-page";
+          // } catch (error) {
+          //   console.log('Error in sending form data:', error);
+          // }
         }else{
             document.querySelector('.membershipformMsg').innerHTML = 'You are already subscribed. Please login';
         }
@@ -285,7 +286,10 @@ if (updateBtn) {
   });
 }
 
- async function sendCustomerCookie() {
+ async function sendCustomerCookie(obj) {
+    let expObj = {
+      email : obj.email
+    }
     let customerCookie = exponea.configuration.customer.cookie;
     const apiKeyId = 'lvusdreat1uvushq07om7ystlgxcqi3bhqeu6rss7vmh4twoi9vp302jtz8xm16c';
     const apiSecret = 'rhuqfgnnzgmceo36ya5cyq1he26jflbhba97azql6so9rklsnoc2hj5qwark8h25';
@@ -346,7 +350,7 @@ if (updateBtn) {
    console.log(JSON.parse(bodyData))
 };
 
-setTimeout(()=>{
-  sendCustomerCookie()
-},3000)
+// setTimeout(()=>{
+//   sendCustomerCookie()
+// },3000)
   </script>
