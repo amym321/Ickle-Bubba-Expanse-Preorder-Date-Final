@@ -218,21 +218,23 @@
         let checkStatus = await checkCustomerByEmail(formObject.customerEmail);
         console.log(checkStatus)
         if(checkStatus === 200){
-          // try {
-          //   const response = await fetch(`${baseurl}/api/create-company`, {
-          //     method: 'POST',
-          //     headers: { 'Content-Type': 'application/json' },
-          //     body: JSON.stringify(formObject)
-          //   });
-          //   const jsonData = await response.json();
-          //    window.location.href = "/pages/thankyou-page";
-          // } catch (error) {
-          //   console.log('Error in sending form data:', error);
-          // }
+          try {
+            const response = await fetch(`${baseurl}/api/create-company`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(formObject)
+            });
+            const jsonData = await response.json();
+            if(response.status == 200){
+              sendCustomerCookie(formObject)
+            }
+             window.location.href = "/pages/thankyou-page";
+          } catch (error) {
+            console.log('Error in sending form data:', error);
+          }
         }else{
             document.querySelector('.membershipformMsg').innerHTML = 'You are already subscribed. Please login';
         }
-        sendCustomerCookie(formObject)
       };
       document.querySelector('.membershipButton').disabled = true;
       sendForm();
@@ -335,16 +337,14 @@ if (updateBtn) {
             ]
         })
 
-    // fetch(url, {
-    //     method: 'POST',
-    //     headers: headers,
-    //     body: bodyData
-    // })
-    //     .then(response => response.json())
-    //     .then(data => console.log(data))
-    //     .catch(error => console.error('Error:', error));
-   console.log(customerCookie)
-   console.log(JSON.parse(bodyData))
+    fetch(url, {
+        method: 'POST',
+        headers: headers,
+        body: bodyData
+    })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
 };
 
   </script>
