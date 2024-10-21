@@ -1,79 +1,79 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
+  "order": [
+    "countdown_7P66Yy",
+    "featured_video_xcjMLX",
+    "1676627539el96vr0i"
+  ],
   "sections": {
-    "countdown_7P66Yy": {
-      "type": "countdown",
-      "blocks": {
-        "content_YHBCX9": {
-          "type": "content",
-          "settings": {
-            "heading": "Countdown",
-            "heading_size": "h2",
-            "text": "<p>Use this timer to create urgency and boost sales.<\/p>",
-            "content_alignment": "left"
-          }
-        },
-        "timer_hy3dWp": {
-          "type": "timer",
-          "settings": {
-            "year": "2025",
-            "month": "01",
-            "day": "1",
-            "hour": "03",
-            "minute": "00",
-            "hide_timer": false,
-            "text": ""
-          }
-        },
-        "button_JV4bdi": {
-          "type": "button",
-          "settings": {
-            "button_link": "shopify:\/\/collections\/best-selling-products",
-            "button": "Shop Collection",
-            "button_style": "solid"
-          }
-        }
+    "1676627539el96vr0i": {
+      "settings": {
       },
+      "type": "gem-page-default-index"
+    },
+    "countdown_7P66Yy": {
       "block_order": [
         "content_YHBCX9",
         "timer_hy3dWp",
         "button_JV4bdi"
       ],
+      "blocks": {
+        "button_JV4bdi": {
+          "settings": {
+            "button": "Shop Collection",
+            "button_link": "shopify://collections/best-selling-products",
+            "button_style": "solid"
+          },
+          "type": "button"
+        },
+        "content_YHBCX9": {
+          "settings": {
+            "content_alignment": "left",
+            "heading": "Countdown",
+            "heading_size": "h2",
+            "text": "<p>Use this timer to create urgency and boost sales.</p>"
+          },
+          "type": "content"
+        },
+        "timer_hy3dWp": {
+          "settings": {
+            "day": "1",
+            "hide_timer": false,
+            "hour": "03",
+            "minute": "00",
+            "month": "01",
+            "text": "",
+            "year": "2025"
+          },
+          "type": "timer"
+        }
+      },
       "settings": {
-        "layout": "banner",
-        "full_width": false,
-        "color_scheme": "none",
         "blur_image": false,
+        "color_scheme": "none",
+        "full_width": false,
+        "layout": "banner",
+        "lazyload_images": true,
         "overlay_color": "#000000",
-        "overlay_opacity": 0,
-        "lazyload_images": true
-      }
+        "overlay_opacity": 0
+      },
+      "type": "countdown"
     },
     "featured_video_xcjMLX": {
-      "type": "featured-video",
       "settings": {
+        "divider": false,
         "title": "",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=SACxjUCa8Ks",
-        "divider": false
-      }
-    },
-    "1676627539el96vr0i": {
-      "type": "gem-page-default-index",
-      "settings": {
-      }
+        "video_url": "https://www.youtube.com/watch?v=SACxjUCa8Ks"
+      },
+      "type": "featured-video"
     }
-  },
-  "order": [
-    "countdown_7P66Yy",
-    "featured_video_xcjMLX",
-    "1676627539el96vr0i"
-  ]
+  }
 }
