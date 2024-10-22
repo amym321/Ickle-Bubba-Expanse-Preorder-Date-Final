@@ -467,7 +467,7 @@
      font-size:18px !important;
   }
 }
-.priceWrapper:not(:has(.rrpMetaprice)) #systemPriceD .gf_product-compare-price:empty +  .gf_product-price{
+.priceWrapper:not(:has(.rrpMetaprice)) #systemPriceD .gf_product-compare-price:empty + .gf_product-price{
   background:none !important;
   padding-left: 0 !important;
 }
