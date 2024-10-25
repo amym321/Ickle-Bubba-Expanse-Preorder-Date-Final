@@ -79,6 +79,7 @@
   {% else %}
 
     let popupState = localStorage.getItems('popupState');
+    console.log('st',popupState)
       if(popupState != 'already_created_company'){
         let guestStorageKey = 'guestStorageKey';
       const popupClosedAt = localStorage.getItem(guestStorageKey);
