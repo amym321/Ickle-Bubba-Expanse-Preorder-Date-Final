@@ -78,28 +78,31 @@
     
   {% else %}
 
-    let guestStorageKey = 'guestStorageKey';
-    const popupClosedAt = localStorage.getItem(guestStorageKey);
-    if (popupClosedAt) {
-      const timestamp = parseInt(popupClosedAt, 10);
-      if (isNaN(timestamp) || is24HoursPassed(timestamp)) {
+    let popupState = localStorage.getItems('popupState');
+      if(popupState != 'already_created_company'){
+        let guestStorageKey = 'guestStorageKey';
+      const popupClosedAt = localStorage.getItem(guestStorageKey);
+      if (popupClosedAt) {
+        const timestamp = parseInt(popupClosedAt, 10);
+        if (isNaN(timestamp) || is24HoursPassed(timestamp)) {
+          if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
+            memberPopup.style.display = 'block';
+          }
+        }else{
+          // nothing will happen bacause time remaining to show popup
+        } 
+      }else{
         if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
           memberPopup.style.display = 'block';
         }
-      }else{
-        // nothing will happen bacause time remaining to show popup
-      } 
-    }else{
-      if( !formThankLocation.includes('member-form') && !formThankLocation.includes('thankyou')){
-        memberPopup.style.display = 'block';
       }
+      infoPopupClose.addEventListener("click", function(e) {
+        e.preventDefault();
+        memberPopup.style.display = "none";
+        const now = new Date().getTime();
+        localStorage.setItem(guestStorageKey, now.toString());
+      });
     }
-    infoPopupClose.addEventListener("click", function(e) {
-      e.preventDefault();
-      memberPopup.style.display = "none";
-      const now = new Date().getTime();
-      localStorage.setItem(guestStorageKey, now.toString());
-    });
     
   {% endif %}
 
