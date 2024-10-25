@@ -18,7 +18,9 @@
       }); 
       const data = await response.json();
       globalCustomer = data.object ;
-      console.log('vishal',response.status)
+      if(response.status == 200){
+        localStorage.setItem('popupState',"already_created_company");
+      }
       return response.status
     } catch (error) {
       console.log('vishalno',response.status)
@@ -79,7 +81,6 @@
   {% else %}
 
     let popupState = localStorage.getItem('popupState');
-      if(popupState != 'already_created_company'){
         let guestStorageKey = 'guestStorageKey';
       const popupClosedAt = localStorage.getItem(guestStorageKey);
       if (popupClosedAt) {
@@ -102,7 +103,6 @@
         const now = new Date().getTime();
         localStorage.setItem(guestStorageKey, now.toString());
       });
-    }
     
   {% endif %}
 
