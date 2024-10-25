@@ -1,7 +1,9 @@
 .header__icons:has(.infoPopup) {
   position: relative;
 }
-
+.hideMemberPopup .infoPopup{
+  display:none !important;
+}
 .formHeader > div p{
   font-size:12px;
   margin:0;
