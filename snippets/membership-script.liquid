@@ -18,7 +18,7 @@
       }); 
       const data = await response.json();
       globalCustomer = data.object ;
-      if(response.status == 200){
+      if(response.status == 401){
         localStorage.setItem('popupState',"already_created_company");
       }
       return response.status
