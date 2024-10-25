@@ -18,6 +18,7 @@
       }); 
       const data = await response.json();
       globalCustomer = data.object ;
+      console.log('vishal',response.status)
       return response.status
     } catch (error) {
       console.log('Error fetching customer data:', error);
