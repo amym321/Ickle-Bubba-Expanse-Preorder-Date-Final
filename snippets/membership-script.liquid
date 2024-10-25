@@ -1,5 +1,8 @@
 <script>
- 
+  let popupState = localStorage.getItem('popupState');
+  if(popupState == 'already_created_company'){
+    let docBody = document.querySelector('body').classList.add('hideMemberPopup');
+  }
   let test = 'http://localhost:5000';
   let live = 'https://dashboard.icklebubba.com';
   let baseurl = test;
