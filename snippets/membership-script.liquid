@@ -18,6 +18,7 @@
       }); 
       const data = await response.json();
       globalCustomer = data.object ;
+      console.log('vishal',response.status)
       localStorage.setItem('popupState',"already_created_company");
       return response.status
     } catch (error) {
