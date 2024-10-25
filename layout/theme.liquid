@@ -1,6 +1,12 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction }}">
 <head>
+  <script>
+    let popupState = localStorage.getItem('popupState');
+    if(popupState == 'already_created_company'){
+      let docBody = document.querySelector('body').classList.add('hideMemberPopup');
+    }
+  </script>
   <!-- MANAGED BY LOCATION REDIRECT APP. DO NOT DELETE -->
   {% capture CFH %}{{ content_for_header }}{% endcapture %}
   {% if customer.tags contains "admin" or request.design_mode %}
