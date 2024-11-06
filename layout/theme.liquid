@@ -205,6 +205,7 @@ function processDatalayerEvent(event){
       loadExponeaScript();
     } else {
       // Use the visitorConsentCollected event to load the script when consent changes
+      document.addEventListener("visitorConsentCollected", (event) => console.log(event.detail));
       document.addEventListener("visitorConsentCollected", function(event) {
         if (event.detail.marketingAllowed && event.detail.analyticsAllowed && event.detail.preferencesAllowed) {
           loadExponeaScript();
