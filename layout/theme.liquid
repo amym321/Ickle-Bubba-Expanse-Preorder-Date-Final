@@ -175,7 +175,8 @@
       console.log('Opt-In Status:', optIn); // Debugging: Log the opt-in status
       event.opt_in = optIn;
       console.log('Updated Event:', event); // Debugging: Log the updated event object
-      Shopify.analytics.publish("bre.cookie", event);
+      // Ensure the event object is correctly passed to the publish function
+      Shopify.analytics.publish("bre.cookie", { ...event });
     }
   }
 </script>
