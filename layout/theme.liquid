@@ -155,9 +155,11 @@
 
   function hasUserAcceptedCookies() {
     var consentCookie = getCookie('_cmp_a');
+    console.log('Consent Cookie:', consentCookie); // Debugging: Log the cookie value
     if (consentCookie) {
       try {
         var consentData = JSON.parse(consentCookie);
+        console.log('Parsed Consent Data:', consentData); // Debugging: Log the parsed data
         return consentData.purposes.p && consentData.purposes.a && consentData.purposes.m;
       } catch (e) {
         console.error('Error parsing consent cookie:', e);
@@ -170,6 +172,7 @@
   function processDatalayerEvent(event) {
     if (event.event === "bre.cookie") {
       var optIn = hasUserAcceptedCookies();
+      console.log('Opt-In Status:', optIn); // Debugging: Log the opt-in status
       event.opt_in = optIn;
       Shopify.analytics.publish("bre.cookie", event);
     }
