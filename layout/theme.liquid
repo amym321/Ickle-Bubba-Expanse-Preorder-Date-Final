@@ -115,35 +115,68 @@
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
   {{ content_for_header }}
   
+
 <!-- dataLayer listener -->
-  <script>
+<script>
   window.dataLayer = window.dataLayer || [];
 
   function subscribeCookieListener(dataLayer) {
     // Step to process information already existing in the datalayer
-    dataLayer.forEach(processDatalayerEvent)
+    dataLayer.forEach(processDatalayerEvent);
 
     // Set-up a "listener"
     const originalPush = dataLayer.push;
     dataLayer.push = function() {
-        originalPush.apply(dataLayer, arguments);
-        Array.from(arguments).forEach(processDatalayerEvent);
+      originalPush.apply(dataLayer, arguments);
+      Array.from(arguments).forEach(processDatalayerEvent);
     };
-  
   }
-subscribeCookieListener(window.dataLayer);
 
-function processDatalayerEvent(event){
-  if(event.event === "bre.cookie"){
-    Shopify.analytics.publish("bre.cookie",event);
+  subscribeCookieListener(window.dataLayer);
+
+  function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    var cookie = undefined;
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        cookie = c.substring(name.length, c.length);
+        break;
+      }
+    }
+    cookie = decodeURIComponent(cookie);
+    cookie = cookie.split('?')[0];
+    return cookie;
   }
-}
- 
+
+  function hasUserAcceptedCookies() {
+    var consentCookie = getCookie('_cmp_a');
+    if (consentCookie) {
+      try {
+        var consentData = JSON.parse(consentCookie);
+        return consentData.purposes.p && consentData.purposes.a && consentData.purposes.m;
+      } catch (e) {
+        console.error('Error parsing consent cookie:', e);
+        return false;
+      }
+    }
+    return false;
+  }
+
+  function processDatalayerEvent(event) {
+    if (event.event === "bre.cookie") {
+      var optIn = hasUserAcceptedCookies();
+      event.opt_in = optIn;
+      Shopify.analytics.publish("bre.cookie", event);
+    }
+  }
 </script>
   <!-- EXPONEA start -->
 <script>
-
-
     function getCookie(cname) {
         var name = cname + "=";
         var ca = document.cookie.split(';');
