@@ -202,11 +202,13 @@ function processDatalayerEvent(event){
     });
    } 
     if (hasUserAcceptedCookies()) {
-    loadExponeaScript();
+      loadExponeaScript();
     } else {
-      // Optionally, you can set up an event listener to load the script when the user accepts cookies
-      document.addEventListener('cookieConsentAccepted', function() {
-        loadExponeaScript();
+      // Use the visitorConsentCollected event to load the script when consent changes
+      document.addEventListener("visitorConsentCollected", function(event) {
+        if (event.detail.marketingAllowed && event.detail.analyticsAllowed && event.detail.preferencesAllowed) {
+          loadExponeaScript();
+        }
       });
     }
 </script>
